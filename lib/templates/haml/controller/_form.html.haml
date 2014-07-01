@@ -1,0 +1,16 @@
+=form_for @<%= table_name.singularize %> do |f|
+	%table.outer
+	<% @attr_cols.each do |col| %>
+		%tr
+			%td= f.label :<%= col.name %>
+			<%#= binding.pry %>
+			%td.field= f.<%= col.field_type %> :<%= col.name %>
+	<% end %>
+		%tr
+		<% if options.ext_form_submit? %>
+			%td{:colspan => "2", :style => "text-align: center;"}
+				= f.submit "Save & Back to List"
+				= f.submit "Save & Reload"
+		<% else %>
+			%td{:colspan => "2"}= f.submit
+		<% end %>

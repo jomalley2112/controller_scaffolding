@@ -1,0 +1,37 @@
+%h4 Listing <%= plural_table_name.humanize %>
+<% col_count = @attr_cols.count %>
+%table.outer-list#top-level
+	%thead 
+		%tr 
+		<% @attr_cols.each do |col| %>
+			%th <%= col.name.humanize %>
+		<% end %>
+		<% if inc_link?("edit") %>
+			<% col_count += 1 %>
+			%th.link_col
+		<% end %>
+		<% if inc_link?("destroy") %>
+			<% col_count += 1 %>
+			%th.link_col
+		<% end %>
+	%tbody 
+		- @<%= plural_table_name %>.each do |<%= singular_table_name %>|
+			%tr
+			<% @attr_cols.each do |col| %> 
+				%td= <%= singular_table_name %>.<%= col.name %>
+			<% end %>
+			<% if inc_link?("edit") %>
+				%td= link_to "Edit", edit_<%= singular_table_name %>_path(<%= singular_table_name %>)
+			<% end %>
+			<% if inc_link?("destroy") %>
+				%td= link_to "Del", <%= singular_table_name %>, method: :delete, data: {confirm: "Are you sure?"}  
+			<% end %>
+	<% if options.ext_index_nav? %>
+		%tr#pagination-row
+			%td{:colspan => '<%= col_count %>', :style => "text-align: center;"}
+				= render partial: 'pagination', locals: { :coll => @<%= plural_table_name %> }
+	<% end %>
+%br/ 
+<% if inc_link?("new") %>
+= link_to 'New <%= singular_table_name.humanize %>', new_<%= singular_table_name %>_path
+<% end %>

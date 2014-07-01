@@ -1,0 +1,5 @@
+-if obj.errors.any?
+	%div.error_messages
+		%ul 
+			-for message in obj.errors.full_messages
+				%li= message
