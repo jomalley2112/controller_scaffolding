@@ -37,18 +37,21 @@ module Haml
         end
       end
 
+      #TODO; I couldn't get the tests to work with relative paths being passed to the 
+      # inject_into_file calls...it wants to make them relative to the test's destination directory
+
       def handle_ext_index
         #Extended index functionality?
         if options.ext_index_nav?
           puts "source_paths=#{source_paths}"
           copy_ext_index_concern
-          inject_into_file 'app/controllers/application_controller.rb', 
+          inject_into_file "#{::Rails.root.to_s}/app/controllers/application_controller.rb", 
                 after: "class ApplicationController < ActionController::Base\n" do
                   "\ninclude ExtIndexNav\n\n"
                 end
           copy_pagination_partial
           copy_ext_index_js
-          inject_into_file 'app/assets/javascripts/application.js',
+          inject_into_file "#{::Rails.root.to_s}/app/assets/javascripts/application.js",
             before: "\n//= require_tree ." do
               "\n//= require jquery"
             end
@@ -59,17 +62,18 @@ module Haml
         #extended form submission functionality?
         if options.ext_form_submit?
           copy_ext_form_submit_concern
-          inject_into_file 'app/controllers/application_controller.rb', 
+
+          inject_into_file "#{::Rails.root.to_s}/app/controllers/application_controller.rb", 
                 after: "class ApplicationController < ActionController::Base\n" do
                   "\ninclude ExtFormSubmit\n\n"
                 end
           copy_flash_msgs_partial
-          inject_into_file 'app/views/layouts/application.html.erb', 
+          inject_into_file "#{::Rails.root.to_s}/app/views/layouts/application.html.erb", 
                 before: "<%= yield %>\n" do
                   "\n<%= render 'flash_messages' %>\n"
                 end
           copy_val_errors_partial
-          inject_into_file 'app/helpers/application_helper.rb',
+          inject_into_file "#{::Rails.root.to_s}/app/helpers/application_helper.rb",
                 after: "module ApplicationHelper\n" do
                   "\ndef render_for_controller(partial, local_vars)
         render(:partial => partial, :locals => local_vars).html_safe
