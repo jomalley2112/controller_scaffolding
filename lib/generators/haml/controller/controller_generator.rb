@@ -109,8 +109,8 @@ module Haml
         copy_file(filename_with_extensions( "_pagination",format), path) if file_action(path)
       end
       def copy_ext_index_concern
-        source_paths << File.expand_path('../../../../generators/models/concerns', __FILE__)
-        base_path = "app/models/concerns"
+        source_paths << File.expand_path('../../../../generators/controller/concerns', __FILE__)
+        base_path = "app/controllers/concerns"
         path = File.join(base_path, 'ext_index_nav.rb')
         copy_file('ext_index_nav.rb', path) if file_action(path)
       end
@@ -123,8 +123,8 @@ module Haml
       end
 
       def copy_ext_form_submit_concern
-        source_paths << File.expand_path('../../../../generators/models/concerns', __FILE__)
-        base_path = "app/models/concerns"
+        source_paths << File.expand_path('../../../../generators/controller/concerns', __FILE__)
+        base_path = "app/controllers/concerns"
         path = File.join(base_path, 'ext_form_submit.rb')
         copy_file('ext_form_submit.rb', path) if file_action(path)
       end

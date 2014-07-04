@@ -1,4 +1,4 @@
-= ControllerScaffolding
+=ControllerScaffolding
 
 Creates controller and extended scaffolding for the model specified.
 
