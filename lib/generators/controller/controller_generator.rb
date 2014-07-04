@@ -38,40 +38,35 @@ module Rails
     #######################################################################
 
     class ControllerGenerator < NamedBase # :nodoc:
-      #TODO...Not sure if these are neccessary
-      gem 'will_paginate'
-      gem 'haml-rails'
-
       argument :actions, type: :array, default: [], banner: "action action"
       class_option :ext_index_nav, :type => :boolean, :default => true, :desc => "Include extended index page features."
       class_option :ext_form_submit, :type => :boolean, :default => true, :desc => "Include extended form submission features."      
       check_class_collision suffix: "Controller"
+      
+      #Note: This needs to be set Outside of any methods
+      source_paths << [File.expand_path('../../../templates/rails/controller', __FILE__)]
+
+      def check_for_model
+        begin
+        table_name.classify.constantize #throws runtime if model doesn't exist
+        rescue
+          #TODO: Make this just halt and return a message using thor if possible
+          raise "Model #{table_name} doesn't appear to exist"
+        end
+      end
 
       def create_controller_file
         template 'controller.rb', File.join('app/controllers', class_path, "#{file_name}_controller.rb")
       end
 
       def add_routes
-        #TODO Handle nested resources
+        #TODO Handle nested resources here (look at namespace_ladder in scaffold generators)
         route "resources :#{plural_table_name.to_sym}"
       end
 
       hook_for :template_engine, :test_framework, :helper, :assets
-
+#================================ P R I V A T E =================================
       private
-
-        # def generate_routing_code(action)
-        #   depth = class_path.length
-        #   namespace_ladder = class_path.each_with_index.map do |ns, i|
-        #     indent("namespace :#{ns} do\n", i * 2)
-        #   end.join
-        #   route = indent(%{get '#{file_name}/#{action}'\n}, depth * 2)
-        #   end_ladder = (1..depth).reverse_each.map do |i|
-        #     indent("end\n", i * 2)
-        #   end.join
-        #  namespace_ladder + route + end_ladder
-        # end
-
         def generate_action_code(action, ext_index=true, ext_form_submit=true)
           case action
             when "index"
@@ -93,7 +88,7 @@ module Rails
       flash[:success] = "Updated #{table_name.singularize.humanize} successfully"
       redirect_to #{redir_call}
     else
-      #flash_alert(@#{table_name.singularize}) #Should add this to the generators
+      flash_alert(@#{table_name.singularize})
       render :edit
     end`
             when "create"
@@ -103,7 +98,7 @@ module Rails
       flash[:success] = "Created #{table_name.singularize.humanize} successfully"
       redirect_to #{redir_call}
     else
-      #flash_alert(@#{table_name.singularize}) #Should add this functionality to the generators too
+      flash_alert(@#{table_name.singularize})
       render :new
     end`
             when "destroy"
@@ -121,4 +116,5 @@ module Rails
     end
     
   end
+
 end

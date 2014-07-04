@@ -1,25 +1,24 @@
 #TEMPLATE GENERATOR & FILE COPIER
-# $rails g controller NonScaffThings index new create edit update destroy [--skip-ext-index-nav]  [--skip-ext-form-submit]
-
+# $ rails g controller NonScaffThings index new create edit update destroy [--skip-ext-index-nav]  [--skip-ext-form-submit]
 
 require 'rails/generators/erb/controller/controller_generator'
 require 'rails/generators/erb/scaffold/scaffold_generator'
 
-#require 'generators/controller/controller_generator'
-#require 'rails/generators/erb'
-
 module Haml
   module Generators
-  	class ControllerGenerator < Erb::Generators::ControllerGenerator #ScaffoldGenerator # # :nodoc:
+  	class ControllerGenerator < Erb::Generators::ControllerGenerator #ScaffoldGenerator
       argument :actions, type: :array, default: [], banner: "action action"
       class_option :ext_index_nav, :type => :boolean, :default => true, :desc => "Include extended index page features."
       class_option :ext_form_submit, :type => :boolean, :default => true, :desc => "Include extended form submission features."      
-
-      def copy_view_files
+      
+      
+      #TODO: It worked without this outside of the plugin
+      source_paths << File.expand_path('../../../../templates/haml/controller', __FILE__)
+      def copy_view_files #do NOT change the name of this method 
+                          # it must be overriding an existing one in a parent class
         base_path = File.join("app/views", class_path, file_name)
         empty_directory base_path
         @attr_cols = ::Rails::Generators::attr_cols(table_name)
-        
         (actions - %w(create update destroy)).each do |action|
           @action = action
           formats.each do |format|
@@ -27,26 +26,37 @@ module Haml
             set_template(@action, @path)
           end
         end
+      end
 
+      def gen_form_partial
         #Create _form partial?
+        base_path = File.join("app/views", class_path, file_name)
         unless (actions & %w(edit new)).empty? #Remember that "&" is intersect
           @path = File.join(base_path, filename_with_extensions("_form", format))
           set_template("_form", @path) 
         end
-        
+      end
+
+      def handle_ext_index
         #Extended index functionality?
         if options.ext_index_nav?
+          puts "source_paths=#{source_paths}"
           copy_ext_index_concern
           inject_into_file 'app/controllers/application_controller.rb', 
                 after: "class ApplicationController < ActionController::Base\n" do
-                  "\ninclude ExtController\n\n"
+                  "\ninclude ExtIndexNav\n\n"
                 end
           copy_pagination_partial
-          append_file 'app/assets/javascripts/application.js', pagination_js_code
-          copy_ext_index_stylesheet
+          copy_ext_index_js
+          inject_into_file 'app/assets/javascripts/application.js',
+            before: "\n//= require_tree ." do
+              "\n//= require jquery"
+            end
         end
-
-        #extended form submissoin functionality?
+      end
+        
+      def handle_ext_form
+        #extended form submission functionality?
         if options.ext_form_submit?
           copy_ext_form_submit_concern
           inject_into_file 'app/controllers/application_controller.rb', 
@@ -64,16 +74,26 @@ module Haml
                   "\ndef render_for_controller(partial, local_vars)
         render(:partial => partial, :locals => local_vars).html_safe
       end\n"
-            end
+                end
         end
-
+      end
+        
+      def copy_stylesheet
+        if options.ext_form_submit? || options.ext_index_nav?
+          source_paths << File.expand_path('../../../../generators/assets/stylesheets', __FILE__)
+          base_path = "app/assets/stylesheets"
+          path = File.join(base_path, 'controller_scaffolding.css.scss')
+          copy_file('controller_scaffolding.css.scss', path) if file_action(path)
+        end
       end
 
+      
+#================================= P R O T E C T E D =================================
       protected
 			def handler
         :haml
       end
-
+#================================= P R I V A T E =====================================
       private
 
       def set_template(action, path)
@@ -95,11 +115,11 @@ module Haml
         copy_file('ext_index_nav.rb', path) if file_action(path)
       end
 
-      def copy_ext_index_stylesheet
-        source_paths << File.expand_path('../../../../generators/assets/stylesheets', __FILE__)
-        base_path = "app/assets/stylesheets"
-        path = File.join(base_path, 'ext_index_nav.css.scss')
-        copy_file('ext_index_nav.css.scss', path) if file_action(path)
+      def copy_ext_index_js
+        source_paths << File.expand_path('../../../../generators/assets/javascripts', __FILE__)
+        base_path = "app/assets/javascripts"
+        path = File.join(base_path, 'ext_index_nav.js')
+        copy_file('ext_index_nav.js', path) if file_action(path)
       end
 
       def copy_ext_form_submit_concern
@@ -137,26 +157,6 @@ module Haml
       def inc_link?(name)
         actions.include?(name)
       end
-
-      #TODO Move this to separate .js file and copy it over and reference it in application.js
-      def pagination_js_code
-        %Q`function set_per_page(sel) {
-    url = updateQueryStringParameter($(location).attr('href'), "per_page", $(sel).val())
-    window.location = updateQueryStringParameter(url, "page", "1")
-  }
-function updateQueryStringParameter(uri, key, value) {
-  var re = new RegExp("([?&])" + key + "=.*?(&|$)", "i");
-  var separator = uri.indexOf('?') !== -1 ? "&" : "?";
-  if (uri.match(re)) {
-    return uri.replace(re, '$1' + key + "=" + value + '$2');
-  }
-  else {
-    return uri + separator + key + "=" + value;
-  }
-}`
-      end
-        
     end
-    
   end
 end

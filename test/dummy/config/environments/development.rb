@@ -1,3 +1,5 @@
+# require "haml-rails"
+# require "will_paginate"
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
