@@ -1,5 +1,5 @@
 #TEMPLATE GENERATOR & FILE COPIER
-# $ rails g controller NonScaffThings index new create edit update destroy [--skip-ext-index-nav]  [--skip-ext-form-submit]
+# $ rails g controller NonScaffThings index new create edit update destroy [--force] [--skip-ext-index-nav]  [--skip-ext-form-submit]
 
 require 'rails/generators/erb/controller/controller_generator'
 require 'rails/generators/erb/scaffold/scaffold_generator'
@@ -103,6 +103,7 @@ module Haml
       def set_template(action, path)
       	template filename_with_extensions(action.to_sym, format), path
       	rescue Thor::Error => e 
+          #TODO: Make this a Thor alert and only show if !options.quiet?
       		puts "JOM...falling back to the 'view.html.haml' template because #{action}.html.haml doesn't exist"
       		template filename_with_extensions(:view, format), @path
       end
@@ -148,6 +149,7 @@ module Haml
       end
 
       def file_action(path)
+        return true if options.force?
         if behavior == :revoke
           verb = "Remove"
         elsif File.exists?(path)

@@ -35,7 +35,7 @@ Description:
 
 * Concerns
 	* installs ext_index_nav.rb if extended index navigation selected
-	*i nstalls ext_form_submit.rb if extended form submission selected
+	* installs ext_form_submit.rb if extended form submission selected
 
 * Routes
 	* Adds a resource for the model specified. *This may be an issue if the routes file already contains  entries for the resource*
