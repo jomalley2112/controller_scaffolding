@@ -14,12 +14,13 @@ class ControllerGeneratorTest < Rails::Generators::TestCase
   def setup
     @contr_name = "people"
     @actions = %w(index new create edit update destroy)
-    @args = [@contr_name] | @actions
+    @opts = %w(--force)
+    @args = [@contr_name] | @actions | @opts
     prepare_destination
   end
 
   def teardown
-    run_generator (@args | %w(--force)) , {:behavior => :revoke}
+    run_generator @args , {:behavior => :revoke}
   end
 
   test "Assert all files are properly created" do

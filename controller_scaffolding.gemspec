@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.authors     = ["John O'Malley"]
   s.email       = ["jom@nycap.rr.com"]
   s.homepage    = "https://github.com/jomalley2112/controller_scaffolding"
-  s.summary     = "Creates controller and scaffolding for the model specified."
+  s.summary     = "Creates controller and extended scaffolding for the model specified."
   s.description = %Q`Usage: $ rails g controller users index new create edit update destroy 
                     [--skip-ext-index-nav] [--skip-ext-form-submit]
                     Arguments: 1. The name of the existing model (as plural), 2. Space separated list of controller actions
@@ -29,6 +29,8 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "pry-rails"
-
+  s.add_development_dependency "rspec-rails"
+  s.add_development_dependency "capybara"
+  s.add_development_dependency "selenium-webdriver"
   
 end

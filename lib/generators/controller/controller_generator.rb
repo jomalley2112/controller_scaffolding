@@ -50,8 +50,8 @@ module Rails
         begin
         table_name.classify.constantize #throws runtime if model doesn't exist
         rescue
-          #TODO: Make this just halt and return a message using thor if possible
-          raise "Model #{table_name} doesn't appear to exist"
+          raise Thor::Error, 
+            "Cannot run controller scaffold for model (#{table_name}) that doesn't yet exist."
         end
       end
 
@@ -112,9 +112,7 @@ module Rails
     params.required(:#{table_name.singularize}).permit(#{Rails::Generators::attr_cols(table_name).map { |col| col.name.to_sym}})
   end`
         end
-
     end
-    
   end
 
 end

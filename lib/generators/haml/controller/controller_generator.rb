@@ -43,7 +43,7 @@ module Haml
       def handle_ext_index
         #Extended index functionality?
         if options.ext_index_nav?
-          puts "source_paths=#{source_paths}"
+          #puts "source_paths=#{source_paths}"
           copy_ext_index_concern
           inject_into_file "#{::Rails.root.to_s}/app/controllers/application_controller.rb", 
                 after: "class ApplicationController < ActionController::Base\n" do
@@ -103,8 +103,8 @@ module Haml
       def set_template(action, path)
       	template filename_with_extensions(action.to_sym, format), path
       	rescue Thor::Error => e 
-          #TODO: Make this a Thor alert and only show if !options.quiet?
-      		puts "JOM...falling back to the 'view.html.haml' template because #{action}.html.haml doesn't exist"
+          say("Falling back to the 'view.html.haml' template because #{action}.html.haml doesn't exist", 
+              :magenta) unless options.quiet?
       		template filename_with_extensions(:view, format), @path
       end
       def copy_pagination_partial
