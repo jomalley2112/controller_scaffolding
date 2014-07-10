@@ -48,8 +48,14 @@ GEM
     childprocess (0.5.3)
       ffi (~> 1.0, >= 1.0.11)
     coderay (1.1.0)
+    database_cleaner (1.0.1)
     diff-lcs (1.2.5)
     erubis (2.7.0)
+    factory_girl (4.4.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.4.1)
+      factory_girl (~> 4.4.0)
+      railties (>= 3.0.0)
     ffi (1.9.3)
     haml (4.0.5)
       tilt
@@ -154,6 +160,8 @@ PLATFORMS
 DEPENDENCIES
   capybara
   controller_scaffolding!
+  database_cleaner
+  factory_girl_rails
   pry-rails
   rspec-rails
   selenium-webdriver

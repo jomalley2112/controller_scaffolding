@@ -11,8 +11,6 @@ module Haml
       class_option :ext_index_nav, :type => :boolean, :default => true, :desc => "Include extended index page features."
       class_option :ext_form_submit, :type => :boolean, :default => true, :desc => "Include extended form submission features."      
       
-      
-      #TODO: It worked without this outside of the plugin
       source_paths << File.expand_path('../../../../templates/haml/controller', __FILE__)
       def copy_view_files #do NOT change the name of this method 
                           # it must be overriding an existing one in a parent class
@@ -43,13 +41,13 @@ module Haml
       def handle_ext_index
         #Extended index functionality?
         if options.ext_index_nav?
-          #puts "source_paths=#{source_paths}"
-          copy_ext_index_concern
+          copy_controller_concern("ext_index_nav.rb")
           inject_into_file "#{::Rails.root.to_s}/app/controllers/application_controller.rb", 
                 after: "class ApplicationController < ActionController::Base\n" do
                   "\ninclude ExtIndexNav\n\n"
                 end
-          copy_pagination_partial
+          copy_partial("_pagination")
+          add_pagination_to_locale_file
           copy_ext_index_js
           inject_into_file "#{::Rails.root.to_s}/app/assets/javascripts/application.js",
             before: "\n//= require_tree ." do
@@ -61,18 +59,18 @@ module Haml
       def handle_ext_form
         #extended form submission functionality?
         if options.ext_form_submit?
-          copy_ext_form_submit_concern
+          copy_controller_concern("ext_form_submit.rb")
 
           inject_into_file "#{::Rails.root.to_s}/app/controllers/application_controller.rb", 
                 after: "class ApplicationController < ActionController::Base\n" do
                   "\ninclude ExtFormSubmit\n\n"
                 end
-          copy_flash_msgs_partial
+          copy_partial("_flash_messages")
           inject_into_file "#{::Rails.root.to_s}/app/views/layouts/application.html.erb", 
                 before: "<%= yield %>\n" do
                   "\n<%= render 'flash_messages' %>\n"
                 end
-          copy_val_errors_partial
+          copy_partial("_validation_errors")
           inject_into_file "#{::Rails.root.to_s}/app/helpers/application_helper.rb",
                 after: "module ApplicationHelper\n" do
                   "\ndef render_for_controller(partial, local_vars)
@@ -107,17 +105,19 @@ module Haml
               :magenta) unless options.quiet?
       		template filename_with_extensions(:view, format), @path
       end
-      def copy_pagination_partial
+
+      def copy_partial(file)
         source_paths << File.expand_path('../partials', __FILE__)
         base_path = "app/views/application"
-        path = File.join(base_path, filename_with_extensions( "_pagination", format))
-        copy_file(filename_with_extensions( "_pagination",format), path) if file_action(path)
+        path = File.join(base_path, filename_with_extensions( file, format))
+        copy_file(filename_with_extensions(file, format), path) if file_action(path)
       end
-      def copy_ext_index_concern
+
+      def copy_controller_concern(file_w_ext)
         source_paths << File.expand_path('../../../../generators/controller/concerns', __FILE__)
         base_path = "app/controllers/concerns"
-        path = File.join(base_path, 'ext_index_nav.rb')
-        copy_file('ext_index_nav.rb', path) if file_action(path)
+        path = File.join(base_path, file_w_ext)
+        copy_file(file_w_ext, path) if file_action(path)
       end
 
       def copy_ext_index_js
@@ -127,25 +127,24 @@ module Haml
         copy_file('ext_index_nav.js', path) if file_action(path)
       end
 
-      def copy_ext_form_submit_concern
-        source_paths << File.expand_path('../../../../generators/controller/concerns', __FILE__)
-        base_path = "app/controllers/concerns"
-        path = File.join(base_path, 'ext_form_submit.rb')
-        copy_file('ext_form_submit.rb', path) if file_action(path)
-      end
-
-      def copy_flash_msgs_partial
-        source_paths << File.expand_path('../partials', __FILE__)
-        base_path = "app/views/application"
-        path = File.join(base_path, filename_with_extensions( "_flash_messages", format))
-        copy_file(filename_with_extensions( "_flash_messages",format), path) if file_action(path)
-      end
-
-      def copy_val_errors_partial
-        source_paths << File.expand_path('../partials', __FILE__)
-        base_path = "app/views/application"
-        path = File.join(base_path, filename_with_extensions( "_validation_errors", format))
-        copy_file(filename_with_extensions( "_validation_errors",format), path) if file_action(path)
+      def add_pagination_to_locale_file
+        inject_into_file "#{::Rails.root.to_s}/config/locales/en.yml", 
+          after: "\nen:\n" do
+%Q{\n
+  will_paginate:
+    models:
+      people:
+        zero:  People
+        one:   Person
+        other: People
+    page_entries_info:
+      multi_page_html: "Displaying <b>%{from}&nbsp;-&nbsp;%{to}</b> of <b>%{count}</b> %{model}"
+      single_page_html:
+        zero:  "No %{model} found"
+        one:   "Displaying <b>1</b> %{model}"
+        other: "Displaying <b>all&nbsp;%{count}</b> %{model}"
+}
+          end
       end
 
       def file_action(path)
