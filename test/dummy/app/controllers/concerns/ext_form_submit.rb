@@ -1,6 +1,6 @@
 module ExtFormSubmit
 	def redir_url()
-    if params[:commit] =~ /reload/i
+    if params[:btn_reload]
       :back
     else
       eval("#{params[:controller]}_url")
