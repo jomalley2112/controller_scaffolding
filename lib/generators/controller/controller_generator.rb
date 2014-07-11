@@ -103,7 +103,12 @@ module Rails
     end`
             when "destroy"
               %Q`@#{table_name.singularize} = #{class_name.singularize}.find(params[:id])
-    @#{table_name.singularize}.destroy`
+    if @#{table_name.singularize}.destroy
+      flash[:success] = "Deleted #{table_name.singularize.humanize} successfully"
+    else
+      flash[:error] = "Unable to delete #{table_name.singularize.humanize}"
+    end
+    redirect_to #{table_name.pluralize}_url`
           end
         end
 

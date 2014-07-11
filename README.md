@@ -8,6 +8,14 @@ Creates controller and extended scaffolding for the model specified.
   - 'haml-rails', '~> 0.5.3'
   - 'sass-rails', '~> 4.0.3'
   - 'jquery-rails', '~> 3.1.1'
+
+- Development Environment Dependencies:
+	- "sqlite3"
+	- "rspec-rails"
+	- "capybara"
+	- "selenium-webdriver"
+	- "factory_girl_rails"
+	- "database_cleaner"
 	
 
 Usage: `$ rails g controller users index new create edit update destroy 
@@ -26,7 +34,7 @@ Description:
 	
 * Controller
 	* Adds functionality to support pagination for the index page if extended index navigation was  selected.
-	* Creates any of the normal REST actions that were passed to the generator.
+	* Creates any of the normal REST actions that were passed to the generator. These actions will have built-in functionality that handles success and validation error messages.
 	* Adds a method to handle strong params. *This should be reviewed to make sure that all of the  params that are allowed, should be allowed*.
 
 * Application Controller
@@ -38,7 +46,7 @@ Description:
 	* installs ext_form_submit.rb if extended form submission selected
 
 * Routes
-	* Adds a resource for the model specified. *This may be an issue if the routes file already contains  entries for the resource*
+	* Adds a resources line for the model specified. *This may be an issue if the routes file already contains  entries for the resource*
 
 * Extended index navigation (optional):
 	* Generates an index view file for the model specified containing columns with headers for all  fields not generated automatically by rails (Everything but id, created_at and updated_at). Certain  keywords are given priority when found in the field names which makes them show up before  others (eg. name, email)
@@ -57,7 +65,7 @@ Description:
 * Assets
 	* Javascript
 		* Installs ext_index_nav.js if extended index navigation is selected.
-		* Requires jquery in application.js
+		* Requires jquery and jqwuery_ujs in application.js
 	* Stylesheets
 		* Installs controller_scaffolding.css.scss if either extended index navigation or extended form  submission are selected
 

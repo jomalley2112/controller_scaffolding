@@ -56,6 +56,7 @@ class ControllerGeneratorTest < Rails::Generators::TestCase
     end
     assert_file "#{::Rails.root.to_s}/app/assets/javascripts/application.js" do |app_js|
       assert_no_match(/\/\/= require jquery/, app_js)
+      assert_no_match(/\/\/= require jquery_ujs/, app_js)
     end
     assert_file "#{::Rails.root.to_s}/app/views/layouts/application.html.erb" do |app_layout|
       assert_no_match(/<%= render 'flash_messages' %>/, app_layout)
@@ -69,6 +70,7 @@ class ControllerGeneratorTest < Rails::Generators::TestCase
     assert_file "#{::Rails.root.to_s}/app/controllers/application_controller.rb", /include ExtIndexNav/
     assert_file "#{::Rails.root.to_s}/app/controllers/application_controller.rb", /include ExtFormSubmit/
     assert_file "#{::Rails.root.to_s}/app/assets/javascripts/application.js", /\/\/= require jquery/
+    assert_file "#{::Rails.root.to_s}/app/assets/javascripts/application.js", /\/\/= require jquery_ujs/
     assert_file "#{::Rails.root.to_s}/app/views/layouts/application.html.erb", /<%= render 'flash_messages' %>/
     assert_file "#{::Rails.root.to_s}/app/helpers/application_helper.rb", /def render_for_controller\(partial, local_vars\)/
   end

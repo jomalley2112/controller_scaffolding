@@ -51,3 +51,20 @@ RSpec.configure do |config|
   config.include Capybara::DSL
   config.include FactoryGirl::Syntax::Methods
 end
+
+def people_displayed(page)
+  page.first("table.outer-list").first("tbody").all(:xpath, "tr[not(@id='pagination-row')]").count
+end
+
+def set_rails_datetime(time, id_prefix)
+  select time.year, from: "#{id_prefix}_1i"
+  select time.strftime("%B"), from: "#{id_prefix}_2i"
+  begin
+    select time.day, from: "#{id_prefix}_3i" #This could raise ambiguous match error
+  rescue
+    puts "set_rails_datetime() rescued an error. Day was #{time.day} not selected."
+  end
+  #pad with zeros to disambiguate
+  select(('%02i' % time.hour), from: "#{id_prefix}_4i")
+  select(('%02i' % time.min), from: "#{id_prefix}_5i")
+end

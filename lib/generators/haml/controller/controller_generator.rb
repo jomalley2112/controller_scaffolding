@@ -51,7 +51,7 @@ module Haml
           copy_ext_index_js
           inject_into_file "#{::Rails.root.to_s}/app/assets/javascripts/application.js",
             before: "\n//= require_tree ." do
-              "\n//= require jquery"
+              "\n//= require jquery\n//= require jquery_ujs"
             end
         end
       end
