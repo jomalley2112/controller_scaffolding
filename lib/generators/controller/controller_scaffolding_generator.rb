@@ -1,5 +1,5 @@
 #CONTROLLER GENERATOR
-#Usage: $rails g controller NonScaffThings index new create edit update destroy --skip-ext-index-nav --skip-ext-form-submit
+#Usage: $rails g controller_scaffolding People index new create edit update destroy  --template-engine=haml --skip-ext-index-nav --skip-ext-form-submit
 
 
 require 'rails/generators/generated_attribute'
@@ -37,7 +37,7 @@ module Rails
     module_function :attr_cols
     #######################################################################
 
-    class ControllerGenerator < NamedBase # :nodoc:
+    class ControllerScaffoldingGenerator < NamedBase
       argument :actions, type: :array, default: [], banner: "action action"
       class_option :ext_index_nav, :type => :boolean, :default => true, :desc => "Include extended index page features."
       class_option :ext_form_submit, :type => :boolean, :default => true, :desc => "Include extended form submission features."      
@@ -64,7 +64,7 @@ module Rails
         route "resources :#{plural_table_name.to_sym}"
       end
 
-      hook_for :template_engine, :test_framework, :helper, :assets
+      hook_for :template_engine, :assets, :test_framework, :helper, 
 #================================ P R I V A T E =================================
       private
         def generate_action_code(action, ext_index=true, ext_form_submit=true)

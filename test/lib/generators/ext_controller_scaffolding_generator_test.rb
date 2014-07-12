@@ -1,10 +1,8 @@
 require 'test_helper'
-#require 'rails/generators'
-#require 'generators/haml/controller/controller_generator'
-require 'generators/controller/controller_generator'
+require 'generators/controller/controller_scaffolding_generator'
 
-class ExtControllerGeneratorTest < Rails::Generators::TestCase
-	tests Rails::Generators::ControllerGenerator
+class ExtControllerScaffoldingGeneratorTest < Rails::Generators::TestCase
+	tests Rails::Generators::ControllerScaffoldingGenerator
 	destination "#{::Rails.root.to_s}/" #File.expand_path("../ctrlr_tmp", File.dirname(__FILE__))
   
   def setup

@@ -1,11 +1,10 @@
 require 'test_helper'
-#require 'rails/generators'
-require 'generators/haml/controller/controller_generator'
-require 'generators/controller/controller_generator'
+require 'generators/haml/controller/controller_scaffolding_generator'
+require 'generators/controller/controller_scaffolding_generator'
 
-class ControllerGeneratorTest < Rails::Generators::TestCase
+class ControllerScaffoldingGeneratorTest < Rails::Generators::TestCase
   
-  tests Haml::Generators::ControllerGenerator
+  tests Haml::Generators::ControllerScaffoldingGenerator
 	destination File.expand_path("../tmp", File.dirname(__FILE__))
   
   #arguments @args #sets default args for gen call

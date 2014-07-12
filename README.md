@@ -18,8 +18,10 @@ Creates controller and extended scaffolding for the model specified.
 	- "database_cleaner"
 	
 
-Usage: `$ rails g controller users index new create edit update destroy 
-[--skip-ext-index-nav] [--skip-ext-form-submit]`
+Usage: `$ rails g|d controller_scaffolding users index new create edit update destroy --template-engine=haml
+[--skip-ext-index-nav] [--skip-ext-form-submit] [--quiet] [--force] [--skip-assets] [--skip-test-framework] [--skip-helper]`
+
+*Note: You must restart Rails after running this generator*
 
 - Arguments:
 	1. The name of the existing model (as plural)  
@@ -28,6 +30,8 @@ Usage: `$ rails g controller users index new create edit update destroy
 - Options:
 	1. [--skip-ext-index-nav] = Skip extended index navigation functionality  
   2. [--skip-ext-form-submit] = Skip extend form submission functionality  
+  3. [--quiet] = Suppress info messages
+  4. [--force] = Overwrite files without prompting
 
 
 Description:

@@ -1,12 +1,12 @@
 #TEMPLATE GENERATOR & FILE COPIER
-# $ rails g controller NonScaffThings index new create edit update destroy [--force] [--skip-ext-index-nav]  [--skip-ext-form-submit]
+# $ rails g controller_scaffolding People index new create edit update destroy  --template-engine=haml [--force] [--skip-ext-index-nav]  [--skip-ext-form-submit]
 
 require 'rails/generators/erb/controller/controller_generator'
 require 'rails/generators/erb/scaffold/scaffold_generator'
 
 module Haml
   module Generators
-  	class ControllerGenerator < Erb::Generators::ControllerGenerator #ScaffoldGenerator
+  	class ControllerScaffoldingGenerator < Erb::Generators::ControllerGenerator
       argument :actions, type: :array, default: [], banner: "action action"
       class_option :ext_index_nav, :type => :boolean, :default => true, :desc => "Include extended index page features."
       class_option :ext_form_submit, :type => :boolean, :default => true, :desc => "Include extended form submission features."      
@@ -29,13 +29,13 @@ module Haml
       def gen_form_partial
         #Create _form partial?
         base_path = File.join("app/views", class_path, file_name)
-        unless (actions & %w(edit new)).empty? #Remember that "&" is intersect
+        unless (actions & %w(edit new)).empty? #Remember that "&" is Array#intersect
           @path = File.join(base_path, filename_with_extensions("_form", format))
           set_template("_form", @path) 
         end
       end
 
-      #TODO; I couldn't get the tests to work with relative paths being passed to the 
+      #TODO: Couldn't get the tests to work with relative paths being passed to the 
       # inject_into_file calls...it wants to make them relative to the test's destination directory
 
       def handle_ext_index

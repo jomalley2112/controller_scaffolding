@@ -3,4 +3,5 @@ module ControllerScaffolding
 	require "will_paginate"
 	require 'jquery-rails'
 	require "factory_girl_rails"
+	require 'controller_scaffolding/add_generator' if defined?(Rails)
 end
