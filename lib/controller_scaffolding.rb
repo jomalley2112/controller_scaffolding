@@ -2,6 +2,6 @@ module ControllerScaffolding
 	require "haml-rails"
 	require "will_paginate"
 	require 'jquery-rails'
-	require "factory_girl_rails"
+	require "factory_girl_rails" if Rails.env == 'test'
 	require 'controller_scaffolding/add_generator' if defined?(Rails)
 end

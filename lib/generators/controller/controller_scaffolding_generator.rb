@@ -1,6 +1,4 @@
 #CONTROLLER GENERATOR
-#Usage: $rails g controller_scaffolding People index new create edit update destroy  --template-engine=haml --skip-ext-index-nav --skip-ext-form-submit
-
 
 require 'rails/generators/generated_attribute'
 

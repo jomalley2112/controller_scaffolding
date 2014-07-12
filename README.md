@@ -2,6 +2,10 @@
 
 Creates controller and extended scaffolding for the model specified.
 
+To use this gem add the following line to your project's Gemfile:
+`gem 'controller_scaffolding', :git => "https://github.com/jomalley2112/controller_scaffolding.git"`
+and then run `bundle install`
+
 - Dependencies:
 	- 'rails', '~> 4.1.1'
   - 'will_paginate', '~> 3.0.5'

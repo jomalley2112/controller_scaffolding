@@ -1,5 +1,4 @@
 #TEMPLATE GENERATOR & FILE COPIER
-# $ rails g controller_scaffolding People index new create edit update destroy  --template-engine=haml [--force] [--skip-ext-index-nav]  [--skip-ext-form-submit]
 
 require 'rails/generators/erb/controller/controller_generator'
 require 'rails/generators/erb/scaffold/scaffold_generator'
