@@ -73,7 +73,7 @@ Description:
 * Assets
 	* Javascript
 		* Installs ext_index_nav.js if extended index navigation is selected.
-		* Requires jquery and jqwuery_ujs in application.js
+		* Requires jquery and jquery_ujs in application.js
 	* Stylesheets
 		* Installs controller_scaffolding.css.scss if either extended index navigation or extended form  submission are selected
 
