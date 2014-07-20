@@ -9,7 +9,7 @@ Create/Edit page
 ![Form](/readme_assets/form_ss.png?raw=true "Form")
 
 To use this gem add the following line to your project's Gemfile:
-`gem 'controller_scaffolding', :git => "https://github.com/jomalley2112/controller_scaffolding.git"`
+`gem 'controller_scaffolding'`
 and then run `bundle install`
 
 - Dependencies:
