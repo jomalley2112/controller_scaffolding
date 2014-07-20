@@ -4438,3 +4438,1254 @@ ActionController::RoutingError (No route matches [GET] "/people"):
   Rendered /Users/johnomalley/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
   Rendered /Users/johnomalley/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.6ms)
   Rendered /Users/johnomalley/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (13.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-07-20 17:30:33 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/johnomalley/.rvm/gems/ruby-2.1.1/gems/railties-4.1.2/lib/rails/templates/rails/welcome/index.html.erb (2.4ms)
+Completed 200 OK in 45ms (Views: 45.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2014-07-20 17:30:41 -0400
+
+ActionController::RoutingError (No route matches [GET] "/people"):
+  actionpack (4.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.2) lib/rails/engine.rb:514:in `call'
+  railties (4.1.2) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/johnomalley/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/johnomalley/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/johnomalley/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/johnomalley/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/johnomalley/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.3ms)
+  Rendered /Users/johnomalley/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (24.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2014-07-20 17:30:51 -0400
+
+ActionController::RoutingError (No route matches [GET] "/users"):
+  actionpack (4.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.2) lib/rails/engine.rb:514:in `call'
+  railties (4.1.2) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/johnomalley/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/johnomalley/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/johnomalley/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/johnomalley/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/johnomalley/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered /Users/johnomalley/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (10.0ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2014-07-20 17:34:03 -0400
+Processing by PeopleController#index as HTML
+  [1m[35mPerson Load (15.9ms)[0m  SELECT  "people".* FROM "people"  LIMIT 15 OFFSET 0
+  [1m[36mPerson Load (0.2ms)[0m  [1mSELECT  "people".* FROM "people"   ORDER BY "people"."id" ASC LIMIT 1 OFFSET 0[0m
+  Rendered application/_pagination.html.haml (9.1ms)
+  Rendered people/index.html.haml within layouts/application (42.4ms)
+  Rendered application/_flash_messages.html.haml (1.0ms)
+Completed 200 OK in 232ms (Views: 213.7ms | ActiveRecord: 16.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-20 17:34:03 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-20 17:34:03 -0400
+
+
+Started GET "/assets/controller_scaffolding.css?body=1" for 127.0.0.1 at 2014-07-20 17:34:03 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-20 17:34:03 -0400
+
+
+Started GET "/assets/ext_index_nav.js?body=1" for 127.0.0.1 at 2014-07-20 17:34:03 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-20 17:34:03 -0400
+
+
+Started DELETE "/people/1" for 127.0.0.1 at 2014-07-20 17:39:51 -0400
+Processing by PeopleController#destroy as HTML
+  Parameters: {"authenticity_token"=>"9bwjdlvB4C319mOdY2rt8dIq9UZJn3NspMJIOgm7yvU=", "id"=>"1"}
+  [1m[35mPerson Load (0.2ms)[0m  SELECT  "people".* FROM "people"  WHERE "people"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  DELETE FROM "people" WHERE "people"."id" = ?  [["id", 1]]
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3012/people
+Completed 302 Found in 9ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2014-07-20 17:39:51 -0400
+Processing by PeopleController#index as HTML
+  [1m[35mPerson Load (0.2ms)[0m  SELECT  "people".* FROM "people"  LIMIT 15 OFFSET 0
+  [1m[36mPerson Load (0.2ms)[0m  [1mSELECT  "people".* FROM "people"   ORDER BY "people"."id" ASC LIMIT 1 OFFSET 0[0m
+  Rendered application/_pagination.html.haml (1.9ms)
+  Rendered people/index.html.haml within layouts/application (7.8ms)
+  Rendered application/_flash_messages.html.haml (0.3ms)
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/people/5" for 127.0.0.1 at 2014-07-20 17:39:53 -0400
+Processing by PeopleController#destroy as HTML
+  Parameters: {"authenticity_token"=>"9bwjdlvB4C319mOdY2rt8dIq9UZJn3NspMJIOgm7yvU=", "id"=>"5"}
+  [1m[35mPerson Load (0.1ms)[0m  SELECT  "people".* FROM "people"  WHERE "people"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "people" WHERE "people"."id" = ?  [["id", 5]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3012/people
+Completed 302 Found in 5ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2014-07-20 17:39:53 -0400
+Processing by PeopleController#index as HTML
+  [1m[35mPerson Load (0.2ms)[0m  SELECT  "people".* FROM "people"  LIMIT 15 OFFSET 0
+  [1m[36mPerson Load (0.2ms)[0m  [1mSELECT  "people".* FROM "people"   ORDER BY "people"."id" ASC LIMIT 1 OFFSET 0[0m
+  Rendered application/_pagination.html.haml (1.9ms)
+  Rendered people/index.html.haml within layouts/application (7.4ms)
+  Rendered application/_flash_messages.html.haml (0.2ms)
+Completed 200 OK in 15ms (Views: 14.5ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/people/6" for 127.0.0.1 at 2014-07-20 17:39:56 -0400
+Processing by PeopleController#destroy as HTML
+  Parameters: {"authenticity_token"=>"9bwjdlvB4C319mOdY2rt8dIq9UZJn3NspMJIOgm7yvU=", "id"=>"6"}
+  [1m[35mPerson Load (0.2ms)[0m  SELECT  "people".* FROM "people"  WHERE "people"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "people" WHERE "people"."id" = ?  [["id", 6]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3012/people
+Completed 302 Found in 5ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2014-07-20 17:39:56 -0400
+Processing by PeopleController#index as HTML
+  [1m[35mPerson Load (0.3ms)[0m  SELECT  "people".* FROM "people"  LIMIT 15 OFFSET 0
+  [1m[36mPerson Load (0.2ms)[0m  [1mSELECT  "people".* FROM "people"   ORDER BY "people"."id" ASC LIMIT 1 OFFSET 0[0m
+  Rendered application/_pagination.html.haml (1.8ms)
+  Rendered people/index.html.haml within layouts/application (7.8ms)
+  Rendered application/_flash_messages.html.haml (0.3ms)
+Completed 200 OK in 16ms (Views: 14.9ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/people/7" for 127.0.0.1 at 2014-07-20 17:39:58 -0400
+Processing by PeopleController#destroy as HTML
+  Parameters: {"authenticity_token"=>"9bwjdlvB4C319mOdY2rt8dIq9UZJn3NspMJIOgm7yvU=", "id"=>"7"}
+  [1m[35mPerson Load (0.2ms)[0m  SELECT  "people".* FROM "people"  WHERE "people"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "people" WHERE "people"."id" = ?  [["id", 7]]
+  [1m[36m (5.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3012/people
+Completed 302 Found in 9ms (ActiveRecord: 6.0ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2014-07-20 17:39:58 -0400
+Processing by PeopleController#index as HTML
+  [1m[35mPerson Load (0.3ms)[0m  SELECT  "people".* FROM "people"  LIMIT 15 OFFSET 0
+  [1m[36mPerson Load (0.1ms)[0m  [1mSELECT  "people".* FROM "people"   ORDER BY "people"."id" ASC LIMIT 1 OFFSET 0[0m
+  Rendered application/_pagination.html.haml (1.8ms)
+  Rendered people/index.html.haml within layouts/application (7.7ms)
+  Rendered application/_flash_messages.html.haml (0.2ms)
+Completed 200 OK in 17ms (Views: 15.5ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/people/8" for 127.0.0.1 at 2014-07-20 17:40:01 -0400
+Processing by PeopleController#destroy as HTML
+  Parameters: {"authenticity_token"=>"9bwjdlvB4C319mOdY2rt8dIq9UZJn3NspMJIOgm7yvU=", "id"=>"8"}
+  [1m[35mPerson Load (0.2ms)[0m  SELECT  "people".* FROM "people"  WHERE "people"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "people" WHERE "people"."id" = ?  [["id", 8]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3012/people
+Completed 302 Found in 6ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2014-07-20 17:40:01 -0400
+Processing by PeopleController#index as HTML
+  [1m[35mPerson Load (0.2ms)[0m  SELECT  "people".* FROM "people"  LIMIT 15 OFFSET 0
+  [1m[36mPerson Load (0.3ms)[0m  [1mSELECT  "people".* FROM "people"   ORDER BY "people"."id" ASC LIMIT 1 OFFSET 0[0m
+  Rendered application/_pagination.html.haml (2.6ms)
+  Rendered people/index.html.haml within layouts/application (7.0ms)
+  Rendered application/_flash_messages.html.haml (0.2ms)
+Completed 200 OK in 15ms (Views: 13.8ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/people/9" for 127.0.0.1 at 2014-07-20 17:40:03 -0400
+Processing by PeopleController#destroy as HTML
+  Parameters: {"authenticity_token"=>"9bwjdlvB4C319mOdY2rt8dIq9UZJn3NspMJIOgm7yvU=", "id"=>"9"}
+  [1m[35mPerson Load (0.1ms)[0m  SELECT  "people".* FROM "people"  WHERE "people"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "people" WHERE "people"."id" = ?  [["id", 9]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3012/people
+Completed 302 Found in 5ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2014-07-20 17:40:03 -0400
+Processing by PeopleController#index as HTML
+  [1m[35mPerson Load (0.2ms)[0m  SELECT  "people".* FROM "people"  LIMIT 15 OFFSET 0
+  [1m[36mPerson Load (0.2ms)[0m  [1mSELECT  "people".* FROM "people"   ORDER BY "people"."id" ASC LIMIT 1 OFFSET 0[0m
+  Rendered application/_pagination.html.haml (2.5ms)
+  Rendered people/index.html.haml within layouts/application (6.4ms)
+  Rendered application/_flash_messages.html.haml (0.2ms)
+Completed 200 OK in 14ms (Views: 12.6ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/people/10" for 127.0.0.1 at 2014-07-20 17:40:04 -0400
+Processing by PeopleController#destroy as HTML
+  Parameters: {"authenticity_token"=>"9bwjdlvB4C319mOdY2rt8dIq9UZJn3NspMJIOgm7yvU=", "id"=>"10"}
+  [1m[35mPerson Load (0.1ms)[0m  SELECT  "people".* FROM "people"  WHERE "people"."id" = ? LIMIT 1  [["id", 10]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "people" WHERE "people"."id" = ?  [["id", 10]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3012/people
+Completed 302 Found in 4ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2014-07-20 17:40:04 -0400
+Processing by PeopleController#index as HTML
+  [1m[35mPerson Load (0.2ms)[0m  SELECT  "people".* FROM "people"  LIMIT 15 OFFSET 0
+  [1m[36mPerson Load (0.2ms)[0m  [1mSELECT  "people".* FROM "people"   ORDER BY "people"."id" ASC LIMIT 1 OFFSET 0[0m
+  Rendered application/_pagination.html.haml (2.4ms)
+  Rendered people/index.html.haml within layouts/application (6.8ms)
+  Rendered application/_flash_messages.html.haml (0.2ms)
+Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/people/11" for 127.0.0.1 at 2014-07-20 17:40:06 -0400
+Processing by PeopleController#destroy as HTML
+  Parameters: {"authenticity_token"=>"9bwjdlvB4C319mOdY2rt8dIq9UZJn3NspMJIOgm7yvU=", "id"=>"11"}
+  [1m[35mPerson Load (0.1ms)[0m  SELECT  "people".* FROM "people"  WHERE "people"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  DELETE FROM "people" WHERE "people"."id" = ?  [["id", 11]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3012/people
+Completed 302 Found in 5ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2014-07-20 17:40:06 -0400
+Processing by PeopleController#index as HTML
+  [1m[35mPerson Load (0.2ms)[0m  SELECT  "people".* FROM "people"  LIMIT 15 OFFSET 0
+  [1m[36mPerson Load (0.2ms)[0m  [1mSELECT  "people".* FROM "people"   ORDER BY "people"."id" ASC LIMIT 1 OFFSET 0[0m
+  Rendered application/_pagination.html.haml (2.4ms)
+  Rendered people/index.html.haml within layouts/application (6.2ms)
+  Rendered application/_flash_messages.html.haml (0.4ms)
+Completed 200 OK in 14ms (Views: 13.4ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/people/12" for 127.0.0.1 at 2014-07-20 17:40:08 -0400
+Processing by PeopleController#destroy as HTML
+  Parameters: {"authenticity_token"=>"9bwjdlvB4C319mOdY2rt8dIq9UZJn3NspMJIOgm7yvU=", "id"=>"12"}
+  [1m[35mPerson Load (0.1ms)[0m  SELECT  "people".* FROM "people"  WHERE "people"."id" = ? LIMIT 1  [["id", 12]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "people" WHERE "people"."id" = ?  [["id", 12]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3012/people
+Completed 302 Found in 4ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2014-07-20 17:40:08 -0400
+Processing by PeopleController#index as HTML
+  [1m[35mPerson Load (0.3ms)[0m  SELECT  "people".* FROM "people"  LIMIT 15 OFFSET 0
+  [1m[36mPerson Load (0.2ms)[0m  [1mSELECT  "people".* FROM "people"   ORDER BY "people"."id" ASC LIMIT 1 OFFSET 0[0m
+  Rendered application/_pagination.html.haml (1.9ms)
+  Rendered people/index.html.haml within layouts/application (5.2ms)
+  Rendered application/_flash_messages.html.haml (0.2ms)
+Completed 200 OK in 18ms (Views: 16.5ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/people/13" for 127.0.0.1 at 2014-07-20 17:40:10 -0400
+Processing by PeopleController#destroy as HTML
+  Parameters: {"authenticity_token"=>"9bwjdlvB4C319mOdY2rt8dIq9UZJn3NspMJIOgm7yvU=", "id"=>"13"}
+  [1m[35mPerson Load (0.2ms)[0m  SELECT  "people".* FROM "people"  WHERE "people"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "people" WHERE "people"."id" = ?  [["id", 13]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3012/people
+Completed 302 Found in 5ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2014-07-20 17:40:10 -0400
+Processing by PeopleController#index as HTML
+  [1m[35mPerson Load (0.3ms)[0m  SELECT  "people".* FROM "people"  LIMIT 15 OFFSET 0
+  Rendered application/_pagination.html.haml (2.1ms)
+  Rendered people/index.html.haml within layouts/application (5.4ms)
+  Rendered application/_flash_messages.html.haml (0.2ms)
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "people" ("created_at", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:50:08.950248"], ["email", "ara.hansen@johnstonblock.name"], ["first_name", "Shaun"], ["last_name", "Jenkins"], ["title", "Direct Branding Director"], ["updated_at", "2014-07-20 21:50:08.950248"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:50:54.463862"], ["dob", "1982-08-18 21:50:54.441951"], ["email", "rhianna@franecki.com"], ["first_name", "Arlie"], ["last_name", "Fadel"], ["title", "Investor Optimization Director"], ["updated_at", "2014-07-20 21:50:54.463862"]]
+  [1m[36m (5.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:50:54.474705"], ["dob", "1988-11-17 22:50:54.474095"], ["email", "aletha@swaniawskitowne.biz"], ["first_name", "Marcos"], ["last_name", "Wolff"], ["title", "Investor Applications Analyst"], ["updated_at", "2014-07-20 21:50:54.474705"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:50:54.479816"], ["dob", "1977-12-25 22:50:54.479273"], ["email", "lynn@wolfstroman.biz"], ["first_name", "Vito"], ["last_name", "Harber"], ["title", "Regional Directives Administrator"], ["updated_at", "2014-07-20 21:50:54.479816"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:50:54.483889"], ["dob", "1981-05-19 21:50:54.483368"], ["email", "felton@wolfftremblay.com"], ["first_name", "Hadley"], ["last_name", "Schaefer"], ["title", "Global Division Designer"], ["updated_at", "2014-07-20 21:50:54.483889"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:50:54.487613"], ["dob", "1993-06-08 21:50:54.487132"], ["email", "braeden@goodwin.name"], ["first_name", "Clemmie"], ["last_name", "Collins"], ["title", "Chief Metrics Orchestrator"], ["updated_at", "2014-07-20 21:50:54.487613"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:50:54.490732"], ["dob", "1991-12-01 22:50:54.490274"], ["email", "aurelio_cummerata@littlegutkowski.com"], ["first_name", "Nicolas"], ["last_name", "Buckridge"], ["title", "Regional Operations Executive"], ["updated_at", "2014-07-20 21:50:54.490732"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:50:54.493824"], ["dob", "1998-01-21 22:50:54.493361"], ["email", "keshawn.heaney@mertz.com"], ["first_name", "Emory"], ["last_name", "Feest"], ["title", "Future Marketing Administrator"], ["updated_at", "2014-07-20 21:50:54.493824"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:50:54.497628"], ["dob", "1978-06-13 21:50:54.497127"], ["email", "raoul@boyer.info"], ["first_name", "Erik"], ["last_name", "Streich"], ["title", "Product Intranet Officer"], ["updated_at", "2014-07-20 21:50:54.497628"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:50:54.502742"], ["dob", "1989-06-11 21:50:54.502098"], ["email", "herminia.rogahn@nitzschegusikowski.net"], ["first_name", "Winfield"], ["last_name", "Walter"], ["title", "Lead Solutions Liason"], ["updated_at", "2014-07-20 21:50:54.502742"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:50:54.506566"], ["dob", "1977-01-12 22:50:54.506052"], ["email", "madilyn@schadenframi.name"], ["first_name", "Estell"], ["last_name", "Dickens"], ["title", "Global Metrics Administrator"], ["updated_at", "2014-07-20 21:50:54.506566"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:50:54.510974"], ["dob", "1995-11-06 22:50:54.510388"], ["email", "rosanna.stark@schulistortiz.com"], ["first_name", "Rocky"], ["last_name", "MacGyver"], ["title", "Regional Integration Coordinator"], ["updated_at", "2014-07-20 21:50:54.510974"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:50:54.514465"], ["dob", "1995-12-13 22:50:54.514031"], ["email", "esta_carroll@kirlin.com"], ["first_name", "Rosendo"], ["last_name", "Sanford"], ["title", "Internal Optimization Supervisor"], ["updated_at", "2014-07-20 21:50:54.514465"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:50:54.517953"], ["dob", "1999-03-11 22:50:54.517483"], ["email", "emerson@zemlak.biz"], ["first_name", "Belle"], ["last_name", "Gerlach"], ["title", "District Division Developer"], ["updated_at", "2014-07-20 21:50:54.517953"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:50:54.521864"], ["dob", "1986-08-01 21:50:54.521375"], ["email", "hudson.hills@white.org"], ["first_name", "Clarissa"], ["last_name", "Kuhic"], ["title", "Human Response Developer"], ["updated_at", "2014-07-20 21:50:54.521864"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:50:54.525399"], ["dob", "1991-11-04 22:50:54.524708"], ["email", "jose.bailey@schillerjerde.biz"], ["first_name", "Lula"], ["last_name", "Ondricka"], ["title", "Legacy Markets Architect"], ["updated_at", "2014-07-20 21:50:54.525399"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:50:54.528960"], ["dob", "2000-05-27 21:50:54.528508"], ["email", "bennie@gleichnerklein.com"], ["first_name", "Glenna"], ["last_name", "Hermiston"], ["title", "Corporate Accountability Facilitator"], ["updated_at", "2014-07-20 21:50:54.528960"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (2.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:50:54.534735"], ["dob", "2005-03-09 22:50:54.532082"], ["email", "aurelia.mitchell@marvin.org"], ["first_name", "Maryam"], ["last_name", "Mueller"], ["title", "Global Communications Associate"], ["updated_at", "2014-07-20 21:50:54.534735"]]
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:50:54.541110"], ["dob", "2005-01-08 22:50:54.540515"], ["email", "darwin_kshlerin@douglasconn.biz"], ["first_name", "Michaela"], ["last_name", "Greenholt"], ["title", "Direct Assurance Analyst"], ["updated_at", "2014-07-20 21:50:54.541110"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:50:54.544734"], ["dob", "1985-09-19 21:50:54.544189"], ["email", "aleen.monahan@keelingkling.info"], ["first_name", "Trace"], ["last_name", "O'Reilly"], ["title", "Regional Group Supervisor"], ["updated_at", "2014-07-20 21:50:54.544734"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:50:54.548123"], ["dob", "1983-11-12 22:50:54.547625"], ["email", "norma_cain@vonrueden.info"], ["first_name", "Justyn"], ["last_name", "Murazik"], ["title", "Senior Research Officer"], ["updated_at", "2014-07-20 21:50:54.548123"]]
+  [1m[35m (1.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:50:54.552582"], ["dob", "1983-11-25 22:50:54.551997"], ["email", "ebony.prosacco@wilkinsonmcclure.info"], ["first_name", "Patrick"], ["last_name", "Ferry"], ["title", "International Marketing Strategist"], ["updated_at", "2014-07-20 21:50:54.552582"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:50:54.556369"], ["dob", "2005-12-04 22:50:54.555873"], ["email", "adolphus@willmsjast.com"], ["first_name", "Hailey"], ["last_name", "Metz"], ["title", "International Directives Analyst"], ["updated_at", "2014-07-20 21:50:54.556369"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:50:54.559754"], ["dob", "1974-12-20 22:50:54.559234"], ["email", "perry@corwin.org"], ["first_name", "Linnie"], ["last_name", "Sporer"], ["title", "Direct Quality Designer"], ["updated_at", "2014-07-20 21:50:54.559754"]]
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:50:54.566256"], ["dob", "1976-10-21 21:50:54.565711"], ["email", "roma@dietrichhettinger.name"], ["first_name", "Sibyl"], ["last_name", "Hyatt"], ["title", "Future Quality Specialist"], ["updated_at", "2014-07-20 21:50:54.566256"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:50:54.571502"], ["dob", "2000-08-28 21:50:54.570700"], ["email", "camille_koelpin@mclaughlinkulas.info"], ["first_name", "Isac"], ["last_name", "Eichmann"], ["title", "District Solutions Orchestrator"], ["updated_at", "2014-07-20 21:50:54.571502"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:50:54.575020"], ["dob", "1973-07-22 21:50:54.574477"], ["email", "consuelo@gutmann.info"], ["first_name", "Isabelle"], ["last_name", "Wisozk"], ["title", "Dynamic Response Producer"], ["updated_at", "2014-07-20 21:50:54.575020"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:50:54.579894"], ["dob", "1986-07-05 21:50:54.579363"], ["email", "norval.oconner@millerschowalter.com"], ["first_name", "Leann"], ["last_name", "Thompson"], ["title", "Internal Directives Designer"], ["updated_at", "2014-07-20 21:50:54.579894"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:50:54.584667"], ["dob", "1987-07-02 21:50:54.584086"], ["email", "aletha@reilly.name"], ["first_name", "Timmothy"], ["last_name", "Gutmann"], ["title", "Global Interactions Strategist"], ["updated_at", "2014-07-20 21:50:54.584667"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:50:54.588240"], ["dob", "1989-09-06 21:50:54.587783"], ["email", "alicia@millermante.com"], ["first_name", "Tracey"], ["last_name", "Boyle"], ["title", "Customer Markets Agent"], ["updated_at", "2014-07-20 21:50:54.588240"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:50:54.592318"], ["dob", "2005-03-09 22:50:54.591719"], ["email", "garnet@murazik.com"], ["first_name", "Gretchen"], ["last_name", "Becker"], ["title", "Product Implementation Planner"], ["updated_at", "2014-07-20 21:50:54.592318"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:50:54.595727"], ["dob", "1982-02-03 22:50:54.595137"], ["email", "hosea@harber.biz"], ["first_name", "Vivianne"], ["last_name", "Corkery"], ["title", "Corporate Functionality Coordinator"], ["updated_at", "2014-07-20 21:50:54.595727"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:50:54.599116"], ["dob", "2005-05-19 21:50:54.598670"], ["email", "emilia@baileymclaughlin.biz"], ["first_name", "Tevin"], ["last_name", "Bechtelar"], ["title", "Corporate Integration Agent"], ["updated_at", "2014-07-20 21:50:54.599116"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:50:54.602445"], ["dob", "1989-01-08 22:50:54.601959"], ["email", "merle@davis.com"], ["first_name", "Virgil"], ["last_name", "Sawayn"], ["title", "Customer Brand Designer"], ["updated_at", "2014-07-20 21:50:54.602445"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:50:54.605455"], ["dob", "2001-02-27 22:50:54.604993"], ["email", "avis@kub.org"], ["first_name", "Lydia"], ["last_name", "Hoppe"], ["title", "Corporate Marketing Liason"], ["updated_at", "2014-07-20 21:50:54.605455"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:50:54.608457"], ["dob", "2002-04-11 21:50:54.608001"], ["email", "karelle@rolfson.info"], ["first_name", "Broderick"], ["last_name", "Parisian"], ["title", "Dynamic Branding Planner"], ["updated_at", "2014-07-20 21:50:54.608457"]]
+  [1m[36m (2.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:50:54.613030"], ["dob", "1994-04-15 21:50:54.612470"], ["email", "myrtie@labadie.org"], ["first_name", "Lorena"], ["last_name", "Dach"], ["title", "Chief Tactics Executive"], ["updated_at", "2014-07-20 21:50:54.613030"]]
+  [1m[35m (1.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:50:54.617268"], ["dob", "1981-11-07 22:50:54.616728"], ["email", "mayra_hilpert@powlowskischuster.com"], ["first_name", "Ara"], ["last_name", "Schaefer"], ["title", "Investor Directives Producer"], ["updated_at", "2014-07-20 21:50:54.617268"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:50:54.620822"], ["dob", "1995-09-12 21:50:54.620339"], ["email", "jeanette_rohan@champlin.biz"], ["first_name", "Robin"], ["last_name", "O'Keefe"], ["title", "Direct Creative Manager"], ["updated_at", "2014-07-20 21:50:54.620822"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:50:54.624476"], ["dob", "1998-08-03 21:50:54.623990"], ["email", "faustino.boyer@fadel.info"], ["first_name", "Alexanne"], ["last_name", "Stroman"], ["title", "Direct Infrastructure Assistant"], ["updated_at", "2014-07-20 21:50:54.624476"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:50:54.628309"], ["dob", "1985-02-27 22:50:54.627729"], ["email", "bud@mannshields.net"], ["first_name", "Jordy"], ["last_name", "Nitzsche"], ["title", "Legacy Implementation Developer"], ["updated_at", "2014-07-20 21:50:54.628309"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:50:54.631656"], ["dob", "1985-05-12 21:50:54.631179"], ["email", "derick.boehm@hodkiewiczfranecki.com"], ["first_name", "Cathryn"], ["last_name", "Strosin"], ["title", "Corporate Applications Strategist"], ["updated_at", "2014-07-20 21:50:54.631656"]]
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:50:54.635538"], ["dob", "1980-04-10 22:50:54.635063"], ["email", "brant@mcculloughchamplin.name"], ["first_name", "Waino"], ["last_name", "Dare"], ["title", "Senior Infrastructure Associate"], ["updated_at", "2014-07-20 21:50:54.635538"]]
+  [1m[35m (1.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:50:54.639381"], ["dob", "1982-10-06 21:50:54.638893"], ["email", "lexie@doyledavis.com"], ["first_name", "Justyn"], ["last_name", "Runolfsson"], ["title", "Customer Factors Specialist"], ["updated_at", "2014-07-20 21:50:54.639381"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:50:54.642763"], ["dob", "1982-06-10 21:50:54.642260"], ["email", "sydni_kovacek@kutch.org"], ["first_name", "Joana"], ["last_name", "Cremin"], ["title", "Global Metrics Facilitator"], ["updated_at", "2014-07-20 21:50:54.642763"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:50:54.646182"], ["dob", "2000-02-10 22:50:54.645687"], ["email", "destiney@abshirecollins.net"], ["first_name", "Misty"], ["last_name", "Rosenbaum"], ["title", "Central Intranet Strategist"], ["updated_at", "2014-07-20 21:50:54.646182"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:50:54.649480"], ["dob", "1991-04-07 21:50:54.649013"], ["email", "grover@grahamgislason.com"], ["first_name", "Jordy"], ["last_name", "Dickens"], ["title", "Central Brand Agent"], ["updated_at", "2014-07-20 21:50:54.649480"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:50:54.653055"], ["dob", "1990-02-19 22:50:54.652574"], ["email", "jamel@labadiebradtke.org"], ["first_name", "Sigurd"], ["last_name", "Schmeler"], ["title", "Central Communications Strategist"], ["updated_at", "2014-07-20 21:50:54.653055"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:50:54.656147"], ["dob", "1996-09-07 21:50:54.655704"], ["email", "cory@padberg.net"], ["first_name", "Susanna"], ["last_name", "Goldner"], ["title", "Lead Metrics Technician"], ["updated_at", "2014-07-20 21:50:54.656147"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:50:54.659279"], ["dob", "1989-04-09 21:50:54.658792"], ["email", "brayan@leuschke.org"], ["first_name", "Walter"], ["last_name", "Graham"], ["title", "Human Security Developer"], ["updated_at", "2014-07-20 21:50:54.659279"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:50:54.662929"], ["dob", "1997-04-05 22:50:54.662356"], ["email", "zoie.reichert@bartonhettinger.name"], ["first_name", "Alden"], ["last_name", "Ebert"], ["title", "National Security Officer"], ["updated_at", "2014-07-20 21:50:54.662929"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:50:54.666360"], ["dob", "1984-09-26 21:50:54.665883"], ["email", "erna@gutkowskicartwright.org"], ["first_name", "Rod"], ["last_name", "Lind"], ["title", "Future Interactions Orchestrator"], ["updated_at", "2014-07-20 21:50:54.666360"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:50:54.669628"], ["dob", "1975-12-12 22:50:54.669160"], ["email", "dexter@farrelljohns.org"], ["first_name", "Odell"], ["last_name", "Bode"], ["title", "Dynamic Data Liason"], ["updated_at", "2014-07-20 21:50:54.669628"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:50:54.672790"], ["dob", "1988-01-24 22:50:54.672359"], ["email", "golden_mcclure@cremin.biz"], ["first_name", "Angelina"], ["last_name", "Volkman"], ["title", "Customer Integration Agent"], ["updated_at", "2014-07-20 21:50:54.672790"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:50:54.676037"], ["dob", "1982-01-12 22:50:54.675581"], ["email", "harmony@breitenberg.biz"], ["first_name", "Hettie"], ["last_name", "Senger"], ["title", "Forward Solutions Specialist"], ["updated_at", "2014-07-20 21:50:54.676037"]]
+  [1m[35m (1.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:50:54.680004"], ["dob", "1989-03-02 22:50:54.679550"], ["email", "mohammad@krajcik.com"], ["first_name", "Sabrina"], ["last_name", "Larkin"], ["title", "District Metrics Technician"], ["updated_at", "2014-07-20 21:50:54.680004"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:50:54.683233"], ["dob", "1998-09-18 21:50:54.682780"], ["email", "antonia@keeling.info"], ["first_name", "Glennie"], ["last_name", "Hayes"], ["title", "Global Accounts Manager"], ["updated_at", "2014-07-20 21:50:54.683233"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:50:54.686734"], ["dob", "2005-11-20 22:50:54.686226"], ["email", "nina_gaylord@parkerpurdy.info"], ["first_name", "Delaney"], ["last_name", "Swift"], ["title", "Central Data Architect"], ["updated_at", "2014-07-20 21:50:54.686734"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:50:54.690118"], ["dob", "1992-11-13 22:50:54.689632"], ["email", "noah.murazik@schultz.name"], ["first_name", "Terrence"], ["last_name", "Bayer"], ["title", "International Interactions Specialist"], ["updated_at", "2014-07-20 21:50:54.690118"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:50:54.693860"], ["dob", "1987-04-19 21:50:54.693321"], ["email", "orie@trantow.name"], ["first_name", "Leonardo"], ["last_name", "Will"], ["title", "Dynamic Quality Facilitator"], ["updated_at", "2014-07-20 21:50:54.693860"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:50:54.697440"], ["dob", "2001-01-12 22:50:54.696957"], ["email", "sallie@rolfson.biz"], ["first_name", "Shane"], ["last_name", "Lowe"], ["title", "Direct Optimization Consultant"], ["updated_at", "2014-07-20 21:50:54.697440"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:50:54.701039"], ["dob", "1980-06-17 21:50:54.700556"], ["email", "amely_macgyver@effertzauer.biz"], ["first_name", "Dallin"], ["last_name", "Haag"], ["title", "Global Division Engineer"], ["updated_at", "2014-07-20 21:50:54.701039"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:50:54.704562"], ["dob", "2003-09-26 21:50:54.704092"], ["email", "desmond_reichel@mcglynn.name"], ["first_name", "Myah"], ["last_name", "Kiehn"], ["title", "Chief Communications Manager"], ["updated_at", "2014-07-20 21:50:54.704562"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:50:54.707898"], ["dob", "1980-07-29 21:50:54.707422"], ["email", "eli@turcottehaley.name"], ["first_name", "Kris"], ["last_name", "Rohan"], ["title", "Internal Metrics Consultant"], ["updated_at", "2014-07-20 21:50:54.707898"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:50:54.711422"], ["dob", "1983-09-25 21:50:54.710920"], ["email", "cielo_moriette@goldner.com"], ["first_name", "Kamren"], ["last_name", "Orn"], ["title", "Human Brand Orchestrator"], ["updated_at", "2014-07-20 21:50:54.711422"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:50:54.715590"], ["dob", "1997-08-14 21:50:54.715068"], ["email", "cindy_rosenbaum@emardboehm.name"], ["first_name", "Lori"], ["last_name", "Miller"], ["title", "Product Applications Specialist"], ["updated_at", "2014-07-20 21:50:54.715590"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:50:54.718963"], ["dob", "1997-04-02 22:50:54.718497"], ["email", "joana@windler.net"], ["first_name", "Citlalli"], ["last_name", "Hane"], ["title", "Global Optimization Technician"], ["updated_at", "2014-07-20 21:50:54.718963"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:50:54.722088"], ["dob", "1983-02-20 22:50:54.721652"], ["email", "jake@miller.info"], ["first_name", "Kristin"], ["last_name", "Jaskolski"], ["title", "Regional Brand Administrator"], ["updated_at", "2014-07-20 21:50:54.722088"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:50:54.725708"], ["dob", "2005-06-05 21:50:54.725186"], ["email", "sanford@cormier.org"], ["first_name", "Lorine"], ["last_name", "Heidenreich"], ["title", "Lead Marketing Consultant"], ["updated_at", "2014-07-20 21:50:54.725708"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:50:54.729548"], ["dob", "1978-10-18 21:50:54.729044"], ["email", "dortha.reilly@moriette.biz"], ["first_name", "Dixie"], ["last_name", "Gislason"], ["title", "Central Intranet Analyst"], ["updated_at", "2014-07-20 21:50:54.729548"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:50:54.733051"], ["dob", "2004-06-01 21:50:54.732542"], ["email", "mauricio.borer@blick.biz"], ["first_name", "Alexis"], ["last_name", "Douglas"], ["title", "Investor Communications Executive"], ["updated_at", "2014-07-20 21:50:54.733051"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:50:54.736241"], ["dob", "1977-06-06 21:50:54.735840"], ["email", "matilde_powlowski@davis.name"], ["first_name", "Eve"], ["last_name", "Pfeffer"], ["title", "Legacy Response Assistant"], ["updated_at", "2014-07-20 21:50:54.736241"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:50:54.739246"], ["dob", "2004-05-07 21:50:54.738820"], ["email", "nicole@rosenbaum.net"], ["first_name", "Shaniya"], ["last_name", "Kling"], ["title", "Product Group Engineer"], ["updated_at", "2014-07-20 21:50:54.739246"]]
+  [1m[35m (1.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:50:54.743422"], ["dob", "1997-07-18 21:50:54.742865"], ["email", "marquis@kuhic.net"], ["first_name", "Westley"], ["last_name", "Vandervort"], ["title", "Forward Metrics Architect"], ["updated_at", "2014-07-20 21:50:54.743422"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:50:54.747085"], ["dob", "1982-12-25 22:50:54.746531"], ["email", "jarrett.lind@wiza.info"], ["first_name", "Felipe"], ["last_name", "Parker"], ["title", "Regional Metrics Administrator"], ["updated_at", "2014-07-20 21:50:54.747085"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:50:54.751092"], ["dob", "2003-11-11 22:50:54.750378"], ["email", "christelle.hilll@nitzsche.com"], ["first_name", "Kennedi"], ["last_name", "Cassin"], ["title", "Regional Accounts Specialist"], ["updated_at", "2014-07-20 21:50:54.751092"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/people" for 127.0.0.1 at 2014-07-20 17:50:59 -0400
+Processing by PeopleController#index as HTML
+  [1m[36mPerson Load (0.3ms)[0m  [1mSELECT  "people".* FROM "people"  LIMIT 15 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "people"
+  [1m[36mPerson Load (0.1ms)[0m  [1mSELECT  "people".* FROM "people"   ORDER BY "people"."id" ASC LIMIT 1 OFFSET 0[0m
+  Rendered application/_pagination.html.haml (3.4ms)
+  Rendered people/index.html.haml within layouts/application (12.7ms)
+  Rendered application/_flash_messages.html.haml (0.1ms)
+Completed 200 OK in 19ms (Views: 18.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-20 17:50:59 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-20 17:50:59 -0400
+
+
+Started GET "/assets/ext_index_nav.js?body=1" for 127.0.0.1 at 2014-07-20 17:50:59 -0400
+
+
+Started GET "/assets/controller_scaffolding.css?body=1" for 127.0.0.1 at 2014-07-20 17:50:59 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-20 17:50:59 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-20 17:50:59 -0400
+  [1m[36m (1.6ms)[0m  [1mCREATE TABLE "people" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "email" varchar(255), "title" varchar(255), "dob" datetime, "is_manager" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (1.2ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140711034542')
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:54:01.533959"], ["dob", "1996-07-02 21:54:01.513357"], ["email", "van@rosenbaummosciski.net"], ["first_name", "Ignacio"], ["last_name", "Zieme"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.533959"]]
+  [1m[36m (5.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:54:01.545608"], ["dob", "1992-05-16 21:54:01.544742"], ["email", "brandon.doyle@okon.com"], ["first_name", "Marlin"], ["last_name", "Hoeger"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.545608"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:54:01.550896"], ["dob", "1975-03-14 21:54:01.550269"], ["email", "tevin@ward.com"], ["first_name", "Jamal"], ["last_name", "Goldner"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.550896"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:54:01.556199"], ["dob", "1979-04-06 22:54:01.555480"], ["email", "keaton.leannon@abshire.info"], ["first_name", "Golden"], ["last_name", "Casper"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.556199"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:54:01.559676"], ["dob", "2003-02-18 22:54:01.559131"], ["email", "ania_barrows@boyerheaney.biz"], ["first_name", "Zoila"], ["last_name", "Bechtelar"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.559676"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:54:01.562755"], ["dob", "1985-08-29 21:54:01.562292"], ["email", "alicia@gutmannemard.com"], ["first_name", "Kristopher"], ["last_name", "Witting"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.562755"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:54:01.565719"], ["dob", "1981-02-19 22:54:01.565260"], ["email", "karolann_reynolds@schuster.org"], ["first_name", "Era"], ["last_name", "Mayert"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.565719"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:54:01.568547"], ["dob", "1974-07-22 21:54:01.568130"], ["email", "rocky@weimann.com"], ["first_name", "Shaylee"], ["last_name", "Heller"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.568547"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:54:01.572046"], ["dob", "1990-08-26 21:54:01.571533"], ["email", "jefferey.auer@borer.org"], ["first_name", "Kendrick"], ["last_name", "Eichmann"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.572046"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:54:01.576172"], ["dob", "1997-06-02 21:54:01.575627"], ["email", "orion@trantow.com"], ["first_name", "Jovanny"], ["last_name", "Wyman"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.576172"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:54:01.579907"], ["dob", "1975-09-15 21:54:01.579428"], ["email", "cade_dibbert@dooley.name"], ["first_name", "Guiseppe"], ["last_name", "Mitchell"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.579907"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:54:01.582991"], ["dob", "1998-11-09 22:54:01.582475"], ["email", "kacey_orn@cronin.name"], ["first_name", "Bulah"], ["last_name", "Moen"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.582991"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:54:01.586487"], ["dob", "1987-05-06 21:54:01.585955"], ["email", "violette@keeling.info"], ["first_name", "Anabel"], ["last_name", "Russel"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.586487"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:54:01.590335"], ["dob", "2001-09-15 21:54:01.589699"], ["email", "shad_mcclure@conroyskiles.com"], ["first_name", "Clementine"], ["last_name", "Rippin"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.590335"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:54:01.593631"], ["dob", "1982-11-18 22:54:01.593144"], ["email", "carolina@flatley.net"], ["first_name", "Kevon"], ["last_name", "VonRueden"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.593631"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:54:01.596860"], ["dob", "1994-05-01 21:54:01.596383"], ["email", "lila.gislason@schaden.net"], ["first_name", "Mckenzie"], ["last_name", "Stamm"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.596860"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:54:01.600487"], ["dob", "2001-11-08 22:54:01.599985"], ["email", "bria.moriette@kuphal.com"], ["first_name", "Mathilde"], ["last_name", "McGlynn"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.600487"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:54:01.603744"], ["dob", "1981-05-18 21:54:01.603291"], ["email", "dora.mueller@gleason.net"], ["first_name", "Abbigail"], ["last_name", "Windler"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.603744"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:54:01.607196"], ["dob", "1995-07-25 21:54:01.606616"], ["email", "braeden@bruenrunte.org"], ["first_name", "Nasir"], ["last_name", "Koss"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.607196"]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:54:01.611684"], ["dob", "1995-11-21 22:54:01.611115"], ["email", "octavia.mann@hodkiewicz.name"], ["first_name", "Marlee"], ["last_name", "Doyle"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.611684"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:54:01.616859"], ["dob", "1976-12-25 22:54:01.616219"], ["email", "shea@kilback.net"], ["first_name", "Arch"], ["last_name", "Ruecker"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.616859"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:54:01.622624"], ["dob", "1987-03-09 22:54:01.621843"], ["email", "josefina@halvorson.net"], ["first_name", "Vicky"], ["last_name", "Russel"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.622624"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:54:01.626236"], ["dob", "2000-03-15 22:54:01.625718"], ["email", "haan.macejkovic@framizulauf.name"], ["first_name", "Jamel"], ["last_name", "Weimann"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.626236"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:54:01.629628"], ["dob", "1991-12-20 22:54:01.629114"], ["email", "riley_gislason@murazik.org"], ["first_name", "Melisa"], ["last_name", "Ankunding"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.629628"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:54:01.632931"], ["dob", "1973-08-21 21:54:01.632427"], ["email", "donald@kuhlman.name"], ["first_name", "Myrna"], ["last_name", "Marquardt"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.632931"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:54:01.638911"], ["dob", "1991-10-21 21:54:01.638131"], ["email", "aiden@hettingerflatley.biz"], ["first_name", "Bridgette"], ["last_name", "Beer"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.638911"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:54:01.642713"], ["dob", "1996-06-03 21:54:01.642105"], ["email", "selina@lockmanhegmann.info"], ["first_name", "Ashlee"], ["last_name", "Watsica"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.642713"]]
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:54:01.647256"], ["dob", "1993-11-22 22:54:01.646668"], ["email", "karina@bashirian.biz"], ["first_name", "Erica"], ["last_name", "Quitzon"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.647256"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:54:01.651578"], ["dob", "1989-02-24 22:54:01.651044"], ["email", "reece@boehm.com"], ["first_name", "Liana"], ["last_name", "Schumm"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.651578"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:54:01.655519"], ["dob", "1974-07-24 21:54:01.654947"], ["email", "raquel@hermiston.com"], ["first_name", "Dawson"], ["last_name", "Heaney"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.655519"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:54:01.659308"], ["dob", "1975-09-06 21:54:01.658814"], ["email", "emie@kutch.net"], ["first_name", "Rico"], ["last_name", "Treutel"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.659308"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:54:01.662422"], ["dob", "2005-05-20 21:54:01.661974"], ["email", "kiera.williamson@turcotteondricka.org"], ["first_name", "Nicholaus"], ["last_name", "Hackett"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.662422"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:54:01.666658"], ["dob", "1985-12-22 22:54:01.666137"], ["email", "alyon@gorczanygibson.com"], ["first_name", "Caroline"], ["last_name", "Wiza"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.666658"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:54:01.670623"], ["dob", "1974-07-29 21:54:01.670124"], ["email", "yeenia@kaulke.biz"], ["first_name", "Dejuan"], ["last_name", "Gulgowski"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.670623"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:54:01.673920"], ["dob", "1998-03-04 22:54:01.673422"], ["email", "molly.auer@senger.org"], ["first_name", "Bertha"], ["last_name", "Boehm"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.673920"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:54:01.677285"], ["dob", "1990-12-20 22:54:01.676826"], ["email", "annie.mitchell@douglas.net"], ["first_name", "Maida"], ["last_name", "Spencer"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.677285"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:54:01.680652"], ["dob", "2005-09-04 21:54:01.680148"], ["email", "christa@kuhn.name"], ["first_name", "Jazmyn"], ["last_name", "Jones"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.680652"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:54:01.683742"], ["dob", "2002-05-28 21:54:01.683280"], ["email", "eladio@christiansenvon.net"], ["first_name", "Abelardo"], ["last_name", "Douglas"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.683742"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:54:01.687043"], ["dob", "1981-04-19 22:54:01.686541"], ["email", "charles.koch@hirthe.org"], ["first_name", "Granville"], ["last_name", "Koepp"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.687043"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:54:01.690718"], ["dob", "1986-03-19 22:54:01.689892"], ["email", "kenneth@torp.com"], ["first_name", "Claud"], ["last_name", "Cormier"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.690718"]]
+  [1m[35m (2.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:54:01.695130"], ["dob", "1975-08-07 21:54:01.694589"], ["email", "noemie.tromp@predovic.net"], ["first_name", "Wilber"], ["last_name", "Thompson"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.695130"]]
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:54:01.699110"], ["dob", "2000-06-05 21:54:01.698525"], ["email", "otis@feeney.com"], ["first_name", "Tony"], ["last_name", "Russel"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.699110"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:54:01.702394"], ["dob", "1978-04-14 22:54:01.701913"], ["email", "freddie.kozey@gerlach.org"], ["first_name", "Erin"], ["last_name", "Wiegand"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.702394"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:54:01.705650"], ["dob", "1997-01-01 22:54:01.705149"], ["email", "dana@stammgreenfelder.name"], ["first_name", "Tillman"], ["last_name", "Kutch"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.705650"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:54:01.709349"], ["dob", "1990-01-23 22:54:01.708881"], ["email", "jamil.feil@dietrich.org"], ["first_name", "Allene"], ["last_name", "Fay"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.709349"]]
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:54:01.713176"], ["dob", "1998-06-06 21:54:01.712618"], ["email", "travis@harveycollins.net"], ["first_name", "Santina"], ["last_name", "Mraz"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.713176"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:54:01.716468"], ["dob", "1976-04-24 22:54:01.715954"], ["email", "parker.mante@hamill.org"], ["first_name", "Arnaldo"], ["last_name", "Lynch"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.716468"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:54:01.719605"], ["dob", "1993-05-17 21:54:01.719170"], ["email", "jalen@romaguera.biz"], ["first_name", "Shanny"], ["last_name", "DuBuque"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.719605"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:54:01.722726"], ["dob", "1988-11-14 22:54:01.722201"], ["email", "hailie@marvin.net"], ["first_name", "Antoinette"], ["last_name", "Kuvalis"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.722726"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:54:01.726166"], ["dob", "1984-11-27 22:54:01.725657"], ["email", "wilmer_gerhold@raynortromp.name"], ["first_name", "Mireya"], ["last_name", "Runolfsson"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.726166"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:54:01.729388"], ["dob", "2004-04-24 21:54:01.728936"], ["email", "janie.zemlak@swaniawski.com"], ["first_name", "Melvina"], ["last_name", "Gerlach"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.729388"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:54:01.732272"], ["dob", "1980-05-02 21:54:01.731856"], ["email", "jovany@hamill.name"], ["first_name", "Lorna"], ["last_name", "Bruen"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.732272"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:54:01.735323"], ["dob", "1980-06-25 21:54:01.734883"], ["email", "vinnie_hahn@toy.org"], ["first_name", "Bradford"], ["last_name", "Brown"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.735323"]]
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:54:01.739092"], ["dob", "1980-08-03 21:54:01.738530"], ["email", "koby.schinner@powlowski.biz"], ["first_name", "Kim"], ["last_name", "Prohaska"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.739092"]]
+  [1m[35m (1.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:54:01.742860"], ["dob", "2000-03-11 22:54:01.742385"], ["email", "syble@parisiansmitham.net"], ["first_name", "Ceasar"], ["last_name", "O'Conner"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.742860"]]
+  [1m[36m (2.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:54:01.747108"], ["dob", "1974-12-09 22:54:01.746553"], ["email", "zackary.murray@jacobs.info"], ["first_name", "Korey"], ["last_name", "Olson"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.747108"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:54:01.750843"], ["dob", "1986-06-02 21:54:01.750295"], ["email", "eliseo_gottlieb@kovaceklind.com"], ["first_name", "Kara"], ["last_name", "Beier"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.750843"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:54:01.754122"], ["dob", "1987-08-08 21:54:01.753656"], ["email", "kaelyn_cronin@dickinson.net"], ["first_name", "Zita"], ["last_name", "West"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.754122"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:54:01.757545"], ["dob", "1995-05-10 21:54:01.756980"], ["email", "flavie_will@collinskunde.info"], ["first_name", "Oleta"], ["last_name", "Yost"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.757545"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:54:01.761040"], ["dob", "2005-07-26 21:54:01.760521"], ["email", "zechariah@hettinger.name"], ["first_name", "Oscar"], ["last_name", "Schultz"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.761040"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:54:01.764271"], ["dob", "1984-03-10 22:54:01.763769"], ["email", "ena@reichert.name"], ["first_name", "Summer"], ["last_name", "Heathcote"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.764271"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:54:01.767460"], ["dob", "1984-08-11 21:54:01.766944"], ["email", "theresia.quigley@schoentowne.biz"], ["first_name", "Abigale"], ["last_name", "Doyle"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.767460"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:54:01.770751"], ["dob", "1997-05-22 21:54:01.770257"], ["email", "marielle@johnson.net"], ["first_name", "Dorthy"], ["last_name", "Windler"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.770751"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:54:01.773969"], ["dob", "1999-10-16 21:54:01.773501"], ["email", "anabel_marquardt@krajcikoberbrunner.org"], ["first_name", "Raul"], ["last_name", "Frami"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.773969"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:54:01.777172"], ["dob", "1988-01-14 22:54:01.776715"], ["email", "micaela@ziemelindgren.name"], ["first_name", "Serena"], ["last_name", "Dietrich"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.777172"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:54:01.780321"], ["dob", "1977-02-18 22:54:01.779887"], ["email", "daija.altenwerth@batz.com"], ["first_name", "Francisca"], ["last_name", "Smitham"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.780321"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:54:01.783597"], ["dob", "1989-06-22 21:54:01.783124"], ["email", "rahsaan@cummings.org"], ["first_name", "Ansel"], ["last_name", "Jacobs"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.783597"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:54:01.786910"], ["dob", "1978-06-19 21:54:01.786420"], ["email", "keaton@herzograth.info"], ["first_name", "Marianne"], ["last_name", "Williamson"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.786910"]]
+  [1m[35m (1.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:54:01.790962"], ["dob", "1982-03-01 22:54:01.790387"], ["email", "ricardo.mohr@lebsackcummings.info"], ["first_name", "Kevon"], ["last_name", "Berge"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.790962"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:54:01.794376"], ["dob", "2005-11-14 22:54:01.793858"], ["email", "hugh@gorczany.biz"], ["first_name", "Orin"], ["last_name", "Jerde"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.794376"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:54:01.797822"], ["dob", "2002-12-17 22:54:01.797251"], ["email", "nash_bruen@considine.com"], ["first_name", "Dedric"], ["last_name", "Luettgen"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.797822"]]
+  [1m[36m (2.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:54:01.802243"], ["dob", "1992-05-26 21:54:01.801689"], ["email", "colleen@kutch.net"], ["first_name", "Valentina"], ["last_name", "Wisoky"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.802243"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:54:01.805466"], ["dob", "1999-09-24 21:54:01.804992"], ["email", "delaney_kris@wisozkaltenwerth.biz"], ["first_name", "Kacie"], ["last_name", "Green"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.805466"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:54:01.809131"], ["dob", "1977-05-10 21:54:01.808602"], ["email", "phyllis@sawayn.info"], ["first_name", "Carli"], ["last_name", "Strosin"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.809131"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:54:01.812288"], ["dob", "1986-01-10 22:54:01.811832"], ["email", "alexandrea@dickinsonschmidt.net"], ["first_name", "Florence"], ["last_name", "McDermott"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:54:01.812288"]]
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/people" for 127.0.0.1 at 2014-07-20 17:54:05 -0400
+Processing by PeopleController#index as HTML
+  [1m[35mPerson Load (0.4ms)[0m  SELECT  "people".* FROM "people"  LIMIT 15 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "people"[0m
+  [1m[35mPerson Load (0.2ms)[0m  SELECT  "people".* FROM "people"   ORDER BY "people"."id" ASC LIMIT 1 OFFSET 0
+  Rendered application/_pagination.html.haml (3.8ms)
+  Rendered people/index.html.haml within layouts/application (17.4ms)
+  Rendered application/_flash_messages.html.haml (0.1ms)
+Completed 200 OK in 26ms (Views: 23.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-20 17:54:06 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-20 17:54:06 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-20 17:54:06 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-20 17:54:06 -0400
+
+
+Started GET "/assets/ext_index_nav.js?body=1" for 127.0.0.1 at 2014-07-20 17:54:06 -0400
+
+
+Started GET "/assets/controller_scaffolding.css?body=1" for 127.0.0.1 at 2014-07-20 17:54:06 -0400
+  [1m[36m (2.4ms)[0m  [1mCREATE TABLE "people" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "email" varchar(255), "title" varchar(255), "dob" datetime, "is_manager" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (1.3ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140711034542')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:55:39.228589"], ["dob", "2005-12-18 22:55:39.208095"], ["email", "asa@simonis.net"], ["first_name", "Milford"], ["is_manager", "f"], ["last_name", "Nienow"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.228589"]]
+  [1m[36m (5.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:55:39.241334"], ["dob", "1989-06-11 21:55:39.239299"], ["email", "foster@krajcik.com"], ["first_name", "Makenna"], ["is_manager", "f"], ["last_name", "Nikolaus"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.241334"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:55:39.245920"], ["dob", "1999-07-21 21:55:39.245283"], ["email", "caroline@schneider.name"], ["first_name", "Rebecca"], ["is_manager", "f"], ["last_name", "Weimann"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.245920"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:55:39.249904"], ["dob", "1977-05-13 21:55:39.249395"], ["email", "aileen@johnsonhermiston.name"], ["first_name", "Una"], ["is_manager", "f"], ["last_name", "Bartoletti"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.249904"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:55:39.253117"], ["dob", "2002-06-08 21:55:39.252610"], ["email", "kenneth@windler.info"], ["first_name", "Jessy"], ["is_manager", "f"], ["last_name", "Herzog"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.253117"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:55:39.256503"], ["dob", "1987-08-03 21:55:39.255942"], ["email", "roxane@muller.com"], ["first_name", "Vince"], ["is_manager", "f"], ["last_name", "O'Kon"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.256503"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:55:39.259439"], ["dob", "1976-05-21 21:55:39.258983"], ["email", "timothy@smithcronin.net"], ["first_name", "Donny"], ["is_manager", "f"], ["last_name", "Prosacco"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.259439"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:55:39.262371"], ["dob", "1985-03-14 22:55:39.261914"], ["email", "hermann_bailey@buckridge.biz"], ["first_name", "Berenice"], ["is_manager", "f"], ["last_name", "Pouros"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.262371"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:55:39.265628"], ["dob", "1973-11-20 22:55:39.265056"], ["email", "sierra.moriette@metz.info"], ["first_name", "Roman"], ["is_manager", "f"], ["last_name", "Pfannerstill"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.265628"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:55:39.269643"], ["dob", "1976-10-27 21:55:39.269095"], ["email", "adeline@bode.com"], ["first_name", "Kaelyn"], ["is_manager", "f"], ["last_name", "Harvey"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.269643"]]
+  [1m[35m (1.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:55:39.274669"], ["dob", "1987-07-19 21:55:39.274063"], ["email", "rosalind@schneider.org"], ["first_name", "Jermey"], ["is_manager", "f"], ["last_name", "Becker"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.274669"]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:55:39.278620"], ["dob", "1978-02-03 22:55:39.278080"], ["email", "phoebe@metz.biz"], ["first_name", "Reymundo"], ["is_manager", "f"], ["last_name", "Dach"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.278620"]]
+  [1m[35m (1.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:55:39.283304"], ["dob", "2006-01-07 22:55:39.282749"], ["email", "broderick.stanton@mohr.name"], ["first_name", "Enos"], ["is_manager", "f"], ["last_name", "Lebsack"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.283304"]]
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:55:39.287453"], ["dob", "2000-09-29 21:55:39.286907"], ["email", "green@morar.net"], ["first_name", "Jay"], ["is_manager", "f"], ["last_name", "Turner"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.287453"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:55:39.291008"], ["dob", "1999-04-24 21:55:39.290500"], ["email", "myah.lowe@metz.name"], ["first_name", "Lance"], ["is_manager", "f"], ["last_name", "Mante"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.291008"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:55:39.294175"], ["dob", "2002-05-11 21:55:39.293705"], ["email", "tracy@thompson.org"], ["first_name", "Kenyon"], ["is_manager", "f"], ["last_name", "Emard"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.294175"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:55:39.297700"], ["dob", "1973-08-04 21:55:39.297205"], ["email", "antwon.lehner@greenmuller.name"], ["first_name", "Mylene"], ["is_manager", "f"], ["last_name", "Balistreri"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.297700"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:55:39.300718"], ["dob", "2001-12-05 22:55:39.300208"], ["email", "jaylon@dooley.info"], ["first_name", "Ezequiel"], ["is_manager", "f"], ["last_name", "Mante"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.300718"]]
+  [1m[35m (1.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:55:39.305271"], ["dob", "2003-01-22 22:55:39.304671"], ["email", "heath@larson.net"], ["first_name", "Vaughn"], ["is_manager", "f"], ["last_name", "Eichmann"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.305271"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:55:39.309502"], ["dob", "1995-09-05 21:55:39.308960"], ["email", "jakayla.stroman@crona.com"], ["first_name", "Jaycee"], ["is_manager", "f"], ["last_name", "Glover"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.309502"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:55:39.315611"], ["dob", "1978-03-25 22:55:39.315003"], ["email", "vivienne@uptonzemlak.biz"], ["first_name", "Marguerite"], ["is_manager", "f"], ["last_name", "Schoen"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.315611"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:55:39.320089"], ["dob", "2002-12-01 22:55:39.319553"], ["email", "luigi_ohara@becker.com"], ["first_name", "Kathleen"], ["is_manager", "f"], ["last_name", "Stehr"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.320089"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:55:39.323417"], ["dob", "1977-03-09 22:55:39.322887"], ["email", "jaquan@nadersanford.com"], ["first_name", "Isidro"], ["is_manager", "f"], ["last_name", "Grant"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.323417"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:55:39.326473"], ["dob", "1975-02-20 22:55:39.326011"], ["email", "elbert.anderson@lockmanarmstrong.net"], ["first_name", "Zakary"], ["is_manager", "f"], ["last_name", "Brekke"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.326473"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:55:39.329515"], ["dob", "1991-10-31 22:55:39.329055"], ["email", "tyshawn.towne@boyer.org"], ["first_name", "Juwan"], ["is_manager", "f"], ["last_name", "Gleason"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.329515"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:55:39.332924"], ["dob", "1992-10-12 21:55:39.332435"], ["email", "stefanie_schimmel@bechtelarjakubowski.org"], ["first_name", "Lessie"], ["is_manager", "f"], ["last_name", "Schmidt"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.332924"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:55:39.336066"], ["dob", "1980-12-05 22:55:39.335592"], ["email", "noe.cartwright@doylemayer.info"], ["first_name", "Leon"], ["is_manager", "f"], ["last_name", "Stracke"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.336066"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:55:39.340457"], ["dob", "1997-01-05 22:55:39.339824"], ["email", "kirsten@kingrunolfon.name"], ["first_name", "Delores"], ["is_manager", "f"], ["last_name", "Dibbert"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.340457"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:55:39.343563"], ["dob", "1995-01-22 22:55:39.343048"], ["email", "norberto_abshire@rohan.info"], ["first_name", "Tina"], ["is_manager", "f"], ["last_name", "Braun"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.343563"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:55:39.348274"], ["dob", "2004-11-27 22:55:39.347666"], ["email", "celia@emmerich.com"], ["first_name", "Laurine"], ["is_manager", "f"], ["last_name", "Fadel"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.348274"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:55:39.351487"], ["dob", "1999-07-12 21:55:39.351019"], ["email", "toy@friesen.biz"], ["first_name", "Rosalee"], ["is_manager", "f"], ["last_name", "Conroy"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.351487"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:55:39.354827"], ["dob", "1991-12-19 22:55:39.354249"], ["email", "alycia@kub.biz"], ["first_name", "Pauline"], ["is_manager", "f"], ["last_name", "Swift"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.354827"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:55:39.359175"], ["dob", "1999-03-12 22:55:39.358596"], ["email", "charles.leannon@moriette.net"], ["first_name", "Jeanette"], ["is_manager", "f"], ["last_name", "Rice"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.359175"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:55:39.363547"], ["dob", "1977-08-10 21:55:39.362959"], ["email", "margot_feil@cummerata.net"], ["first_name", "Kobe"], ["is_manager", "f"], ["last_name", "Schuppe"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.363547"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:55:39.366923"], ["dob", "1998-11-18 22:55:39.366451"], ["email", "kariane.ruel@dibbert.name"], ["first_name", "Timmothy"], ["is_manager", "f"], ["last_name", "Botsford"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.366923"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:55:39.370529"], ["dob", "1976-11-06 22:55:39.370014"], ["email", "asha@zboncakkoch.biz"], ["first_name", "Charles"], ["is_manager", "f"], ["last_name", "Hartmann"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.370529"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:55:39.374118"], ["dob", "2005-12-27 22:55:39.373597"], ["email", "serena_zulauf@hoppe.info"], ["first_name", "Margaretta"], ["is_manager", "f"], ["last_name", "Hilll"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.374118"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:55:39.377351"], ["dob", "1983-07-26 21:55:39.376913"], ["email", "ryleigh@friesen.name"], ["first_name", "Jonatan"], ["is_manager", "f"], ["last_name", "Wilderman"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.377351"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:55:39.380726"], ["dob", "1988-10-09 21:55:39.380198"], ["email", "clint.lemke@parisiandickens.net"], ["first_name", "Mark"], ["is_manager", "f"], ["last_name", "Kilback"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.380726"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:55:39.383880"], ["dob", "2003-03-12 22:55:39.383412"], ["email", "greg@fay.info"], ["first_name", "Patsy"], ["is_manager", "f"], ["last_name", "Legros"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.383880"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:55:39.386765"], ["dob", "1985-12-17 22:55:39.386332"], ["email", "michele@pacochapowlowski.com"], ["first_name", "Sigmund"], ["is_manager", "f"], ["last_name", "Pfeffer"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.386765"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:55:39.389630"], ["dob", "1977-05-11 21:55:39.389192"], ["email", "lenore.wolf@heidenreichmarks.biz"], ["first_name", "Lorenza"], ["is_manager", "f"], ["last_name", "Simonis"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.389630"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:55:39.393009"], ["dob", "1976-07-16 21:55:39.392490"], ["email", "alicia.labadie@brown.com"], ["first_name", "Ali"], ["is_manager", "f"], ["last_name", "Runte"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.393009"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:55:39.396545"], ["dob", "1983-09-10 21:55:39.396010"], ["email", "luna.gusikowski@upton.net"], ["first_name", "Kailyn"], ["is_manager", "f"], ["last_name", "Nader"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.396545"]]
+  [1m[35m (2.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:55:39.400725"], ["dob", "1992-10-26 22:55:39.400101"], ["email", "queen@mcdermott.net"], ["first_name", "Sonny"], ["is_manager", "f"], ["last_name", "Okuneva"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.400725"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:55:39.403854"], ["dob", "1977-05-28 21:55:39.403402"], ["email", "shyanne@weinatlegros.info"], ["first_name", "Alessandro"], ["is_manager", "f"], ["last_name", "Harvey"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.403854"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:55:39.407556"], ["dob", "1990-12-29 22:55:39.406987"], ["email", "elenor_leffler@parisian.org"], ["first_name", "Ruthe"], ["is_manager", "f"], ["last_name", "King"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.407556"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:55:39.410726"], ["dob", "1990-11-14 22:55:39.410236"], ["email", "bernice@kubgleichner.com"], ["first_name", "Gia"], ["is_manager", "f"], ["last_name", "Dietrich"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.410726"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:55:39.413935"], ["dob", "1998-10-24 21:55:39.413402"], ["email", "maybelle.konopelski@predovic.com"], ["first_name", "Yadira"], ["is_manager", "f"], ["last_name", "Pollich"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.413935"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:55:39.417105"], ["dob", "2004-07-24 21:55:39.416665"], ["email", "mabel_crooks@jones.info"], ["first_name", "Jannie"], ["is_manager", "f"], ["last_name", "Pollich"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.417105"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:55:39.419985"], ["dob", "2005-10-06 21:55:39.419533"], ["email", "aracely_spinka@lind.com"], ["first_name", "Josue"], ["is_manager", "f"], ["last_name", "Vandervort"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.419985"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:55:39.423094"], ["dob", "1992-07-08 21:55:39.422544"], ["email", "stefan.kuphal@kemmerebert.com"], ["first_name", "Parker"], ["is_manager", "f"], ["last_name", "Ondricka"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.423094"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:55:39.426554"], ["dob", "1990-04-01 21:55:39.426085"], ["email", "ebony.hackett@bradtkeweimann.net"], ["first_name", "Mariah"], ["is_manager", "f"], ["last_name", "Littel"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.426554"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:55:39.429679"], ["dob", "1979-11-19 22:55:39.429163"], ["email", "bethel.maggio@dubuqueshanahan.com"], ["first_name", "Fredrick"], ["is_manager", "f"], ["last_name", "Shields"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.429679"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:55:39.433019"], ["dob", "1986-02-08 22:55:39.432459"], ["email", "roselyn@lehner.name"], ["first_name", "Ibrahim"], ["is_manager", "f"], ["last_name", "Armstrong"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.433019"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:55:39.436872"], ["dob", "1987-04-07 21:55:39.436290"], ["email", "marilie.heel@gorczany.com"], ["first_name", "Bertha"], ["is_manager", "f"], ["last_name", "Torphy"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.436872"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:55:39.440677"], ["dob", "1987-08-26 21:55:39.440092"], ["email", "gonzalo@mueller.name"], ["first_name", "Rosemarie"], ["is_manager", "f"], ["last_name", "Sanford"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.440677"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:55:39.444198"], ["dob", "2001-12-11 22:55:39.443638"], ["email", "manuela@beatty.net"], ["first_name", "Zachery"], ["is_manager", "f"], ["last_name", "Purdy"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.444198"]]
+  [1m[35m (1.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:55:39.448016"], ["dob", "1998-07-18 21:55:39.447451"], ["email", "jaylin@jenkinspfannerstill.biz"], ["first_name", "Ilene"], ["is_manager", "f"], ["last_name", "Kessler"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.448016"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:55:39.451442"], ["dob", "1978-12-20 22:55:39.450885"], ["email", "millie.daugherty@pfannerstill.name"], ["first_name", "Myrtle"], ["is_manager", "f"], ["last_name", "Graham"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.451442"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:55:39.456001"], ["dob", "2005-06-07 21:55:39.455199"], ["email", "laisha_ernser@kuvaliscole.org"], ["first_name", "Drake"], ["is_manager", "f"], ["last_name", "Braun"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.456001"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:55:39.460117"], ["dob", "2000-11-22 22:55:39.459492"], ["email", "jammie_zemlak@kutch.com"], ["first_name", "Dangelo"], ["is_manager", "f"], ["last_name", "Williamson"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.460117"]]
+  [1m[35m (1.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:55:39.464234"], ["dob", "1977-02-19 22:55:39.463669"], ["email", "felicia@turcotte.info"], ["first_name", "Howell"], ["is_manager", "f"], ["last_name", "Ritchie"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.464234"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:55:39.467595"], ["dob", "1988-09-02 21:55:39.467064"], ["email", "ethelyn.krajcik@donnellystiedemann.com"], ["first_name", "Candace"], ["is_manager", "f"], ["last_name", "Fahey"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.467595"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:55:39.470953"], ["dob", "1975-08-05 21:55:39.470438"], ["email", "lysanne_kuvalis@jerde.com"], ["first_name", "Leslie"], ["is_manager", "f"], ["last_name", "Runolfsdottir"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.470953"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:55:39.475384"], ["dob", "1997-05-11 21:55:39.474728"], ["email", "laura_hauck@ruecker.org"], ["first_name", "Tiana"], ["is_manager", "f"], ["last_name", "Morar"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.475384"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:55:39.479605"], ["dob", "2003-09-30 21:55:39.479061"], ["email", "kaelyn@luettgen.name"], ["first_name", "Mittie"], ["is_manager", "f"], ["last_name", "Swaniawski"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.479605"]]
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:55:39.483828"], ["dob", "1981-04-11 22:55:39.483257"], ["email", "pasquale.kub@kihnlittel.net"], ["first_name", "Mckayla"], ["is_manager", "f"], ["last_name", "Brakus"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.483828"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:55:39.487124"], ["dob", "1992-06-28 21:55:39.486637"], ["email", "golda@ebertschaden.org"], ["first_name", "Hilda"], ["is_manager", "f"], ["last_name", "Lind"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.487124"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:55:39.490480"], ["dob", "1996-03-25 22:55:39.489926"], ["email", "glenda@homenick.biz"], ["first_name", "Ardella"], ["is_manager", "f"], ["last_name", "Kshlerin"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.490480"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:55:39.493861"], ["dob", "2002-06-16 21:55:39.493324"], ["email", "nestor.dubuque@dooley.name"], ["first_name", "Regan"], ["is_manager", "f"], ["last_name", "Hermiston"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.493861"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:55:39.497284"], ["dob", "1979-03-17 22:55:39.496794"], ["email", "stewart.towne@smith.org"], ["first_name", "Lemuel"], ["is_manager", "f"], ["last_name", "Wisoky"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.497284"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:55:39.500590"], ["dob", "1997-02-21 22:55:39.500117"], ["email", "percival_marquardt@moore.name"], ["first_name", "Jana"], ["is_manager", "f"], ["last_name", "Pollich"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.500590"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-20 21:55:39.503764"], ["dob", "2002-07-25 21:55:39.503157"], ["email", "nedra@blanda.org"], ["first_name", "Bettye"], ["is_manager", "f"], ["last_name", "Hansen"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.503764"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "people" ("created_at", "dob", "email", "first_name", "is_manager", "last_name", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-07-20 21:55:39.507326"], ["dob", "1989-09-20 21:55:39.506842"], ["email", "joaquin.deckow@borer.info"], ["first_name", "Gertrude"], ["is_manager", "f"], ["last_name", "Olson"], ["title", "Sales Rep"], ["updated_at", "2014-07-20 21:55:39.507326"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/people" for 127.0.0.1 at 2014-07-20 17:55:42 -0400
+Processing by PeopleController#index as HTML
+  [1m[36mPerson Load (0.5ms)[0m  [1mSELECT  "people".* FROM "people"  LIMIT 15 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "people"
+  [1m[36mPerson Load (0.2ms)[0m  [1mSELECT  "people".* FROM "people"   ORDER BY "people"."id" ASC LIMIT 1 OFFSET 0[0m
+  Rendered application/_pagination.html.haml (3.6ms)
+  Rendered people/index.html.haml within layouts/application (17.2ms)
+  Rendered application/_flash_messages.html.haml (0.1ms)
+Completed 200 OK in 26ms (Views: 23.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/controller_scaffolding.css?body=1" for 127.0.0.1 at 2014-07-20 17:55:42 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-20 17:55:42 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-20 17:55:42 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-20 17:55:42 -0400
+
+
+Started GET "/assets/ext_index_nav.js?body=1" for 127.0.0.1 at 2014-07-20 17:55:42 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-20 17:55:42 -0400
+
+
+Started GET "/people?per_page=10&page=1" for 127.0.0.1 at 2014-07-20 17:56:03 -0400
+Processing by PeopleController#index as HTML
+  Parameters: {"per_page"=>"10", "page"=>"1"}
+  [1m[35mPerson Load (0.3ms)[0m  SELECT  "people".* FROM "people"  LIMIT 10 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "people"[0m
+  [1m[35mPerson Load (0.2ms)[0m  SELECT  "people".* FROM "people"   ORDER BY "people"."id" ASC LIMIT 1 OFFSET 0
+  Rendered application/_pagination.html.haml (4.1ms)
+  Rendered people/index.html.haml within layouts/application (11.4ms)
+  Rendered application/_flash_messages.html.haml (0.2ms)
+Completed 200 OK in 20ms (Views: 18.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-20 17:56:03 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-20 17:56:03 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-20 17:56:03 -0400
+
+
+Started GET "/assets/controller_scaffolding.css?body=1" for 127.0.0.1 at 2014-07-20 17:56:03 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-20 17:56:03 -0400
+
+
+Started GET "/assets/ext_index_nav.js?body=1" for 127.0.0.1 at 2014-07-20 17:56:03 -0400
+
+
+Started GET "/people/2/edit" for 127.0.0.1 at 2014-07-20 17:56:50 -0400
+Processing by PeopleController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPerson Load (0.3ms)[0m  [1mSELECT  "people".* FROM "people"  WHERE "people"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered people/_form.html.haml (18.5ms)
+  Rendered people/edit.html.haml within layouts/application (21.1ms)
+  Rendered application/_flash_messages.html.haml (0.1ms)
+Completed 200 OK in 30ms (Views: 28.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/controller_scaffolding.css?body=1" for 127.0.0.1 at 2014-07-20 17:56:51 -0400
+
+
+Started GET "/assets/ext_index_nav.js?body=1" for 127.0.0.1 at 2014-07-20 17:56:51 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-20 17:56:51 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-20 17:56:51 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-20 17:56:51 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-20 17:56:51 -0400
+
+
+Started GET "/people/3/edit" for 127.0.0.1 at 2014-07-20 18:05:31 -0400
+
+ActionController::RoutingError (No route matches [GET] "/people/3/edit"):
+  actionpack (4.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.2) lib/rails/engine.rb:514:in `call'
+  railties (4.1.2) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/johnomalley/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/johnomalley/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/johnomalley/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/johnomalley/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/johnomalley/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered /Users/johnomalley/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (9.9ms)
+
+
+Started GET "/people/3/edit" for 127.0.0.1 at 2014-07-20 18:05:50 -0400
+Processing by PeopleController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mPerson Load (0.2ms)[0m  SELECT  "people".* FROM "people"  WHERE "people"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered people/_form.html.haml (23.3ms)
+  Rendered people/edit.html.haml within layouts/application (26.5ms)
+  Rendered application/_flash_messages.html.haml (1.3ms)
+Completed 200 OK in 49ms (Views: 36.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/controller_scaffolding.css?body=1" for 127.0.0.1 at 2014-07-20 18:05:50 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-20 18:05:50 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-20 18:05:50 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-20 18:05:50 -0400
+
+
+Started GET "/assets/ext_index_nav.js?body=1" for 127.0.0.1 at 2014-07-20 18:05:50 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-20 18:05:50 -0400
+
+
+Started PATCH "/people/3" for 127.0.0.1 at 2014-07-20 18:05:55 -0400
+Processing by PeopleController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9bwjdlvB4C319mOdY2rt8dIq9UZJn3NspMJIOgm7yvU=", "person"=>{"first_name"=>"Rebecca", "last_name"=>"Weimann", "email"=>"caroline@schneider.name", "title"=>"Sales Rep", "dob(1i)"=>"1999", "dob(2i)"=>"7", "dob(3i)"=>"21", "dob(4i)"=>"21", "dob(5i)"=>"55", "is_manager"=>"0"}, "btn_reload"=>"Save & Reload", "id"=>"3"}
+  [1m[36mPerson Load (0.2ms)[0m  [1mSELECT  "people".* FROM "people"  WHERE "people"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "people" SET "dob" = ?, "updated_at" = ? WHERE "people"."id" = 3[0m  [["dob", "1999-07-21 21:55:00.000000"], ["updated_at", "2014-07-20 22:05:55.247581"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+Redirected to http://localhost:3012/people/3/edit
+Completed 302 Found in 9ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/people/3/edit" for 127.0.0.1 at 2014-07-20 18:05:55 -0400
+Processing by PeopleController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPerson Load (0.1ms)[0m  [1mSELECT  "people".* FROM "people"  WHERE "people"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered people/_form.html.haml (12.6ms)
+  Rendered people/edit.html.haml within layouts/application (14.5ms)
+  Rendered application/_flash_messages.html.haml (0.3ms)
+Completed 200 OK in 26ms (Views: 25.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-20 18:05:55 -0400
+
+
+Started GET "/assets/ext_index_nav.js?body=1" for 127.0.0.1 at 2014-07-20 18:05:55 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-20 18:05:55 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-20 18:05:55 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-20 18:05:55 -0400
+
+
+Started GET "/assets/controller_scaffolding.css?body=1" for 127.0.0.1 at 2014-07-20 18:05:55 -0400

@@ -2,16 +2,22 @@
 
 Creates controller and extended scaffolding for the model specified.
 
+Index page
+![Index](/readme_assets/index_ss.png?raw=true "Index")
+
+Create/Edit page
+![Form](/readme_assets/form_ss.png?raw=true "Form")
+
 To use this gem add the following line to your project's Gemfile:
 `gem 'controller_scaffolding', :git => "https://github.com/jomalley2112/controller_scaffolding.git"`
 and then run `bundle install`
 
 - Dependencies:
-	- 'rails', '~> 4.1.1'
-  - 'will_paginate', '~> 3.0.5'
-  - 'haml-rails', '~> 0.5.3'
-  - 'sass-rails', '~> 4.0.3'
-  - 'jquery-rails', '~> 3.1.1'
+	- 'rails', '~> 4.0'
+  - 'will_paginate'
+  - 'haml-rails'
+  - 'sass-rails'
+  - 'jquery-rails'
 
 - Development Environment Dependencies:
 	- "sqlite3"
