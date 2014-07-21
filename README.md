@@ -18,6 +18,7 @@ and then run `bundle install`
   - 'haml-rails'
   - 'sass-rails'
   - 'jquery-rails'
+  - 'will_paginate-bootstrap'
 
 - Development Environment Dependencies:
 	- "sqlite3"

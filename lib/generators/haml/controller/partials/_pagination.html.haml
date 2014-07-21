@@ -1,9 +1,10 @@
 - item_type = coll.length > 0 ? coll.first.class.table_name.humanize.pluralize : "Entries"
-.pagination
+.outer-pagination
 	= page_entries_info coll, model: item_type
 	%br/ 
-	= will_paginate coll
-	- opts_arr = %w(10 15 20 25 30 40 50 75 100 All).map { |n| [n, n] }
+	%div.c_scaff_pagination
+		= will_paginate coll #, renderer: BootstrapPagination::Rails
+		- opts_arr = %w(10 15 20 25 30 40 50 75 100 All).map { |n| [n, n] }
 	%div 
 		= label_tag :per_page, "#{item_type} per page:"
 		&nbsp;

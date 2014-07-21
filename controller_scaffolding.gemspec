@@ -18,10 +18,11 @@ Gem::Specification.new do |s|
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency 'rails', '~> 4.0'
-  s.add_dependency 'will_paginate' #, '~> 3.0.5'
+  s.add_dependency 'will_paginate' #, '3.0.5'
   s.add_dependency 'haml-rails' #, '~> 0.5.3'
   s.add_dependency 'sass-rails' #, '~> 4.0.3'
   s.add_dependency 'jquery-rails' #, '~> 3.1.1'
+  
 
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "pry-rails"
