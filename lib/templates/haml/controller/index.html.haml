@@ -28,7 +28,7 @@
 			<% end %>
 	<% if options.ext_index_nav? %>
 		%tr#pagination-row
-			%td{:colspan => '<%= col_count %>', :style => "text-align: center;"}
+			%td{:colspan => '<%= col_count %>', :class => "pagination-container"}
 				= render partial: 'pagination', locals: { :coll => @<%= plural_table_name %> }
 	<% end %>
 %br/ 

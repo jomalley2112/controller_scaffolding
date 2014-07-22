@@ -4,62 +4,79 @@ $gray-light: lighten(#000, 46.7%);
 $table-bg-color: white;
 $border-color: #CBE6E6;
 $link-color: #704942;
+$pagination-info-color: #dfd7be;
 
 /*Mixins*/
 @mixin tblbasic {
-	width: 750px;
-	background-color: $table-bg-color;
-	border-radius: 5px;
-	border: solid 2px $border-color;
-	border-collapse: inherit;
-	border-spacing: 0px;
+  width: 750px;
+  background-color: $table-bg-color;
+  border-radius: 5px;
+  border: solid 2px $border-color;
+  border-collapse: inherit;
+  border-spacing: 0px;
 }
 
 /*for forms*/
 table.outer { 
-	@include tblbasic;
-	padding: 20px;
-	background-color: $gray-lighter;
-	td {	padding: 5px; }
+  @include tblbasic;
+  padding: 20px;
+  background-color: $gray-lighter;
+  td {  padding: 5px; }
 }
 
 /*for lists*/
 table.outer-list {
-	@include tblbasic;
-	margin:  15px;
-	tr:nth-child(even) {
-		background-color: $gray-lighter;
-	}
-	thead { 
-		tr {
-			background-color: $gray-light;
-			th { 
-				padding: 5px 0px 5px 5px;  /*top right bottom left*/	
-				border-bottom: solid 2px $border-color;
-				} 
-		}
-		
-	}
-	td {	padding: 5px; }
+  @include tblbasic;
+  margin:  15px;
+  tr:nth-child(even) {
+    background-color: $gray-lighter;
+  }
+  thead { 
+    tr {
+      background-color: $gray-light;
+      th { 
+        padding: 5px 0px 5px 5px;  /*top right bottom left*/  
+        border-bottom: solid 2px $border-color;
+        } 
+    }
+    
+  }
+  td {  padding: 4px; }
 }
 
 table.page-top {
-	padding: 20px;
-	width: 800px;
-	border-radius: 5px;
-	td {	padding: 5px; }
+  padding: 20px;
+  width: 800px;
+  border-radius: 5px;
+  td {  padding: 5px; }
 }
 
-.center-align {	text-align: center; }
+.center-align { text-align: center; }
 
 .link_col { width: 30px; }
 
 a {
-	color: $link-color;
-	text-decoration: none;
+  color: $link-color;
+  text-decoration: none;
 }
 
-.outer-pagination {	background-color: $gray-light }
+.outer-pagination { background-color: $pagination-info-color; }
+tr#pagination-row td.pagination-container {
+  padding: 0px;
+  text-align: center;
+}
+td.page-info { 
+  width: 50%; 
+  text-align: center;
+  padding: 0px;
+  line-height: 1;
+}
+td.left-page-info {
+  text-align: left;
+}
+td.right-page-info {
+  text-align: right;
+}
 
 /*######################Pagination borrowed from apple##############################*/
 div.c_scaff_pagination {
@@ -95,11 +112,11 @@ div.c_scaff_pagination {
 
 /*body style borrowed from bootsrap*/
 body {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 14px;
-	line-height: 1.428571429;
-	color: #333333;
-	background-color: white;	
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #333333;
+  background-color: white;  
 }
 
 /*alert styles borrowed from bootstrap*/
