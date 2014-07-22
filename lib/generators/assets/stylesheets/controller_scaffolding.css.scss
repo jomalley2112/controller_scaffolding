@@ -4,7 +4,8 @@ $gray-light: lighten(#000, 46.7%);
 $table-bg-color: white;
 $border-color: #CBE6E6;
 $link-color: #704942;
-$pagination-info-color: #dfd7be;
+$light-neutral-color: #DFD7BE;
+$darker-neutral-color: #AEA78F;
 
 /*Mixins*/
 @mixin tblbasic {
@@ -33,7 +34,7 @@ table.outer-list {
   }
   thead { 
     tr {
-      background-color: $gray-light;
+      background-color: $darker-neutral-color;
       th { 
         padding: 5px 0px 5px 5px;  /*top right bottom left*/  
         border-bottom: solid 2px $border-color;
@@ -60,7 +61,7 @@ a {
   text-decoration: none;
 }
 
-.outer-pagination { background-color: $pagination-info-color; }
+.outer-pagination { background-color: $light-neutral-color; }
 tr#pagination-row td.pagination-container {
   padding: 0px;
   text-align: center;
