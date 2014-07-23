@@ -35,10 +35,11 @@ module Rails
     module_function :attr_cols
     #######################################################################
 
-    class ControllerScaffoldingGenerator < NamedBase
+    class ControllerScaffoldingGenerator < Rails::Generators::NamedBase
       argument :actions, type: :array, default: [], banner: "action action"
       class_option :ext_index_nav, :type => :boolean, :default => true, :desc => "Include extended index page features."
       class_option :ext_form_submit, :type => :boolean, :default => true, :desc => "Include extended form submission features."      
+      class_option :search_sort, :type => :boolean, :default => true, :desc => "Add search and sort functionality to index page."      
       check_class_collision suffix: "Controller"
       
       #Note: This needs to be set Outside of any methods
@@ -62,7 +63,12 @@ module Rails
         route "resources :#{plural_table_name.to_sym}"
       end
 
-      hook_for :template_engine, :assets, :test_framework, :helper, 
+      hook_for :template_engine, :assets, :test_framework, :helper
+      def run_sns_gen
+        #TODO: should see if we can do this with a hook_for as well
+        invoke "sql_search_n_sort:install" if options.search_sort?  
+      end
+      
 #================================ P R I V A T E =================================
       private
         def generate_action_code(action, ext_index=true, ext_form_submit=true)

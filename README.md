@@ -29,7 +29,7 @@ and then run `bundle install`
 	
 
 Usage: `$ rails g|d controller_scaffolding users index new create edit update destroy --template-engine=haml
-[--skip-ext-index-nav] [--skip-ext-form-submit] [--quiet] [--force] [--skip-assets] [--skip-test-framework] [--skip-helper]`
+[--skip-ext-index-nav] [--skip-ext-form-submit] [--skip-search-sort] [--quiet] [--force] [--skip-assets] [--skip-test-framework] [--skip-helper]`
 
 *Note: You must restart Rails after running this generator*
 
@@ -82,6 +82,9 @@ Description:
 		* Requires jquery and jquery_ujs in application.js
 	* Stylesheets
 		* Installs controller_scaffolding.css.scss if either extended index navigation or extended form  submission are selected
+
+TODO: Add optional search and optional sort functionality for index pages
+TODO: Allow --all-rest-actions option in generator so they don't all need to be indivudually listed
 
 
 This project uses MIT-LICENSE.

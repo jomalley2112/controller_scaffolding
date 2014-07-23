@@ -81,28 +81,4 @@ class ControllerScaffoldingGeneratorTest < Rails::Generators::TestCase
   #   end
   # end
 
-
-  #make sure "app/assets/javascripts/application.js" has //= require jquery
-
-
-  # def setup
-  # 	#puts "about to run rails g model"
-  # 	#%x(cd test/dummy; rails g model Person first_name:string last_name:string email:string title:string dob:datetime is_manager:boolean)
-  # 	#sleep 5
-  #   #%x(cd test/dummy; rake db:migrate; rake db:test:prepare)
-  #   #sleep 5
-  # end
-
-  # def cleanup
-		# #%x(cd test/dummy; rails d model Person first_name:string last_name:string email:string title:string dob:datetime is_manager:boolean)  	
-  # 	#%x(cd test/dummy; rake db:rollback STEP=1)
-  # 	#%x(rm app/models/concerns/person.rb)
-  # 	#%x(rm test/models/person_test.rb)
-  #   #delete migration file
-  #   # mig_dir_loc = "test/dummy/db/migrate"
-  #   # migr_dir = Dir.new(mig_dir_loc)
-  #   # migr_dir.each do |filename|
-  #   #   File.delete("#{mig_dir_loc}/#{filename}") if filename =~ /create_people\.rb/
-  #   # end
-  # end
 end

@@ -3,14 +3,21 @@
 require 'rails/generators/erb/controller/controller_generator'
 require 'rails/generators/erb/scaffold/scaffold_generator'
 
+
 module Haml
   module Generators
   	class ControllerScaffoldingGenerator < Erb::Generators::ControllerGenerator
       argument :actions, type: :array, default: [], banner: "action action"
       class_option :ext_index_nav, :type => :boolean, :default => true, :desc => "Include extended index page features."
       class_option :ext_form_submit, :type => :boolean, :default => true, :desc => "Include extended form submission features."      
+      class_option :search_sort, :type => :boolean, :default => true, :desc => "Add search and sort functionality to index page."      
       
+
       source_paths << File.expand_path('../../../../templates/haml/controller', __FILE__)
+      @rails_root = "#{::Rails.root.to_s}/"
+
+
+
       def copy_view_files #do NOT change the name of this method 
                           # it must be overriding an existing one in a parent class
         base_path = File.join("app/views", class_path, file_name)
@@ -86,6 +93,10 @@ module Haml
           path = File.join(base_path, 'controller_scaffolding.css.scss')
           copy_file('controller_scaffolding.css.scss', path) if file_action(path)
         end
+      end
+
+      def handle_search_n_sort
+        
       end
 
       

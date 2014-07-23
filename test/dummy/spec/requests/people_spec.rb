@@ -129,6 +129,21 @@ describe "People" do
         }.to change(Person, :count).by(-1)
       end
     end
+
+    describe "Search and Sort" do
+      it "displays a search box and a find and clear button" do
+        visit people_path
+        page.should have_selector("input#search_for")
+        page.should have_selector("button#submit-search")
+        page.should have_selector("button#clear-search")
+      end
+
+      it "shows sort dropdown with default sort order selected when no sorting is chosen", :js => true do
+        visit people_path
+        find("select#sort_by").value.should eq "last_name"
+      end
+      
+    end
     
   end
 
