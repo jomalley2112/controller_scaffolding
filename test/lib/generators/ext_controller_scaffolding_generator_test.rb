@@ -32,20 +32,17 @@ class ExtControllerScaffoldingGeneratorTest < Rails::Generators::TestCase
   	end 
 
   	#strong params method definition
-  	assert_file "#{::Rails.root.to_s}/app/controllers/#{@contr_name}_controller.rb" do |p_ctrl|
 			assert_match %r(def #{@contr_name.singularize}_params), p_ctrl
   	end
 
   end
 
   test "Routes were added properly" do
-  	assert_file "#{::Rails.root.to_s}/config/routes.rb" do |routes|
   		assert_no_match %r(resources :#{@contr_name}), routes
   	end
 
   	run_generator @args
 
-  	assert_file "#{::Rails.root.to_s}/config/routes.rb" do |routes|
   		assert_match %r(resources :#{@contr_name}), routes
   	end
   end
