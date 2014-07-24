@@ -85,6 +85,7 @@ describe "People" do
 
            it "displays 10 items per page when selected by user", :js => true do
              visit people_path
+             #binding.pry
              select("10", from: "People per page:")
              people_displayed(page).should == 10
            end 
@@ -131,18 +132,60 @@ describe "People" do
     end
 
     describe "Search and Sort" do
-      it "displays a search box and a find and clear button" do
+      it "displays a search box and a find and clear button", :js => false do
         visit people_path
         page.should have_selector("input#search_for")
         page.should have_selector("button#submit-search")
         page.should have_selector("button#clear-search")
       end
 
-      it "shows sort dropdown with default sort order selected when no sorting is chosen", :js => true do
+      it "displays a sort select list populated with all of the correct options", :js => false do
         visit people_path
-        find("select#sort_by").value.should eq "last_name"
+        sel_opts = ["First name","First name [desc]","Last name","Last name [desc]","Email", 
+                   "Email [desc]","Title", 
+                   "Title [desc]","Dob","Dob [desc]","Is manager","Is manager [desc]"]
+        page.should have_select('sort_by', :options => sel_opts)
       end
-      
+      it "clears the search", :js => true do
+        visit people_path
+        fill_in("search_for", :with => "Search Text")
+        click_button("clear-search")
+        first("input#search_for").value.should eq ""
+      end
+
+      describe "has functional sort capability" do
+        before(:each) do
+          (1..50).each do 
+            FactoryGirl.create(:person, first_name: "John_#{Random.rand(1..99)}", 
+              last_name: "Doe_#{Random.rand(1..99)}", email: "johndoesemail_#{Random.rand(1..99)}@domain.com")
+          end
+        end
+        it "sorts by last name descending when selected", :js => true do
+          visit people_path
+          select("Last name [desc]", :from => "sort_by")
+          sleep 0.5
+          last_names = all(:xpath, "//table/tbody/tr/td[2]")
+          last_names.map(&:text).should == last_names.map(&:text).sort.reverse
+        end
+
+      end
+      describe "has functional search capability", :js => true do
+        before(:each) do
+          FactoryGirl.create(:person, first_name: "Fred", last_name: "Bradley")
+          FactoryGirl.create(:person, first_name: "Brad", last_name: "Johnson")
+          FactoryGirl.create(:person, first_name: "John", last_name: "Williams")
+          FactoryGirl.create(:person, first_name: "Will", last_name: "Farley")
+          FactoryGirl.create(:person, first_name: "Joseph", email: "jo@brads.net")
+        end
+        it "returns only rows that have first or last name matching case-insensitive 'wIlL'" do
+          visit people_path
+          people_displayed(page).should eq 5
+          fill_in("search_for", :with => "wIlL")
+          #binding.pry
+          click_button("submit-search")
+          people_displayed(page).should eq 2
+        end
+      end
     end
     
   end

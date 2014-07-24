@@ -25,7 +25,7 @@ RSpec.configure do |config|
 end
 
 def people_displayed(page)
-  page.first("table.outer-list").first("tbody").all(:xpath, "tr[not(@id='pagination-row')]").count
+  page.first("table.outer-list").first("tbody.items").all(:xpath, "tr[not(@id='pagination-row')]").count
 end
 
 def set_rails_datetime(time, id_prefix)

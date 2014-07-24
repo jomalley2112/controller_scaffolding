@@ -14,8 +14,7 @@ module Haml
       
 
       source_paths << File.expand_path('../../../../templates/haml/controller', __FILE__)
-      @rails_root = "#{::Rails.root.to_s}/"
-
+      #@rails_root = "#{::Rails.root.to_s}/"
 
 
       def copy_view_files #do NOT change the name of this method 
@@ -23,6 +22,10 @@ module Haml
         base_path = File.join("app/views", class_path, file_name)
         empty_directory base_path
         @attr_cols = ::Rails::Generators::attr_cols(table_name)
+        @col_count = @attr_cols.count
+        @col_count += 1 if actions.include?("edit")
+        @col_count += 1 if actions.include?("destroy")
+        @search_sort = options.search_sort?
         (actions - %w(create update destroy)).each do |action|
           @action = action
           formats.each do |format|
@@ -96,7 +99,26 @@ module Haml
       end
 
       def handle_search_n_sort
-        
+        puts "\n\n@search_sort=#{@search_sort}\n"
+        if @search_sort
+          inject_into_file "app/models/#{table_name.singularize}.rb",
+            before: /^end/ do
+              "\n\textend SqlSearchableSortable\n"
+            end
+          inject_into_file "app/models/#{table_name.singularize}.rb",
+            before: /^end/ do
+              "\n\tsql_searchable #{cols_to_symbols}\n" 
+            end
+          inject_into_file "app/models/#{table_name.singularize}.rb",
+            before: /^end/ do
+              "\n\tsql_sortable #{cols_to_symbols}\n"
+            end
+          # inject_into_file "app/controllers/#{table_name}_controller.rb",
+          #   before: /^end/ do
+          #     "\n\tsql_searchable #{cols_to_symbols}\n" 
+          #   end
+        end
+
       end
 
       
@@ -107,6 +129,11 @@ module Haml
       end
 #================================= P R I V A T E =====================================
       private
+
+      def cols_to_symbols
+        #ugly, but I can't find another way to keep the symbols
+        @attr_cols.map { |col| col.name.to_sym }.to_s.gsub(/\[(.*)\]/, '\1')
+      end
 
       def set_template(action, path)
       	template filename_with_extensions(action.to_sym, format), path

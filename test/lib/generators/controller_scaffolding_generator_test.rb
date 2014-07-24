@@ -16,6 +16,7 @@ class ControllerScaffoldingGeneratorTest < Rails::Generators::TestCase
     @opts = %w(--force)
     @args = [@contr_name] | @actions | @opts
     prepare_destination
+    copy_dummy_files
   end
 
   def teardown
@@ -49,29 +50,29 @@ class ControllerScaffoldingGeneratorTest < Rails::Generators::TestCase
   end
 
   test "Assert lines have been inserted into proper files" do
-    assert_file "#{::Rails.root.to_s}/app/controllers/application_controller.rb" do |ctrl|
+    assert_file "app/controllers/application_controller.rb" do |ctrl|
       assert_no_match(/include ExtIndexNav/, ctrl)
       assert_no_match(/include ExtFormSubmit/, ctrl)
     end
-    assert_file "#{::Rails.root.to_s}/app/assets/javascripts/application.js" do |app_js|
+    assert_file "app/assets/javascripts/application.js" do |app_js|
       assert_no_match(/\/\/= require jquery/, app_js)
       assert_no_match(/\/\/= require jquery_ujs/, app_js)
     end
-    assert_file "#{::Rails.root.to_s}/app/views/layouts/application.html.erb" do |app_layout|
+    assert_file "app/views/layouts/application.html.erb" do |app_layout|
       assert_no_match(/<%= render 'flash_messages' %>/, app_layout)
     end
-    assert_file "#{::Rails.root.to_s}/app/helpers/application_helper.rb" do |app_helper|
+    assert_file "app/helpers/application_helper.rb" do |app_helper|
       assert_no_match(/def render_for_controller\(partial, local_vars\)/, app_helper)
     end
     
     run_generator @args
     
-    assert_file "#{::Rails.root.to_s}/app/controllers/application_controller.rb", /include ExtIndexNav/
-    assert_file "#{::Rails.root.to_s}/app/controllers/application_controller.rb", /include ExtFormSubmit/
-    assert_file "#{::Rails.root.to_s}/app/assets/javascripts/application.js", /\/\/= require jquery/
-    assert_file "#{::Rails.root.to_s}/app/assets/javascripts/application.js", /\/\/= require jquery_ujs/
-    assert_file "#{::Rails.root.to_s}/app/views/layouts/application.html.erb", /<%= render 'flash_messages' %>/
-    assert_file "#{::Rails.root.to_s}/app/helpers/application_helper.rb", /def render_for_controller\(partial, local_vars\)/
+    assert_file "app/controllers/application_controller.rb", /include ExtIndexNav/
+    assert_file "app/controllers/application_controller.rb", /include ExtFormSubmit/
+    assert_file "app/assets/javascripts/application.js", /\/\/= require jquery/
+    assert_file "app/assets/javascripts/application.js", /\/\/= require jquery_ujs/
+    assert_file "app/views/layouts/application.html.erb", /<%= render 'flash_messages' %>/
+    assert_file "app/helpers/application_helper.rb", /def render_for_controller\(partial, local_vars\)/
   end
 
   # test "Assert actions specified in command line are added to controller file" do
@@ -80,5 +81,15 @@ class ControllerScaffoldingGeneratorTest < Rails::Generators::TestCase
   #     assert_file "app/controllers/#{@contr_name}_controller.rb"
   #   end
   # end
+
+  private
+    #TODO: SHould add a helper for this to Rails::Generators::TestCase
+    # so you could do like: stage_rails_files("../dummy_test_files", "app", "config", ...)
+    def copy_dummy_files
+      dummy_file_dir = File.expand_path("../dummy_test_files", __FILE__)
+      puts "dummy_file_dir=#{dummy_file_dir}"
+      FileUtils.cp_r("#{dummy_file_dir}/app", "#{destination_root}/app")
+      FileUtils.cp_r("#{dummy_file_dir}/config", "#{destination_root}/config")
+    end
 
 end
