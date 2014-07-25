@@ -64,7 +64,7 @@ Description:
 
 * Extended index navigation (optional):
 	* Generates an index view file for the model specified containing columns with headers for all  fields not generated automatically by rails (Everything but id, created_at and updated_at). Certain  keywords are given priority when found in the field names which makes them show up before  others (eg. name, email)
-	* Generates pagination functionality for the index page
+	* Generates pagination functionality for the index page. Default items per page can be set by editing the @per_page variable in `app/controllers/concerns/ext_index_nav.rb`
 	* Adds some styling to the index page
 
 * Extended form submission (optional):
@@ -85,6 +85,3 @@ Description:
 
 TODO: Add optional search and optional sort functionality for index pages
 TODO: Allow --all-rest-actions option in generator so they don't all need to be indivudually listed
-
-
-This project uses MIT-LICENSE.
