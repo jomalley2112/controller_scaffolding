@@ -6,10 +6,10 @@ describe "People" do
     cmd_str << ' --template-engine=haml --quiet --force --skip-assets --skip-test-framework --skip-helper' 
 		puts "\n#{cmd_str}"
   	%x(#{cmd_str})
-
+    # puts "\n\nRELOADING ROUTES FILE:\n\n"
+    # puts  %x(cat config/routes.rb)
     #Reload changed resources
-  	Rails.application.reload_routes!
-    load "#{ Rails.root }/app/helpers/application_helper.rb" #reloads helper
+    Rails.application.reload_routes!
   end
 
   after(:all) do
@@ -21,9 +21,10 @@ describe "People" do
 
   
   describe "Index" do
+        
     it "displays the correct columns in the correct order" do
     	visit people_path
-    	th_arr = first("table.outer-list").first("thead").all("th")
+      th_arr = first("table.outer-list").first("thead").all("th")
     	th_arr.map { |th| th.text.strip }.reject(&:blank?).should 
         eq ["First name", "Last name",	"Email", "Title", "Dob", "Is manager"]
     end
@@ -47,11 +48,11 @@ describe "People" do
 
 	    	end
 
-	    	describe "one item" do
+	    	describe "one item", :js => true do
 	    		before { FactoryGirl.create(:person) }
 	    	  it "shows the correct page info message" do
 	    			visit people_path
-	    			page.should have_content("Displaying 1 Person")
+            page.should have_content("Displaying 1 Person")
 	    		end
 	    	end
 
@@ -85,7 +86,6 @@ describe "People" do
 
            it "displays 10 items per page when selected by user", :js => true do
              visit people_path
-             #binding.pry
              select("10", from: "People per page:")
              people_displayed(page).should == 10
            end 
@@ -177,11 +177,10 @@ describe "People" do
           FactoryGirl.create(:person, first_name: "Will", last_name: "Farley")
           FactoryGirl.create(:person, first_name: "Joseph", email: "jo@brads.net")
         end
-        it "returns only rows that have first or last name matching case-insensitive 'wIlL'" do
+        it "returns only rows that have first or last name matching case-insensitive 'wIlL'", :js => false do
           visit people_path
           people_displayed(page).should eq 5
           fill_in("search_for", :with => "wIlL")
-          #binding.pry
           click_button("submit-search")
           people_displayed(page).should eq 2
         end

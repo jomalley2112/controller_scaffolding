@@ -1,6 +1,7 @@
 #CONTROLLER GENERATOR
 
 require 'rails/generators/generated_attribute'
+require 'pry-rails'
 
 module Rails
   module Generators
@@ -69,6 +70,7 @@ module Rails
         invoke "sql_search_n_sort:install" if options.search_sort?  
       end
       
+      #generate "sql_search_n_sort"
 #================================ P R I V A T E =================================
       private
         def generate_action_code(action, ext_index=true, ext_form_submit=true)
@@ -119,10 +121,10 @@ end`
       def draw_index_action(ext_index=true)
         if ext_index
           %Q`setup_pagination
-          #{draw_get_items_for_index}
-            .paginate(per_page: @per_page, page: @page)`
+    #{draw_get_items_for_index}
+      .paginate(per_page: @per_page, page: @page)`
         else
-          draw_get_items_for_index
+    draw_get_items_for_index
         end
       end
 

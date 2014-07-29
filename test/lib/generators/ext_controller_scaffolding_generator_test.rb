@@ -28,7 +28,6 @@ class ExtControllerScaffoldingGeneratorTest < Rails::Generators::TestCase
   	
   	assert_file "app/controllers/#{@contr_name}_controller.rb" do |p_ctrl|
   		@actions.each do |a|
-	  		puts "Looking for action #{a}"
 	  		assert_instance_method a, p_ctrl do |action|
 	  			assert_match(/\.paginate\(per_page: @per_page, page: @page\)/, action) if a == "index"
 			  end

@@ -3,11 +3,11 @@
 	%thead 
 		<% if @search_sort %>
 		%tr
-			%td{colspan: "<%= @col_count %>",:style => "padding-bottom: 15px;"}
+			%td{ colspan: "<%= @col_count %>" }
 				%table{style: "width: 100%"}
 					%tr
 						%td= render "sort_form" #, :opts => @sort_dropdown_opts
-						%td{style: "text-align: right"}= render "search_form"
+						%td{ style: "text-align: right" }= render "search_form"
 		<% end %>
 		%tr 
 		<% @attr_cols.each do |col| %>

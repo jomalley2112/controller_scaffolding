@@ -17,6 +17,7 @@ class ControllerScaffoldingGeneratorTest < Rails::Generators::TestCase
     @args = [@contr_name] | @actions | @opts
     prepare_destination
     copy_dummy_files
+
   end
 
   def teardown
@@ -24,7 +25,9 @@ class ControllerScaffoldingGeneratorTest < Rails::Generators::TestCase
   end
 
   test "Assert all files are properly created" do
+    #load "app/controllers/application_controller.rb"
     run_generator @args
+    
     #Views
     assert_file "app/views/#{@contr_name}/index.html.haml"
     assert_file "app/views/#{@contr_name}/new.html.haml"
@@ -61,9 +64,9 @@ class ControllerScaffoldingGeneratorTest < Rails::Generators::TestCase
     assert_file "app/views/layouts/application.html.erb" do |app_layout|
       assert_no_match(/<%= render 'flash_messages' %>/, app_layout)
     end
-    assert_file "app/helpers/application_helper.rb" do |app_helper|
-      assert_no_match(/def render_for_controller\(partial, local_vars\)/, app_helper)
-    end
+    # assert_file "app/helpers/application_helper.rb" do |app_helper|
+    #   assert_no_match(/def render_for_controller\(partial, local_vars\)/, app_helper)
+    # end
     
     run_generator @args
     
@@ -72,7 +75,7 @@ class ControllerScaffoldingGeneratorTest < Rails::Generators::TestCase
     assert_file "app/assets/javascripts/application.js", /\/\/= require jquery/
     assert_file "app/assets/javascripts/application.js", /\/\/= require jquery_ujs/
     assert_file "app/views/layouts/application.html.erb", /<%= render 'flash_messages' %>/
-    assert_file "app/helpers/application_helper.rb", /def render_for_controller\(partial, local_vars\)/
+    #assert_file "app/helpers/application_helper.rb", /def render_for_controller\(partial, local_vars\)/
   end
 
   # test "Assert actions specified in command line are added to controller file" do
@@ -87,9 +90,9 @@ class ControllerScaffoldingGeneratorTest < Rails::Generators::TestCase
     # so you could do like: stage_rails_files("../dummy_test_files", "app", "config", ...)
     def copy_dummy_files
       dummy_file_dir = File.expand_path("../dummy_test_files", __FILE__)
-      puts "dummy_file_dir=#{dummy_file_dir}"
       FileUtils.cp_r("#{dummy_file_dir}/app", "#{destination_root}/app")
       FileUtils.cp_r("#{dummy_file_dir}/config", "#{destination_root}/config")
+      load "#{destination_root}/app/controllers/application_controller.rb"
     end
 
 end

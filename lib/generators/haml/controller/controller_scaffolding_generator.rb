@@ -3,7 +3,6 @@
 require 'rails/generators/erb/controller/controller_generator'
 require 'rails/generators/erb/scaffold/scaffold_generator'
 
-
 module Haml
   module Generators
   	class ControllerScaffoldingGenerator < Erb::Generators::ControllerGenerator
@@ -12,11 +11,8 @@ module Haml
       class_option :ext_form_submit, :type => :boolean, :default => true, :desc => "Include extended form submission features."      
       class_option :search_sort, :type => :boolean, :default => true, :desc => "Add search and sort functionality to index page."      
       
-
       source_paths << File.expand_path('../../../../templates/haml/controller', __FILE__)
-      #@rails_root = "#{::Rails.root.to_s}/"
-
-
+      
       def copy_view_files #do NOT change the name of this method 
                           # it must be overriding an existing one in a parent class
         base_path = File.join("app/views", class_path, file_name)
@@ -36,7 +32,6 @@ module Haml
       end
 
       def gen_form_partial
-        #Create _form partial?
         base_path = File.join("app/views", class_path, file_name)
         unless (actions & %w(edit new)).empty? #Remember that "&" is Array#intersect
           @path = File.join(base_path, filename_with_extensions("_form", format))
@@ -44,21 +39,17 @@ module Haml
         end
       end
 
-      #TODO: Couldn't get the tests to work with relative paths being passed to the 
-      # inject_into_file calls...it wants to make them relative to the test's destination directory
-
       def handle_ext_index
-        #Extended index functionality?
         if options.ext_index_nav?
           copy_controller_concern("ext_index_nav.rb")
-          inject_into_file "#{::Rails.root.to_s}/app/controllers/application_controller.rb", 
+          inject_into_file "app/controllers/application_controller.rb", 
                 after: "class ApplicationController < ActionController::Base\n" do
-                  "\ninclude ExtIndexNav\n\n"
+                  "\n\tinclude ExtIndexNav\n"
                 end
           copy_partial("_pagination")
           add_pagination_to_locale_file
           copy_ext_index_js
-          inject_into_file "#{::Rails.root.to_s}/app/assets/javascripts/application.js",
+          inject_into_file "app/assets/javascripts/application.js",
             before: "\n//= require_tree ." do
               "\n//= require jquery\n//= require jquery_ujs"
             end
@@ -66,26 +57,19 @@ module Haml
       end
         
       def handle_ext_form
-        #extended form submission functionality?
         if options.ext_form_submit?
           copy_controller_concern("ext_form_submit.rb")
 
-          inject_into_file "#{::Rails.root.to_s}/app/controllers/application_controller.rb", 
+          inject_into_file "app/controllers/application_controller.rb", 
                 after: "class ApplicationController < ActionController::Base\n" do
-                  "\ninclude ExtFormSubmit\n\n"
+                  "\n\tinclude ExtFormSubmit\n"
                 end
           copy_partial("_flash_messages")
-          inject_into_file "#{::Rails.root.to_s}/app/views/layouts/application.html.erb", 
+          inject_into_file "app/views/layouts/application.html.erb", 
                 before: "<%= yield %>\n" do
                   "\n<%= render 'flash_messages' %>\n"
                 end
           copy_partial("_validation_errors")
-          inject_into_file "#{::Rails.root.to_s}/app/helpers/application_helper.rb",
-                after: "module ApplicationHelper\n" do
-                  "\ndef render_for_controller(partial, local_vars)
-        render(:partial => partial, :locals => local_vars).html_safe
-      end\n"
-                end
         end
       end
         
@@ -98,8 +82,8 @@ module Haml
         end
       end
 
+      #This is the code that add SnS functionality to the model specified in the controller generator
       def handle_search_n_sort
-        puts "\n\n@search_sort=#{@search_sort}\n"
         if @search_sort
           inject_into_file "app/models/#{table_name.singularize}.rb",
             before: /^end/ do
@@ -113,10 +97,6 @@ module Haml
             before: /^end/ do
               "\n\tsql_sortable #{cols_to_symbols}\n"
             end
-          # inject_into_file "app/controllers/#{table_name}_controller.rb",
-          #   before: /^end/ do
-          #     "\n\tsql_searchable #{cols_to_symbols}\n" 
-          #   end
         end
 
       end
@@ -165,7 +145,7 @@ module Haml
       end
 
       def add_pagination_to_locale_file
-        inject_into_file "#{::Rails.root.to_s}/config/locales/en.yml", 
+        inject_into_file "config/locales/en.yml", 
           after: "\nen:\n" do
 %Q{\n
   will_paginate:
@@ -178,7 +158,7 @@ module Haml
       multi_page_html: "Displaying <b>%{from}&nbsp;-&nbsp;%{to}</b> of <b>%{count}</b> %{model}"
       single_page_html:
         zero:  "No %{model} found"
-        one:   "Displaying <b>1</b> %{model}"
+        one:   "Displaying <b>1</b> %{model.singularize}"
         other: "Displaying <b>all&nbsp;%{count}</b> %{model}"
 }
           end

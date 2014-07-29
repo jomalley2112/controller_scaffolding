@@ -6,13 +6,13 @@ require 'capybara/rails'
 require 'capybara/rspec'
 require 'factory_girl_rails'
 require 'database_cleaner'
+require 'pry-rails'
 
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
-  
   config.use_transactional_fixtures = false
   config.before(:each) do
     DatabaseCleaner.strategy = :transaction
@@ -22,6 +22,7 @@ RSpec.configure do |config|
   config.order = "random"
   config.include Capybara::DSL
   config.include FactoryGirl::Syntax::Methods
+  config.include Rails.application.routes.url_helpers
 end
 
 def people_displayed(page)
@@ -40,3 +41,4 @@ def set_rails_datetime(time, id_prefix)
   select(('%02i' % time.hour), from: "#{id_prefix}_4i")
   select(('%02i' % time.min), from: "#{id_prefix}_5i")
 end
+
