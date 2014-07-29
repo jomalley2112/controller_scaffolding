@@ -1,15 +1,17 @@
 # ControllerScaffolding #
 
+[![Gem Version](https://badge.fury.io/rb/controller_scaffolding.svg)](http://badge.fury.io/rb/controller_scaffolding)
+
 #### Description ####
 The generator acts somewhat like scaffolding, but you must specify an *existing* model and pass in any of the RESTful actions you are interested in. With no options passed in except for the template engine (only Haml for now) it generates index pages with search/sort* functionality, basic pagination, and displays flash messages and validation errors. It also adds some styling for the index page and the new/edit form which makes it a bit easier on the eyes until you have a chance to add your own styling.
 
 \* https://github.com/jomalley2112/sql_search_n_sort
 
-Index page
+#### Index page ####
 ![Index](/readme_assets/index_ss.png?raw=true "Index")
 ---
 
-Create/Edit page
+#### Create/Edit page ####
 ![Form](/readme_assets/form_ss.png?raw=true "Form")
 ---
 
@@ -103,6 +105,7 @@ $ rails g|d controller_scaffolding users index new create edit update destroy --
 - "database_cleaner"
 
 #### TODO ####
-TODO: Do something with template engine hook so Haml doesn;t need to be specified in the generator
-TODO: Add optional search and optional sort functionality for index pages
-TODO: Allow --all-rest-actions option in generator so they don't all need to be indivudually listed
+- TODO: Allow --all-rest-actions option in generator so they don't all need to be indivudually listed
+- TODO: Do something with template engine hook so Haml doesn't need to be specified in the generator call
+- TODO: Add optional search and optional sort functionality for index pages
+
