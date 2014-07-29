@@ -6,10 +6,10 @@ describe "People" do
     cmd_str << ' --template-engine=haml --quiet --force --skip-assets --skip-test-framework --skip-helper' 
 		puts "\n#{cmd_str}"
   	%x(#{cmd_str})
-
+    # puts "\n\nRELOADING ROUTES FILE:\n\n"
+    # puts  %x(cat config/routes.rb)
     #Reload changed resources
-  	Rails.application.reload_routes!
-    load "#{ Rails.root }/app/helpers/application_helper.rb" #reloads helper
+    Rails.application.reload_routes!
   end
 
   after(:all) do
@@ -21,9 +21,10 @@ describe "People" do
 
   
   describe "Index" do
+        
     it "displays the correct columns in the correct order" do
     	visit people_path
-    	th_arr = first("table.outer-list").first("thead").all("th")
+      th_arr = first("table.outer-list").first("thead").all("th")
     	th_arr.map { |th| th.text.strip }.reject(&:blank?).should 
         eq ["First name", "Last name",	"Email", "Title", "Dob", "Is manager"]
     end
@@ -47,11 +48,11 @@ describe "People" do
 
 	    	end
 
-	    	describe "one item" do
+	    	describe "one item", :js => true do
 	    		before { FactoryGirl.create(:person) }
 	    	  it "shows the correct page info message" do
 	    			visit people_path
-	    			page.should have_content("Displaying 1 Person")
+            page.should have_content("Displaying 1 Person")
 	    		end
 	    	end
 
@@ -127,6 +128,62 @@ describe "People" do
           page.driver.browser.switch_to.alert.accept
           sleep 1
         }.to change(Person, :count).by(-1)
+      end
+    end
+
+    describe "Search and Sort" do
+      it "displays a search box and a find and clear button", :js => false do
+        visit people_path
+        page.should have_selector("input#search_for")
+        page.should have_selector("button#submit-search")
+        page.should have_selector("button#clear-search")
+      end
+
+      it "displays a sort select list populated with all of the correct options", :js => false do
+        visit people_path
+        sel_opts = ["First name","First name [desc]","Last name","Last name [desc]","Email", 
+                   "Email [desc]","Title", 
+                   "Title [desc]","Dob","Dob [desc]","Is manager","Is manager [desc]"]
+        page.should have_select('sort_by', :options => sel_opts)
+      end
+      it "clears the search", :js => true do
+        visit people_path
+        fill_in("search_for", :with => "Search Text")
+        click_button("clear-search")
+        first("input#search_for").value.should eq ""
+      end
+
+      describe "has functional sort capability" do
+        before(:each) do
+          (1..50).each do 
+            FactoryGirl.create(:person, first_name: "John_#{Random.rand(1..99)}", 
+              last_name: "Doe_#{Random.rand(1..99)}", email: "johndoesemail_#{Random.rand(1..99)}@domain.com")
+          end
+        end
+        it "sorts by last name descending when selected", :js => true do
+          visit people_path
+          select("Last name [desc]", :from => "sort_by")
+          sleep 0.5
+          last_names = all(:xpath, "//table/tbody/tr/td[2]")
+          last_names.map(&:text).should == last_names.map(&:text).sort.reverse
+        end
+
+      end
+      describe "has functional search capability", :js => true do
+        before(:each) do
+          FactoryGirl.create(:person, first_name: "Fred", last_name: "Bradley")
+          FactoryGirl.create(:person, first_name: "Brad", last_name: "Johnson")
+          FactoryGirl.create(:person, first_name: "John", last_name: "Williams")
+          FactoryGirl.create(:person, first_name: "Will", last_name: "Farley")
+          FactoryGirl.create(:person, first_name: "Joseph", email: "jo@brads.net")
+        end
+        it "returns only rows that have first or last name matching case-insensitive 'wIlL'", :js => false do
+          visit people_path
+          people_displayed(page).should eq 5
+          fill_in("search_for", :with => "wIlL")
+          click_button("submit-search")
+          people_displayed(page).should eq 2
+        end
       end
     end
     

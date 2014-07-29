@@ -1,5 +1,5 @@
 .bundle/
-log/*.log
+*.log
 pkg/
 test/dummy/
 #test/dummy/tmp

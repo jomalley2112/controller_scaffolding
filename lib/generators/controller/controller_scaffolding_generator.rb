@@ -1,6 +1,7 @@
 #CONTROLLER GENERATOR
 
 require 'rails/generators/generated_attribute'
+require 'pry-rails'
 
 module Rails
   module Generators
@@ -35,10 +36,11 @@ module Rails
     module_function :attr_cols
     #######################################################################
 
-    class ControllerScaffoldingGenerator < NamedBase
+    class ControllerScaffoldingGenerator < Rails::Generators::NamedBase
       argument :actions, type: :array, default: [], banner: "action action"
       class_option :ext_index_nav, :type => :boolean, :default => true, :desc => "Include extended index page features."
       class_option :ext_form_submit, :type => :boolean, :default => true, :desc => "Include extended form submission features."      
+      class_option :search_sort, :type => :boolean, :default => true, :desc => "Add search and sort functionality to index page."      
       check_class_collision suffix: "Controller"
       
       #Note: This needs to be set Outside of any methods
@@ -62,19 +64,19 @@ module Rails
         route "resources :#{plural_table_name.to_sym}"
       end
 
-      hook_for :template_engine, :assets, :test_framework, :helper, 
+      hook_for :template_engine, :assets, :test_framework, :helper
+      def run_sns_gen
+        #TODO: should see if we can do this with a hook_for as well
+        invoke "sql_search_n_sort:install" if options.search_sort?  
+      end
+      
+      #generate "sql_search_n_sort"
 #================================ P R I V A T E =================================
       private
         def generate_action_code(action, ext_index=true, ext_form_submit=true)
           case action
             when "index"
-              if ext_index
-                %Q`setup_pagination
-                @#{plural_table_name} = #{class_name.singularize}.all
-                  .paginate(per_page: @per_page, page: @page)`
-              else
-                %Q`@#{plural_table_name} = #{class_name.singularize}.all`
-              end
+              draw_index_action(true)
             when "edit"
               %Q`@#{table_name.singularize} = #{class_name.singularize}.find(params[:id])`
             when "new"
@@ -110,11 +112,30 @@ module Rails
           end
         end
 
-        def generate_strong_params_def
-          %Q`def #{table_name.singularize}_params
-    params.required(:#{table_name.singularize}).permit(#{Rails::Generators::attr_cols(table_name).map { |col| col.name.to_sym}})
-  end`
+      def generate_strong_params_def
+        %Q`def #{table_name.singularize}_params
+  params.required(:#{table_name.singularize}).permit(#{Rails::Generators::attr_cols(table_name).map { |col| col.name.to_sym}})
+end`
+      end
+
+      def draw_index_action(ext_index=true)
+        if ext_index
+          %Q`setup_pagination
+    #{draw_get_items_for_index}
+      .paginate(per_page: @per_page, page: @page)`
+        else
+    draw_get_items_for_index
         end
+      end
+
+      def draw_get_items_for_index
+        if options.search_sort?
+    "@#{plural_table_name} = #{class_name.singularize}.sql_search(params[:search_for]).sql_sort(@sort_by, @sort_dir)"
+        else
+    "@#{plural_table_name} = #{class_name.singularize}.all"
+        end
+      end
+
     end
   end
 

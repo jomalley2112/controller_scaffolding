@@ -1,20 +1,25 @@
 %h4 Listing <%= plural_table_name.humanize %>
-<% col_count = @attr_cols.count %>
 %table.outer-list#top-level
 	%thead 
+		<% if @search_sort %>
+		%tr
+			%td{ colspan: "<%= @col_count %>" }
+				%table{style: "width: 100%"}
+					%tr
+						%td= render "sort_form" #, :opts => @sort_dropdown_opts
+						%td{ style: "text-align: right" }= render "search_form"
+		<% end %>
 		%tr 
 		<% @attr_cols.each do |col| %>
 			%th <%= col.name.humanize %>
 		<% end %>
 		<% if inc_link?("edit") %>
-			<% col_count += 1 %>
 			%th.link_col
 		<% end %>
 		<% if inc_link?("destroy") %>
-			<% col_count += 1 %>
 			%th.link_col
 		<% end %>
-	%tbody 
+	%tbody.items
 		- @<%= plural_table_name %>.each do |<%= singular_table_name %>|
 			%tr
 			<% @attr_cols.each do |col| %> 
@@ -28,7 +33,7 @@
 			<% end %>
 	<% if options.ext_index_nav? %>
 		%tr#pagination-row
-			%td{:colspan => '<%= col_count %>', :style => "text-align: center;"}
+			%td{:colspan => '<%= @col_count %>', :style => "text-align: center;"}
 				= render partial: 'pagination', locals: { :coll => @<%= plural_table_name %> }
 	<% end %>
 %br/ 
