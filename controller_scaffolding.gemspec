@@ -10,11 +10,11 @@ Gem::Specification.new do |s|
   s.authors     = ["John O'Malley"]
   s.email       = ["jom@nycap.rr.com"]
   s.homepage    = "https://github.com/jomalley2112/controller_scaffolding"
-  s.summary     = "Creates controller and extended scaffolding for the model specified."
+  s.summary     = "Creates controller and extended scaffolding including optional search and sort functionality for the model specified."
   s.description = "Creates controller and extended scaffolding for the model specified."
   s.license     = "MIT"
 
-  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{lib}/**/*", "Rakefile", "README.md", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency 'rails', '~> 4.1'

@@ -2,26 +2,26 @@
 %table.outer-list#top-level
 	%thead 
 		<% if @search_sort %>
-		%tr
+		%tr.header-row
 			%td{ colspan: "<%= @col_count %>" }
 				%table{style: "width: 100%"}
 					%tr
 						%td= render "sort_form" #, :opts => @sort_dropdown_opts
 						%td{ style: "text-align: right" }= render "search_form"
 		<% end %>
-		%tr 
+		%tr.header-row{	style: "font-weight: bold;" }
 		<% @attr_cols.each do |col| %>
-			%th <%= col.name.humanize %>
+			%td <%= col.name.humanize %>
 		<% end %>
 		<% if inc_link?("edit") %>
-			%th.link_col
+			%td.link_col
 		<% end %>
 		<% if inc_link?("destroy") %>
-			%th.link_col
+			%td.link_col
 		<% end %>
 	%tbody.items
 		- @<%= plural_table_name %>.each do |<%= singular_table_name %>|
-			%tr
+			%tr.item
 			<% @attr_cols.each do |col| %> 
 				%td= <%= singular_table_name %>.<%= col.name %>
 			<% end %>
@@ -33,7 +33,7 @@
 			<% end %>
 	<% if options.ext_index_nav? %>
 		%tr#pagination-row
-			%td{:colspan => '<%= @col_count %>', :style => "text-align: center;"}
+			%td{:colspan => '<%= @col_count %>', :class => "pagination-container"}
 				= render partial: 'pagination', locals: { :coll => @<%= plural_table_name %> }
 	<% end %>
 %br/ 

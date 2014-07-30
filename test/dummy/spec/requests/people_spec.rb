@@ -164,7 +164,7 @@ describe "People" do
           visit people_path
           select("Last name [desc]", :from => "sort_by")
           sleep 0.5
-          last_names = all(:xpath, "//table/tbody/tr/td[2]")
+          last_names = all(:xpath, "//table/tbody/tr[@class='item']/td[2]")
           last_names.map(&:text).should == last_names.map(&:text).sort.reverse
         end
 

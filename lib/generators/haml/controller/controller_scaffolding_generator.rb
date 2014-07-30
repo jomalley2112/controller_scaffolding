@@ -13,16 +13,19 @@ module Haml
       
       source_paths << File.expand_path('../../../../templates/haml/controller', __FILE__)
       
+      
+     #This method seems to always get run first
       def copy_view_files #do NOT change the name of this method 
                           # it must be overriding an existing one in a parent class
         base_path = File.join("app/views", class_path, file_name)
         empty_directory base_path
+        @actions = actions.nil? || actions.empty? ? %w(index new create edit update destroy) : actions
         @attr_cols = ::Rails::Generators::attr_cols(table_name)
         @col_count = @attr_cols.count
-        @col_count += 1 if actions.include?("edit")
-        @col_count += 1 if actions.include?("destroy")
+        @col_count += 1 if @actions.include?("edit")
+        @col_count += 1 if @actions.include?("destroy")
         @search_sort = options.search_sort?
-        (actions - %w(create update destroy)).each do |action|
+        (@actions - %w(create update destroy)).each do |action|
           @action = action
           formats.each do |format|
             @path = File.join(base_path, filename_with_extensions(action, format))
@@ -33,7 +36,7 @@ module Haml
 
       def gen_form_partial
         base_path = File.join("app/views", class_path, file_name)
-        unless (actions & %w(edit new)).empty? #Remember that "&" is Array#intersect
+        unless (@actions & %w(edit new)).empty? #Remember that "&" is Array#intersect
           @path = File.join(base_path, filename_with_extensions("_form", format))
           set_template("_form", @path) 
         end
@@ -177,7 +180,7 @@ module Haml
       end
 
       def inc_link?(name)
-        actions.include?(name)
+        @actions.include?(name)
       end
     end
   end

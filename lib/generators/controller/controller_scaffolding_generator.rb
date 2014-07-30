@@ -32,7 +32,6 @@ module Rails
         .sort(&ATTR_SORT_PROC)
         .map { |ac| GeneratedAttribute.new(ac.name, ac.type)}
     end
-    
     module_function :attr_cols
     #######################################################################
 
@@ -45,6 +44,10 @@ module Rails
       
       #Note: This needs to be set Outside of any methods
       source_paths << [File.expand_path('../../../templates/rails/controller', __FILE__)]
+
+      def setup_actions
+        @actions = actions.nil? || actions.empty? ? %w(index new create edit update destroy) : actions
+      end
 
       def check_for_model
         begin
@@ -73,6 +76,7 @@ module Rails
       #generate "sql_search_n_sort"
 #================================ P R I V A T E =================================
       private
+        #This method gets called from the controller.rb template
         def generate_action_code(action, ext_index=true, ext_form_submit=true)
           case action
             when "index"

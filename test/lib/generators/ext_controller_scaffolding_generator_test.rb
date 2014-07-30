@@ -9,7 +9,7 @@ class ExtControllerScaffoldingGeneratorTest < Rails::Generators::TestCase
   def setup
     @contr_name = "people"
     @actions = %w(index new create edit update destroy custom_action)
-    @opts = %w(--force --quiet)
+    @opts = %w(--force --quiet) # --template-engine=haml #thought it would need that option
     @args = [@contr_name] | @actions | @opts
     prepare_destination
     copy_dummy_files
@@ -51,59 +51,5 @@ class ExtControllerScaffoldingGeneratorTest < Rails::Generators::TestCase
     end
   end
 
-  #PROBLEM: Because these files are copied from the
-    # Sns generator which is run from within the controller scaffolding controller  it doesn't copy to the
-    # proper testing "destination" directory which in this case is test/tmp
-  # test "Search and Sort functionality files get copied" do
-  #   assert_no_file "app/views/application/_sort_form.html.haml"
-  #   assert_no_file "app/views/application/_search_form.html.haml"
-  #   assert_no_file "app/assets/javascripts/sql_search_n_sort.js"
-  #   assert_no_file "app/helpers/sql_search_n_sort_helper.rb/"
-  #   run_generator @args
-  #   assert_file "app/views/application/_sort_form.html.haml" 
-  #   assert_file "app/views/application/_search_form.html.haml"
-  #   assert_file "app/assets/javascripts/sql_search_n_sort.js"
-  #   assert_file "app/helpers/sql_search_n_sort_helper.rb/"
-  # end
 
-  # test "Lines needed for Search and Sort get inserted into existing files" do
-  #   assert_file "app/controllers/application_controller.rb" do |ac|
-  #     assert_no_match "include SqlSortSetup", ac
-  #     assert_no_match %r(before_filter :setup_sql_sort, :only => \[:index.*\]), ac
-  #   end
-  #   assert_file "app/assets/javascripts/application.js" do |ajs|
-  #     assert_no_match "\n//= require jquery", ajs
-  #   end
-  #   assert_file "app/models/#{@contr_name.singularize}.rb" do |mod|
-  #     assert_no_match "extend SqlSearchableSortable", mod 
-  #     assert_no_match "sql_searchable", mod
-  #     assert_no_match "sql_sortable", mod
-  #   end
-
-  #   run_generator @args
-    
-  #   assert_file "app/controllers/application_controller.rb" do |ac|
-  #     assert_match "include SqlSortSetup", ac
-  #     assert_match %r(before_filter :setup_sql_sort, :only => \[:index.*\]), ac
-  #   end
-  #   assert_file "app/assets/javascripts/application.js" do |ajs|
-  #     assert_match "\n//= require jquery", ajs
-  #   end
-
-  #   assert_file "app/models/#{@contr_name.singularize}.rb" do |mod|
-  #     assert_match %r(\n.*extend SqlSearchableSortable), mod 
-  #     assert_match %r(\n.*sql_searchable), mod
-  #     assert_match %r(\n.*sql_sortable), mod
-  #   end
-  
-  # end
-
-  private
-    #TODO: SHould add a helper for this to Rails::Generators::TestCase
-    # so you could do like: stage_rails_files("../dummy_test_files", "app", "config", ...)
-    def copy_dummy_files
-      dummy_file_dir = File.expand_path("../dummy_test_files", __FILE__)
-      FileUtils.cp_r("#{dummy_file_dir}/app", "#{destination_root}/app")
-      FileUtils.cp_r("#{dummy_file_dir}/config", "#{destination_root}/config")
-    end
 end
