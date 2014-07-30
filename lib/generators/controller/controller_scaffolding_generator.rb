@@ -1,7 +1,7 @@
 #CONTROLLER GENERATOR
 
 require 'rails/generators/generated_attribute'
-require 'pry-rails'
+#require 'pry-rails'
 
 module Rails
   module Generators
