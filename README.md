@@ -90,11 +90,12 @@ $ rails g|d controller_scaffolding users index new create edit update destroy --
 
 ### Gem dependencies ###
 #### Dependencies ####
-- 'rails', '~> 4.0'
+- 'rails', '~> 4.1'
 - 'will_paginate'
 - 'haml-rails'
-- 'sass-rails'
+- 'sass-rails', '~> 4.0.3'
 - 'jquery-rails'
+- 'sql_search_n_sort', '=1.12'
 
 #### Development Environment Dependencies ####
 - "sqlite3"
