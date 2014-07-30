@@ -22,7 +22,7 @@ and then run `bundle install`
 #### Usage ####
 ```bash
 $ rails g|d controller_scaffolding users index new create edit update destroy --template-engine=haml
-[--skip-ext-index-nav] [--skip-ext-form-submit] [--skip-assets] [--skip-test-framework] [--skip-helper] [--quiet] [--force] <!-- [--skip-search-sort] -->
+[--skip-ext-index-nav] [--skip-ext-form-submit] [--skip-assets] [--skip-test-framework] [--skip-helper] [--quiet] [--force] <!-- [---skip-search-sort] -->
 ```
 
 *Note: You must restart Rails after running this generator*
@@ -42,7 +42,7 @@ $ rails g|d controller_scaffolding users index new create edit update destroy --
 | --skip-helper          | Do not create helper file                              | yes        |
 | --quiet                | Suppress info messages                                 | yes        |
 | --force                | Overwrite files without prompting                      | yes        |
-<!--| --skip-search-sort     | Do not include search or sort fucntionality            | yes        | -->
+<!--| ---skip-search-sort     | Do not include search or sort fucntionality            | yes        | -->
 
 ### Description of generator actions ###
 	
