@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    controller_scaffolding (1.0.3)
+    controller_scaffolding (1.0.4)
       haml-rails
       jquery-rails
       rails (~> 4.1)
