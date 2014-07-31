@@ -6,7 +6,7 @@ PATH
       jquery-rails
       rails (~> 4.1)
       sass-rails (~> 4.0.3)
-      sql_search_n_sort (= 1.12)
+      sql_search_n_sort (= 1.15)
       will_paginate
 
 GEM
@@ -147,7 +147,7 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
-    sql_search_n_sort (1.12)
+    sql_search_n_sort (1.15)
       haml-rails
       jquery-rails
       nokogiri (= 1.6.3.1)

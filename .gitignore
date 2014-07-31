@@ -1,5 +1,7 @@
 .bundle/
 *.log
+*.sqlite3
 pkg/
-test/dummy/
-#test/dummy/tmp
+#test/dummy/
+test/dummy/tmp
+test/dummy/libiconv

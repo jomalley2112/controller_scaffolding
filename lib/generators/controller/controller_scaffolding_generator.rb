@@ -117,9 +117,9 @@ module Rails
         end
 
       def generate_strong_params_def
-        %Q`def #{table_name.singularize}_params
-  params.required(:#{table_name.singularize}).permit(#{Rails::Generators::attr_cols(table_name).map { |col| col.name.to_sym}})
-end`
+        %Q`\tdef #{table_name.singularize}_params
+      params.required(:#{table_name.singularize}).permit(#{Rails::Generators::attr_cols(table_name).map { |col| col.name.to_sym}})
+    end`
       end
 
       def draw_index_action(ext_index=true)

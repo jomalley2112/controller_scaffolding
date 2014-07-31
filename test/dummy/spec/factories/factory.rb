@@ -9,4 +9,10 @@ FactoryGirl.define do
     is_manager false
   end
 
+  factory :credit_card_info do
+  	sequence(:cardholder) { |n| "John Adams #{n}" }
+  	exp_date Time.now + 2.years
+  	secret_code SecureRandom.hex(8)
+  end
+
 end
