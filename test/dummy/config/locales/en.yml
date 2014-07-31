@@ -21,19 +21,5 @@
 
 en:
 
-
-  will_paginate:
-    models:
-      people:
-        zero:  People
-        one:   Person
-        other: People
-    page_entries_info:
-      multi_page_html: "Displaying <b>%{from}&nbsp;-&nbsp;%{to}</b> of <b>%{count}</b> %{model}"
-      single_page_html:
-        zero:  "No %{model} found"
-        one:   "Displaying <b>1</b> %{model}"
-        other: "Displaying <b>all&nbsp;%{count}</b> %{model}"
-
   
 
