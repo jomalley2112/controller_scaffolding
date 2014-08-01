@@ -87,6 +87,10 @@ $ rails g|d controller_scaffolding users index new create edit update destroy --
 #### Search and Sort ####
 * see README.md at https://github.com/jomalley2112/sql_search_n_sort
 
+### Testing ###
+* Generator tests: run `rake test` from the root directory.
+* Integration test specs: run `rspec spec` from 'test/dummy'  
+
 ### Gem dependencies ###
 #### Dependencies ####
 - 'rails', '~> 4.1'
@@ -107,4 +111,5 @@ $ rails g|d controller_scaffolding users index new create edit update destroy --
 #### TODO ####
 - Do something with template engine hook so Haml doesn't need to be specified in the generator call
 - Add search results message like "9 Results match 'you search string'"
+- Nail down versions for dependencies
 
