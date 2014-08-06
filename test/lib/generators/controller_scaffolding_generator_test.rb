@@ -1,3 +1,6 @@
+#To Teardown manually:
+# rails d controller_scaffolding people index new create edit update destroy custom_action --template-engine=haml
+
 require 'test_helper'
 require 'generators/haml/controller/controller_scaffolding_generator'
 require 'generators/controller/controller_scaffolding_generator'
@@ -72,6 +75,22 @@ class ControllerScaffoldingGeneratorTest < Rails::Generators::TestCase
     assert_file "app/assets/javascripts/application.js", /\/\/= require jquery/
     assert_file "app/assets/javascripts/application.js", /\/\/= require jquery_ujs/
     assert_file "app/views/layouts/application.html.erb", /<%= render 'flash_messages' %>/
+    
+    # pagination_msgs = %Q`    models:
+    #   #{@contr_name}:
+    #     zero:  #{@contr_name.humanize}
+    #     one:   #{@contr_name.singularize.humanize}
+    #     other: #{@contr_name.humanize}
+    # page_entries_info:
+    #   multi_page_html: "Displaying <b>%{from}&nbsp;-&nbsp;%{to}</b> of <b>%{count}</b> %{model}"
+    #   single_page_html:
+    #     zero:  "No %{model} found"
+    #     one:   "Displaying <b>1</b> %{model}"
+    #     other: "Displaying <b>all&nbsp;%{count}</b> %{model}"`
+
+    # assert_file "config/locales/en.yml" do |en|
+    #   assert_match(pagination_msgs, en)
+    # end
   end
   
 

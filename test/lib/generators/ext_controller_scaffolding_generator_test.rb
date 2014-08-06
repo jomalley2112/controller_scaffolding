@@ -1,3 +1,6 @@
+#To Teardown manually:
+# rails d controller_scaffolding people index new create edit update destroy custom_action --template-engine=haml
+
 require 'test_helper'
 require 'generators/controller/controller_scaffolding_generator'
 
@@ -9,7 +12,7 @@ class ExtControllerScaffoldingGeneratorTest < Rails::Generators::TestCase
   def setup
     @contr_name = "people"
     @actions = %w(index new create edit update destroy custom_action)
-    @opts = %w(--force --quiet) # --template-engine=haml #thought it would need that option
+    @opts = %w(--force --quiet --template-engine=haml)
     @args = [@contr_name] | @actions | @opts
     prepare_destination
     copy_dummy_files
@@ -21,8 +24,6 @@ class ExtControllerScaffoldingGeneratorTest < Rails::Generators::TestCase
 
   test "Controller was created properly with appropriate actions" do
   	assert_no_file "app/controllers/#{@contr_name}_controller.rb"
-    #Note: This is the controller file that will be generated after the generator runs
-    assert_no_file "app/controllers/#{@contr_name}_controller.rb"
       
   	run_generator @args
   	

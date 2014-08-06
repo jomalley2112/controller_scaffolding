@@ -109,6 +109,7 @@ $ rails g|d controller_scaffolding users index new create edit update destroy --
 - "database_cleaner"
 
 #### TODO ####
+- See if we can support case where existing model has been removed after generator has been run and then the user decides to uninstall (revoke) controller_scaffolding.
 - Do something with template engine hook so Haml doesn't need to be specified in the generator call
 - Add search results message like "9 Results match 'you search string'"
 - Nail down versions for dependencies

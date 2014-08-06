@@ -1,7 +1,9 @@
 #CONTROLLER GENERATOR
+#To Teardown manually:
+# rails d controller_scaffolding people index new create edit update destroy custom_action --template-engine=haml
 
 require 'rails/generators/generated_attribute'
-#require 'pry-rails'
+
 
 module Rails
   module Generators
@@ -49,12 +51,12 @@ module Rails
         @actions = actions.nil? || actions.empty? ? %w(index new create edit update destroy) : actions
       end
 
-      def check_for_model
+      def check_for_model #TODO: only do if behavior = :invoke maybe?
         begin
         table_name.classify.constantize #throws runtime if model doesn't exist
         rescue
           raise Thor::Error, 
-            "Cannot run controller scaffold for model (#{table_name}) that doesn't yet exist."
+            "Cannot run controller scaffold for model (#{table_name.constantize}) that doesn't yet exist."
         end
       end
 

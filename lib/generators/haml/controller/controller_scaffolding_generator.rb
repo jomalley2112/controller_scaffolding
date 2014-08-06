@@ -1,5 +1,8 @@
 #TEMPLATE GENERATOR & FILE COPIER
 
+#To Teardown manually:
+# rails d controller_scaffolding people index new create edit update destroy custom_action --template-engine=haml
+
 require 'rails/generators/erb/controller/controller_generator'
 require 'rails/generators/erb/scaffold/scaffold_generator'
 
@@ -50,7 +53,7 @@ module Haml
                   "\n\tinclude ExtIndexNav\n"
                 end
           copy_partial("_pagination")
-          add_pagination_to_locale_file
+          #add_pagination_to_locale_file
           copy_ext_index_js
           inject_into_file "app/assets/javascripts/application.js",
             before: "\n//= require_tree ." do
@@ -147,25 +150,25 @@ module Haml
         copy_file('ext_index_nav.js', path) if file_action(path)
       end
 
-      def add_pagination_to_locale_file
-        inject_into_file "config/locales/en.yml", 
-          after: "\nen:\n" do
-%Q{\n
-  will_paginate:
-    models:
-      people:
-        zero:  People
-        one:   Person
-        other: People
-    page_entries_info:
-      multi_page_html: "Displaying <b>%{from}&nbsp;-&nbsp;%{to}</b> of <b>%{count}</b> %{model}"
-      single_page_html:
-        zero:  "No %{model} found"
-        one:   "Displaying <b>1</b> %{model}"
-        other: "Displaying <b>all&nbsp;%{count}</b> %{model}"
-}
-          end
-      end
+#       def add_pagination_to_locale_file
+#         inject_into_file "config/locales/en.yml", 
+#           after: "\nen:\n" do
+# %Q{\n
+#   will_paginate:
+#     models:
+#       #{table_name}:
+#         zero:  #{table_name.humanize}
+#         one:   #{file_name.humanize}
+#         other: #{table_name.humanize}
+#     page_entries_info:
+#       multi_page_html: "Displaying <b>%{from}&nbsp;-&nbsp;%{to}</b> of <b>%{count}</b> %{model}"
+#       single_page_html:
+#         zero:  "No %{model} found"
+#         one:   "Displaying <b>1</b> %{model}"
+#         other: "Displaying <b>all&nbsp;%{count}</b> %{model}"
+# }
+#           end
+#       end
 
       def file_action(path)
         return true if options.force?
