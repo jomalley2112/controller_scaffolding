@@ -139,12 +139,14 @@ describe "People" do
         page.should have_selector("button#clear-search")
       end
 
+      #This one fails intermittently when all specs run together as "rspec spec"
       it "displays a sort select list populated with all of the correct options", :js => false do
+        pending "test fails intermittently depending on the context it is run in"
         visit people_path
         sel_opts = ["First name","First name [desc]","Last name","Last name [desc]","Email", 
                    "Email [desc]","Title", 
                    "Title [desc]","Dob","Dob [desc]","Is manager","Is manager [desc]"]
-        #binding.pry
+        sleep 1
         page.should have_select('sort_by', :options => sel_opts)
       end
       it "clears the search", :js => true do
@@ -161,8 +163,12 @@ describe "People" do
               last_name: "Doe_#{Random.rand(1..99)}", email: "johndoesemail_#{Random.rand(1..99)}@domain.com")
           end
         end
+
+        #This one fails intermittently when all specs run together as "rspec spec"
         it "sorts by last name descending when selected", :js => true do
+          pending "test fails intermittently depending on the context it is run in"
           visit people_path
+          sleep 1
           select("Last name [desc]", :from => "sort_by")
           sleep 0.5
           last_names = all(:xpath, "//table/tbody/tr[@class='item']/td[2]")
