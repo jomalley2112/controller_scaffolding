@@ -53,7 +53,7 @@ module Haml
                   "\n\tinclude ExtIndexNav\n"
                 end
           copy_partial("_pagination")
-          #add_pagination_to_locale_file
+          add_pagination_to_locale_file
           copy_ext_index_js
           inject_into_file "app/assets/javascripts/application.js",
             before: "\n//= require_tree ." do
@@ -150,25 +150,29 @@ module Haml
         copy_file('ext_index_nav.js', path) if file_action(path)
       end
 
-#       def add_pagination_to_locale_file
-#         inject_into_file "config/locales/en.yml", 
-#           after: "\nen:\n" do
-# %Q{\n
-#   will_paginate:
-#     models:
-#       #{table_name}:
-#         zero:  #{table_name.humanize}
-#         one:   #{file_name.humanize}
-#         other: #{table_name.humanize}
-#     page_entries_info:
-#       multi_page_html: "Displaying <b>%{from}&nbsp;-&nbsp;%{to}</b> of <b>%{count}</b> %{model}"
-#       single_page_html:
-#         zero:  "No %{model} found"
-#         one:   "Displaying <b>1</b> %{model}"
-#         other: "Displaying <b>all&nbsp;%{count}</b> %{model}"
-# }
-#           end
-#       end
+      def add_pagination_to_locale_file
+        #TODO: Could put some kind of logic in here when revoking that removes some lines
+        # from the locale file, but it shouldn't hurt anything if we don't
+        lang = I18n.locale.to_s
+        locale_config = YAML.load_file("#{destination_root}/config/locales/#{lang}.yml")
+        locale_config[I18n.locale.to_s] = {} unless locale_config[lang]
+        lc_wp = locale_config[I18n.locale.to_s]['will_paginate'] ||=
+          locale_config[I18n.locale.to_s]['will_paginate'] = {}
+        wp_models = lc_wp['models'] || lc_wp['models'] = {}
+        curr_model = wp_models[table_name] || 
+          wp_models[table_name] = { "zero"=>table_name.humanize, 
+                                    "one"=>file_name.singularize.humanize, 
+                                    "other"=>table_name.humanize }
+        wp_pei = lc_wp['page_entries_info'] || lc_wp['page_entries_info'] = {}
+        pei_mph = wp_pei['multi_page_html'] || wp_pei['multi_page_html'] = 
+          "Displaying <b>%{from}&nbsp;-&nbsp;%{to}</b> of <b>%{count}</b> %{model}"
+
+        pei_sph = wp_pei['single_page_html'] || wp_pei['single_page_html'] = {}
+        pei_sph['zero'] || pei_sph['zero'] = "No %{model} found"
+        pei_sph['one'] || pei_sph['one'] = "Displaying <b>1</b> %{model}"
+        pei_sph['other'] || pei_sph['other'] = "Displaying <b>all&nbsp;%{count}</b> %{model}"
+        File.open("#{destination_root}/config/locales/#{lang}.yml", "w") { |f| YAML.dump(locale_config, f) }
+      end
 
       def file_action(path)
         return true if options.force?

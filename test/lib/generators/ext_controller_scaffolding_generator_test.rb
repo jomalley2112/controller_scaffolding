@@ -2,7 +2,6 @@
 # rails d controller_scaffolding people index new create edit update destroy custom_action --template-engine=haml
 
 require 'test_helper'
-require 'generators/controller/controller_scaffolding_generator'
 
 class ExtControllerScaffoldingGeneratorTest < Rails::Generators::TestCase
 	tests Rails::Generators::ControllerScaffoldingGenerator

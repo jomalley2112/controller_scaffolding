@@ -144,6 +144,7 @@ describe "People" do
         sel_opts = ["First name","First name [desc]","Last name","Last name [desc]","Email", 
                    "Email [desc]","Title", 
                    "Title [desc]","Dob","Dob [desc]","Is manager","Is manager [desc]"]
+        #binding.pry
         page.should have_select('sort_by', :options => sel_opts)
       end
       it "clears the search", :js => true do
