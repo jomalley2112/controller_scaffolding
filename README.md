@@ -8,26 +8,7 @@ The generator acts somewhat like scaffolding, but you must specify an *existing*
 \* https://github.com/jomalley2112/sql_search_n_sort
 
 #### Current Issues ####
-* You may need to tweak your `config/locales/en.yml` file to get the pagination messages to display correctly:
-```yaml
-en:
-  will_paginate:
-    models:
-      people:
-        zero:  People
-        one:   Person
-        other: People
-     user:
-       zero: Users
-       one:  User
-       other:Users
-    page_entries_info:
-      multi_page_html: "Displaying <b>%{from}&nbsp;-&nbsp;%{to}</b> of <b>%{count}</b> %{model}"
-      single_page_html:
-        zero:  "No %{model} found"
-        one:   "Displaying <b>1</b> %{model}"
-        other: "Displaying <b>all&nbsp;%{count}</b> %{model}"
-```
+* 2 failing tests
 
 #### Index page ####
 ![Index](/readme_assets/index_ss.png?raw=true "Index")
