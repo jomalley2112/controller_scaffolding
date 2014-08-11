@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe "CreditCardInfos" do
 	before(:all) do
-    cmd_str = 'rails g controller_scaffolding credit_card_infos index new create --skip-search-sort' 
+    cmd_str = 'rails g controller_scaffolding credit_card_infos index new create ' 
     cmd_str << ' --template-engine=haml --quiet --force --skip-assets --skip-test-framework --skip-helper' 
 		puts "\n#{cmd_str}"
   	%x(#{cmd_str})
@@ -12,7 +12,7 @@ describe "CreditCardInfos" do
   end
 
   after(:all) do
-  	cmd_str = 'rails d controller_scaffolding credit_card_infos index new create --skip-search-sort' 
+  	cmd_str = 'rails d controller_scaffolding credit_card_infos index new create ' 
     cmd_str << ' --template-engine=haml --quiet --force --skip-assets --skip-test-framework --skip-helper' 
     puts "\n#{cmd_str}"
     %x(#{cmd_str})
