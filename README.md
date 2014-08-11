@@ -7,8 +7,6 @@ The generator acts somewhat like scaffolding, but you must specify an *existing*
 
 \* https://github.com/jomalley2112/sql_search_n_sort
 
-#### Current Issues ####
-* made 2 intermittently failing specs in people_spec pending
 
 #### Index page ####
 ![Index](/readme_assets/index_ss.png?raw=true "Index")
