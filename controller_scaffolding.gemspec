@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'jquery-rails' #, '~> 3.1.1'
   s.add_dependency 'sql_search_n_sort', '=1.15'
 
+
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "pry-rails"
   s.add_development_dependency "rspec-rails"
@@ -33,4 +34,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency "database_cleaner"
   s.add_development_dependency "faker"
   s.add_development_dependency "resource_cloner", '=0.5.0'
+  
 end
