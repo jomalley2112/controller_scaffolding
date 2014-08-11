@@ -10,6 +10,10 @@ en:
         zero: Credit card infos
         one: Credit card info
         other: Credit card infos
+      fellows:
+        zero: Fellows
+        one: Fellow
+        other: Fellows
     page_entries_info:
       multi_page_html: Displaying <b>%{from}&nbsp;-&nbsp;%{to}</b> of <b>%{count}</b>
         %{model}
