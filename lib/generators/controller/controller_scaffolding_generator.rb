@@ -56,7 +56,7 @@ module Rails
         table_name.classify.constantize #throws runtime if model doesn't exist
         rescue
           raise Thor::Error, 
-            "Cannot run controller scaffold for model (#{table_name.constantize}) that doesn't yet exist."
+            "Cannot run controller scaffold for model (#{table_name.classify}) that doesn't yet exist."
         end
       end
 
