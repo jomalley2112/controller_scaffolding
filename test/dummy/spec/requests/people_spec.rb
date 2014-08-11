@@ -140,15 +140,16 @@ describe "People" do
       end
 
       #This one fails intermittently when all specs run together as "rspec spec"
-      it "displays a sort select list populated with all of the correct options", :js => false do
-        pending "test fails intermittently depending on the context it is run in"
+      it "displays a sort select list populated with all of the correct options", :js => true do
+        #pending "test fails intermittently depending on the context it is run in"
         visit people_path
         sel_opts = ["First name","First name [desc]","Last name","Last name [desc]","Email", 
                    "Email [desc]","Title", 
                    "Title [desc]","Dob","Dob [desc]","Is manager","Is manager [desc]"]
-        sleep 1
+        #binding.pry
         page.should have_select('sort_by', :options => sel_opts)
       end
+
       it "clears the search", :js => true do
         visit people_path
         fill_in("search_for", :with => "Search Text")
@@ -166,11 +167,9 @@ describe "People" do
 
         #This one fails intermittently when all specs run together as "rspec spec"
         it "sorts by last name descending when selected", :js => true do
-          pending "test fails intermittently depending on the context it is run in"
+          #pending "test fails intermittently depending on the context it is run in"
           visit people_path
-          sleep 1
           select("Last name [desc]", :from => "sort_by")
-          sleep 0.5
           last_names = all(:xpath, "//table/tbody/tr[@class='item']/td[2]")
           last_names.map(&:text).should == last_names.map(&:text).sort.reverse
         end
