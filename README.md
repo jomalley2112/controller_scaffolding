@@ -99,7 +99,7 @@ $ rails g|d controller_scaffolding users index new create edit update destroy --
 - 'haml-rails'
 - 'sass-rails', '~> 4.0.3'
 - 'jquery-rails'
-- 'sql_search_n_sort', '=1.15'
+- 'sql_search_n_sort', '=1.16'
 
 #### Development Environment Dependencies ####
 - "sqlite3"
