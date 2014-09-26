@@ -21,8 +21,13 @@ and then run `bundle install`
 
 
 #### Usage ####
+Real Example:
 ```bash
-$ rails g|d controller_scaffolding users index new create edit update destroy --template-engine=haml
+$ rails g controller_scaffolding users index new create edit update destroy --template-engine=haml --skip-assets --skip-test-framework --skip-helper
+```
+All Options:
+```bash
+$ rails g|d controller_scaffolding plural_model_name action1 action2 action3 --template-engine=haml
 [--skip-ext-index-nav] [--skip-ext-form-submit] [--skip-assets] [--skip-test-framework] [--skip-helper] [--quiet] [--force] [--skip-search-sort]
 ```
 
