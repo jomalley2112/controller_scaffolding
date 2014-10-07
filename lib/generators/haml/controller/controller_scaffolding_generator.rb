@@ -95,9 +95,10 @@ module Haml
             before: /^end/ do
               "\n\textend SqlSearchableSortable\n"
             end
+          #binding.pry
           inject_into_file "app/models/#{table_name.singularize}.rb",
             before: /^end/ do
-              "\n\tsql_searchable #{cols_to_symbols}\n" 
+              "\n\tsql_searchable #{searchable_cols_as_symbols}\n" 
             end
           inject_into_file "app/models/#{table_name.singularize}.rb",
             before: /^end/ do
@@ -116,7 +117,15 @@ module Haml
 #================================= P R I V A T E =====================================
       private
 
+      def searchable_cols_as_symbols
+        puts "!!!="+@attr_cols.select{ |col| [:string, :text].include? col.type}
+          .map { |col| col.name.to_sym }.to_s.gsub(/\[(.*)\]/, '\1')
+        @attr_cols.select{ |col| [:string, :text].include? col.type}
+          .map { |col| col.name.to_sym }.to_s.gsub(/\[(.*)\]/, '\1')
+      end
+
       def cols_to_symbols
+
         #ugly, but I can't find another way to keep the symbols
         @attr_cols.map { |col| col.name.to_sym }.to_s.gsub(/\[(.*)\]/, '\1')
       end

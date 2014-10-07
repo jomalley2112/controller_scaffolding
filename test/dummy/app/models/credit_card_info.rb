@@ -1,3 +1,3 @@
-class CreditCardInfo < ActiveRecord::Base
-	
+class CreditCardInfo < ActiveRecord::Base	
+
 end
