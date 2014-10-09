@@ -54,7 +54,7 @@ module Rails
       def check_for_model #TODO: only do if behavior = :invoke maybe?
         begin
         table_name.classify.constantize #throws runtime if model doesn't exist
-        rescue
+        rescue #TODO Make this more specific
           raise Thor::Error, 
             "Cannot run controller scaffold for model (#{table_name.classify}) that doesn't yet exist."
         end
