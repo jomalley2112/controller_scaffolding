@@ -118,8 +118,6 @@ module Haml
       private
 
       def searchable_cols_as_symbols
-        puts "!!!="+@attr_cols.select{ |col| [:string, :text].include? col.type}
-          .map { |col| col.name.to_sym }.to_s.gsub(/\[(.*)\]/, '\1')
         @attr_cols.select{ |col| [:string, :text].include? col.type}
           .map { |col| col.name.to_sym }.to_s.gsub(/\[(.*)\]/, '\1')
       end
