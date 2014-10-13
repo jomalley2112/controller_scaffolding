@@ -117,7 +117,6 @@ $ rails g|d controller_scaffolding plural_model_name action1 action2 action3 --t
 #### TODO ####
 - Integrate hot_date_rails for generated date fields
 	- allow option to override this and use traditional date/time select fields
-- Integrate sql_search_n_sort v1.3.0 when it's ready
 - See if we can support case where existing model has been removed after generator has been run and then the user decides to uninstall (revoke) controller_scaffolding.
 - Do something with template engine hook so Haml doesn't need to be specified in the generator call
 	- Add support for Erb

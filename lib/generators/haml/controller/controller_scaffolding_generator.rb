@@ -95,7 +95,6 @@ module Haml
             before: /^end/ do
               "\n\textend SqlSearchableSortable\n"
             end
-          #binding.pry
           inject_into_file "app/models/#{table_name.singularize}.rb",
             before: /^end/ do
               "\n\tsql_searchable #{searchable_cols_as_symbols}\n" 
@@ -108,7 +107,12 @@ module Haml
 
       end
 
-      
+      def print_warnings
+        if @unsearchable_model && behavior == :invoke
+          warn("WARNING: Model #{table_name.classify} is extending SqlSearchableSortable," \
+            " but doesn't have any searchable attributes at this point.") 
+        end
+      end      
 #================================= P R O T E C T E D =================================
       protected
 			def handler
@@ -118,8 +122,10 @@ module Haml
       private
 
       def searchable_cols_as_symbols
-        @attr_cols.select{ |col| [:string, :text].include? col.type}
+        retval = @attr_cols.select{ |col| [:string, :text].include? col.type}
           .map { |col| col.name.to_sym }.to_s.gsub(/\[(.*)\]/, '\1')
+        @unsearchable_model = true if retval.empty?
+        return retval
       end
 
       def cols_to_symbols

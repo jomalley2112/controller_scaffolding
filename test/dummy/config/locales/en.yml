@@ -14,6 +14,10 @@ en:
         zero: Fellows
         one: Fellow
         other: Fellows
+      unsearchables:
+        zero: Unsearchables
+        one: Unsearchable
+        other: Unsearchables
     page_entries_info:
       multi_page_html: Displaying <b>%{from}&nbsp;-&nbsp;%{to}</b> of <b>%{count}</b>
         %{model}
