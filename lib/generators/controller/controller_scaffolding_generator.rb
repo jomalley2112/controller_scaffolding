@@ -4,7 +4,6 @@
 
 require 'rails/generators/generated_attribute'
 
-
 module Rails
   module Generators
     #####################  Generators module methods  #####################

@@ -12,7 +12,9 @@ module Haml
       argument :actions, type: :array, default: [], banner: "action action"
       class_option :ext_index_nav, :type => :boolean, :default => true, :desc => "Include extended index page features."
       class_option :ext_form_submit, :type => :boolean, :default => true, :desc => "Include extended form submission features."      
-      class_option :search_sort, :type => :boolean, :default => true, :desc => "Add search and sort functionality to index page."      
+      class_option :search_sort, :type => :boolean, :default => true, :desc => "Add search and sort functionality to index page."
+      class_option :datepicker, :type => :boolean, :default => true, :desc => "Use datepicker for date/time fields."
+
       
       source_paths << File.expand_path('../../../../templates/haml/controller', __FILE__)
       
@@ -59,6 +61,7 @@ module Haml
             before: "\n//= require_tree ." do
               "\n//= require jquery\n//= require jquery_ujs"
             end
+          @injected_jquery_ujs = true
         end
       end
         
@@ -78,6 +81,15 @@ module Haml
           copy_partial("_validation_errors")
         end
       end
+
+      # def handle_datepicker
+      #   if options.datepicker?
+      #     inject_into_file "app/assets/javascripts/application.js",
+      #       before: "\n//= require_tree ." do
+      #         "\n//= require jquery\n//= require jquery_ujs"
+      #       end unless @injected_jquery_ujs
+      #   end
+      # end
         
       def copy_stylesheet
         if options.ext_form_submit? || options.ext_index_nav?

@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'sass-rails', '~> 4.0.3'
   s.add_dependency 'jquery-rails' #, '~> 3.1.1'
   s.add_dependency 'sql_search_n_sort', '=2.0.0'
+  s.add_dependency 'hot_date_rails', '~> 1.3.3'
 
 
   s.add_development_dependency "sqlite3"
