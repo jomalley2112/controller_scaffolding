@@ -4,7 +4,6 @@
 
 require 'rails/generators/generated_attribute'
 
-
 module Rails
   module Generators
     #####################  Generators module methods  #####################
@@ -52,9 +51,10 @@ module Rails
       end
 
       def check_for_model #TODO: only do if behavior = :invoke maybe?
+        #this rescue has only been smoke-tested. can't find a way to unit test
         begin
         table_name.classify.constantize #throws runtime if model doesn't exist
-        rescue
+        rescue NameError
           raise Thor::Error, 
             "Cannot run controller scaffold for model (#{table_name.classify}) that doesn't yet exist."
         end

@@ -2,8 +2,13 @@
 	%table.outer
 	<% @attr_cols.each do |col| %>
 		%tr
+		<% if options.datepicker? && [:date, :time, :datetime].include?(col.type) %>
+			%td= f.hd_label :<%= col.name %>
+			%td.field= f.<%= col.type %>_picker :<%= col.name %>
+		<% else %>
 			%td= f.label :<%= col.name %>
 			%td.field= f.<%= col.field_type %> :<%= col.name %>
+		<% end %>
 	<% end %>
 		%tr
 		<% if options.ext_form_submit? %>

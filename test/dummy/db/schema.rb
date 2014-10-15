@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140811153902) do
+ActiveRecord::Schema.define(version: 20141013173403) do
 
   create_table "credit_card_infos", force: true do |t|
     t.string   "cardholder"
@@ -47,6 +47,23 @@ ActiveRecord::Schema.define(version: 20140811153902) do
     t.string   "title"
     t.datetime "dob"
     t.boolean  "is_manager"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "schedules", force: true do |t|
+    t.time     "breakfast"
+    t.date     "birthday"
+    t.datetime "appointment"
+    t.time     "dinner"
+    t.date     "easter"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "unsearchables", force: true do |t|
+    t.date     "dt"
+    t.boolean  "bool"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

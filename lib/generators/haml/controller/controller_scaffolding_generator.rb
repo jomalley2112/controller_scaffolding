@@ -12,7 +12,9 @@ module Haml
       argument :actions, type: :array, default: [], banner: "action action"
       class_option :ext_index_nav, :type => :boolean, :default => true, :desc => "Include extended index page features."
       class_option :ext_form_submit, :type => :boolean, :default => true, :desc => "Include extended form submission features."      
-      class_option :search_sort, :type => :boolean, :default => true, :desc => "Add search and sort functionality to index page."      
+      class_option :search_sort, :type => :boolean, :default => true, :desc => "Add search and sort functionality to index page."
+      class_option :datepicker, :type => :boolean, :default => true, :desc => "Use datepicker for date/time fields."
+
       
       source_paths << File.expand_path('../../../../templates/haml/controller', __FILE__)
       
@@ -55,10 +57,7 @@ module Haml
           copy_partial("_pagination")
           add_pagination_to_locale_file
           copy_ext_index_js
-          inject_into_file "app/assets/javascripts/application.js",
-            before: "\n//= require_tree ." do
-              "\n//= require jquery\n//= require jquery_ujs"
-            end
+          inc_jquery_scripts
         end
       end
         
@@ -78,6 +77,20 @@ module Haml
           copy_partial("_validation_errors")
         end
       end
+
+      def handle_datepicker
+        if options.datepicker?
+          inc_jquery_scripts
+          inject_into_file "app/assets/javascripts/application.js",
+            before: "\n//= require_tree ." do
+              "\n//= require hot_date_rails"
+            end
+          inject_into_file "app/assets/stylesheets/application.css",
+            before: "\n *= require_tree ." do
+              "\n *= require hot_date_rails"
+            end
+        end
+      end
         
       def copy_stylesheet
         if options.ext_form_submit? || options.ext_index_nav?
@@ -95,7 +108,6 @@ module Haml
             before: /^end/ do
               "\n\textend SqlSearchableSortable\n"
             end
-          #binding.pry
           inject_into_file "app/models/#{table_name.singularize}.rb",
             before: /^end/ do
               "\n\tsql_searchable #{searchable_cols_as_symbols}\n" 
@@ -108,7 +120,12 @@ module Haml
 
       end
 
-      
+      def print_warnings
+        if @unsearchable_model && behavior == :invoke && !options.quiet?
+          warn("WARNING: Model #{table_name.classify} is extending SqlSearchableSortable," \
+            " but doesn't have any searchable attributes at this point.") 
+        end
+      end      
 #================================= P R O T E C T E D =================================
       protected
 			def handler
@@ -117,14 +134,24 @@ module Haml
 #================================= P R I V A T E =====================================
       private
 
+      def inc_jquery_scripts
+        inject_into_file "app/assets/javascripts/application.js",
+          before: "\n//= require_tree ." do
+            "\n//= require jquery\n//= require jquery_ujs"
+          end unless @injected_jquery_ujs #shouldn't allow duplicate text, but just to be safe
+        @injected_jquery_ujs = true
+      end
+
       def searchable_cols_as_symbols
-        @attr_cols.select{ |col| [:string, :text].include? col.type}
+        retval = @attr_cols.select{ |col| [:string, :text].include? col.type}
           .map { |col| col.name.to_sym }.to_s.gsub(/\[(.*)\]/, '\1')
+        @unsearchable_model = true if retval.empty?
+        return retval
       end
 
       def cols_to_symbols
-
-        #ugly, but I can't find another way to keep the symbols
+        # going from [:col1, :col2, :col3] to ":col1, :col2, :col3"
+        #ugly, but I can't find another way to keep the symbols and lose the brackets
         @attr_cols.map { |col| col.name.to_sym }.to_s.gsub(/\[(.*)\]/, '\1')
       end
 
