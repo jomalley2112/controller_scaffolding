@@ -3,9 +3,10 @@
 [![Gem Version](https://badge.fury.io/rb/controller_scaffolding.svg)](http://badge.fury.io/rb/controller_scaffolding)
 
 #### Description ####
-The generator acts somewhat like scaffolding, but you must specify an *existing* model and pass in any of the RESTful actions you are interested in (or no actions if you want all of them). With no options passed in except for the template engine (only Haml for now) it generates index pages with search/sort* functionality, basic pagination, and displays flash messages and validation errors. It also adds some styling for the index page and the new/edit form which makes it a bit easier on the eyes until you have a chance to add your own styling.
+The generator acts somewhat like scaffolding, but you must specify an *existing* model and pass in any of the RESTful actions you are interested in (or no actions if you want all of them). With no options passed in except for the template engine (only Haml for now) it generates index pages with search/sort* functionality and basic pagination and on forms it adds optional date/time pickers** and displays flash messages and validation errors. It also adds some styling for the index page and the new/edit form which makes it a bit easier on the eyes until you have a chance to add your own styling.
 
 \* https://github.com/jomalley2112/sql_search_n_sort
+\*\* https://github.com/jomalley2112/hot_date_rails
 
 
 #### Index page ####
@@ -28,7 +29,7 @@ $ rails g controller_scaffolding users index new create edit update destroy --te
 All Options:
 ```bash
 $ rails g|d controller_scaffolding plural_model_name action1 action2 action3 --template-engine=haml
-[--skip-ext-index-nav] [--skip-ext-form-submit] [--skip-assets] [--skip-test-framework] [--skip-helper] [--quiet] [--force] [--skip-search-sort]
+[--skip-ext-index-nav] [--skip-ext-form-submit] [--skip-datepicker] [--skip-assets] [--skip-test-framework] [--skip-helper] [--quiet] [--force] [--skip-search-sort]
 ```
 
 *Note: You must restart Rails after running this generator*
@@ -43,6 +44,7 @@ $ rails g|d controller_scaffolding plural_model_name action1 action2 action3 --t
 | --template-engine=haml | Use Haml for template engine - REQUIRED                | no         |
 | --skip-ext-index-nav   | Do not include extended index navigation functionality | yes        |
 | --skip-ext-form-submit | Do not include extended form submission functionality  | yes        |
+| --skip-datepicker      | Do not include date/time picker functionality          | yes        |
 | --skip-assets          | Do not create assets                                   | yes        |
 | --skip-test-framework  | Do not create test files                               | yes        |
 | --skip-helper          | Do not create helper file                              | yes        |
@@ -82,6 +84,9 @@ $ rails g|d controller_scaffolding plural_model_name action1 action2 action3 --t
 * Adds functionality to display flash messages and validation errors.
 * Adds some styling to the form
 
+#### Datepicker ####
+* Uses [hot_date_rails](https://github.com/jomalley2112/hot_date_rails) to attach date, time and datetime pickers to appropriate form input fields.
+
 
 #### Assets ####
 * Javascript
@@ -105,6 +110,7 @@ $ rails g|d controller_scaffolding plural_model_name action1 action2 action3 --t
 - 'sass-rails', '~> 4.0.3'
 - 'jquery-rails'
 - 'sql_search_n_sort', '=2.0.0'
+- 'hot_date_rails', '~> 1.3.3'
 
 #### Development Environment Dependencies ####
 - "sqlite3"
@@ -115,11 +121,8 @@ $ rails g|d controller_scaffolding plural_model_name action1 action2 action3 --t
 - "database_cleaner"
 
 #### TODO ####
-- Integrate hot_date_rails for generated date fields
-	- allow option to override this and use traditional date/time select fields
+- Add support for Erb
 - See if we can support case where existing model has been removed after generator has been run and then the user decides to uninstall (revoke) controller_scaffolding.
-- Do something with template engine hook so Haml doesn't need to be specified in the generator call
-	- Add support for Erb
 - Add search results message like "9 Results match 'you search string'"
 - Nail down versions for dependencies
 
