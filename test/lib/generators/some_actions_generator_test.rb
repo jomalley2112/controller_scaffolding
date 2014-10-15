@@ -1,4 +1,5 @@
 require 'generators/controller/controller_scaffolding_generator'
+require 'test_helper'
 
 #The main function of this test is to verify the expected behavior of the generator when the 
 # index edit update and custom_action actions are passed to it. The correct actions and views should be generated

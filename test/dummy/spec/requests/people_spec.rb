@@ -3,7 +3,7 @@ require 'spec_helper'
 describe "People" do
 	before(:all) do
     cmd_str = 'rails g controller_scaffolding people index new create edit update destroy' 
-    cmd_str << ' --template-engine=haml --quiet --force --skip-assets --skip-test-framework --skip-helper' 
+    cmd_str << ' --template-engine=haml --quiet --force --skip-assets --skip-test-framework --skip-helper --skip-datepicker' 
 		puts "\n#{cmd_str}"
   	%x(#{cmd_str})
     # puts "\n\nRELOADING ROUTES FILE:\n\n"
@@ -14,7 +14,7 @@ describe "People" do
 
   after(:all) do
   	cmd_str = 'rails d controller_scaffolding people index new create edit update destroy' 
-    cmd_str << ' --template-engine=haml --quiet --force --skip-assets --skip-test-framework --skip-helper' 
+    cmd_str << ' --template-engine=haml --quiet --force --skip-assets --skip-test-framework --skip-helper --skip-datepicker' 
     puts "\n#{cmd_str}"
     %x(#{cmd_str})
   end
@@ -146,7 +146,6 @@ describe "People" do
         sel_opts = ["First name","First name [desc]","Last name","Last name [desc]","Email", 
                    "Email [desc]","Title", 
                    "Title [desc]","Dob","Dob [desc]","Is manager","Is manager [desc]"]
-        #binding.pry
         page.should have_select('sort_by', :options => sel_opts)
       end
 
