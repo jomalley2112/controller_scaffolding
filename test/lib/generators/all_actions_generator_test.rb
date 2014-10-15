@@ -1,3 +1,4 @@
+require 'test_helper'
 require 'generators/controller/controller_scaffolding_generator'
 
 #The main function of this test is to verify the expected behavior of the generator when no

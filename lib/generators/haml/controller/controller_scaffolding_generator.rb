@@ -57,11 +57,7 @@ module Haml
           copy_partial("_pagination")
           add_pagination_to_locale_file
           copy_ext_index_js
-          inject_into_file "app/assets/javascripts/application.js",
-            before: "\n//= require_tree ." do
-              "\n//= require jquery\n//= require jquery_ujs"
-            end
-          @injected_jquery_ujs = true
+          inc_jquery_scripts
         end
       end
         
@@ -82,14 +78,19 @@ module Haml
         end
       end
 
-      # def handle_datepicker
-      #   if options.datepicker?
-      #     inject_into_file "app/assets/javascripts/application.js",
-      #       before: "\n//= require_tree ." do
-      #         "\n//= require jquery\n//= require jquery_ujs"
-      #       end unless @injected_jquery_ujs
-      #   end
-      # end
+      def handle_datepicker
+        if options.datepicker?
+          inc_jquery_scripts
+          inject_into_file "app/assets/javascripts/application.js",
+            before: "\n//= require_tree ." do
+              "\n//= require hot_date_rails"
+            end
+          inject_into_file "app/assets/stylesheets/application.css",
+            before: "\n *= require_tree ." do
+              "\n *= require hot_date_rails"
+            end
+        end
+      end
         
       def copy_stylesheet
         if options.ext_form_submit? || options.ext_index_nav?
@@ -120,7 +121,7 @@ module Haml
       end
 
       def print_warnings
-        if @unsearchable_model && behavior == :invoke
+        if @unsearchable_model && behavior == :invoke && !options.quiet?
           warn("WARNING: Model #{table_name.classify} is extending SqlSearchableSortable," \
             " but doesn't have any searchable attributes at this point.") 
         end
@@ -133,6 +134,14 @@ module Haml
 #================================= P R I V A T E =====================================
       private
 
+      def inc_jquery_scripts
+        inject_into_file "app/assets/javascripts/application.js",
+          before: "\n//= require_tree ." do
+            "\n//= require jquery\n//= require jquery_ujs"
+          end unless @injected_jquery_ujs #shouldn't allow duplicate text, but just to be safe
+        @injected_jquery_ujs = true
+      end
+
       def searchable_cols_as_symbols
         retval = @attr_cols.select{ |col| [:string, :text].include? col.type}
           .map { |col| col.name.to_sym }.to_s.gsub(/\[(.*)\]/, '\1')
@@ -141,8 +150,8 @@ module Haml
       end
 
       def cols_to_symbols
-
-        #ugly, but I can't find another way to keep the symbols
+        # going from [:col1, :col2, :col3] to ":col1, :col2, :col3"
+        #ugly, but I can't find another way to keep the symbols and lose the brackets
         @attr_cols.map { |col| col.name.to_sym }.to_s.gsub(/\[(.*)\]/, '\1')
       end
 
