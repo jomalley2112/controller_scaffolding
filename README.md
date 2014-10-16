@@ -6,6 +6,7 @@
 The generator acts somewhat like scaffolding, but you must specify an *existing* model and pass in any of the RESTful actions you are interested in (or no actions if you want all of them). With no options passed in except for the template engine (only Haml for now) it generates index pages with search/sort* functionality and basic pagination and on forms it adds optional date/time pickers** and displays flash messages and validation errors. It also adds some styling for the index page and the new/edit form which makes it a bit easier on the eyes until you have a chance to add your own styling.
 
 \* https://github.com/jomalley2112/sql_search_n_sort
+
 \*\* https://github.com/jomalley2112/hot_date_rails
 
 
@@ -84,10 +85,6 @@ $ rails g|d controller_scaffolding plural_model_name action1 action2 action3 --t
 * Adds functionality to display flash messages and validation errors.
 * Adds some styling to the form
 
-#### Datepicker ####
-* Uses [hot_date_rails](https://github.com/jomalley2112/hot_date_rails) to attach date, time and datetime pickers to appropriate form input fields.
-
-
 #### Assets ####
 * Javascript
 	* Installs ext_index_nav.js if extended index navigation is selected.
@@ -97,6 +94,9 @@ $ rails g|d controller_scaffolding plural_model_name action1 action2 action3 --t
 
 #### Search and Sort ####
 * see README.md at https://github.com/jomalley2112/sql_search_n_sort
+
+#### Datepicker ####
+* Uses [hot_date_rails](https://github.com/jomalley2112/hot_date_rails) to attach date, time and datetime pickers to appropriate form input fields.
 
 ### Testing ###
 * Generator tests: run `rake test` from the root directory.
