@@ -1,0 +1,21 @@
+<% item_type = coll.length > 0 ? coll.first.class.table_name.humanize.pluralize : "Entries" %>
+<% opts_arr = %w(10 15 20 25 30 40 50 75 100 All).map { |n| [n, n] } %>
+<div class="outer-pagination">
+  <div class="c_scaff_pagination">
+    <%= will_paginate coll %>
+  </div>
+  <table style="width: 100%">
+    <tr>
+      <td class="page-info left-page-info">
+        <%= page_entries_info coll, model: item_type %>
+      </td>
+      <td class="page-info right-page-info">
+        <%= label_tag :per_page, "#{item_type} per page:" %>
+        &nbsp;
+        <%= select_tag(:per_page, options_for_select(opts_arr, (@selected_val || @per_page || 25)), :style => "width: 65px", :onchange => "set_per_page(this);") %>
+      </td>
+    </tr>
+  </table>
+</div>
+
+		

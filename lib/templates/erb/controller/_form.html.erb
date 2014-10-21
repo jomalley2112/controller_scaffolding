@@ -1,0 +1,27 @@
+<%%= form_for @<%= table_name.singularize %> do |f| %>
+	<table class="outer">
+	<% @attr_cols.each do |col| %>
+		<tr>
+		<% if options.datepicker? && [:date, :time, :datetime].include?(col.type) %>
+			<td><%%= f.hd_label :<%= col.name %> %>
+			<td class="field"><%%= f.<%= col.type %>_picker :<%= col.name %> %></td>
+		<% else %>
+			<td><%%= f.label :<%= col.name %> %></td> 
+			<td class="field"><%%= f.<%= col.field_type %> :<%= col.name %> %></td>
+		<% end %>
+		</tr>
+	<% end %>
+		<tr>
+		<% if options.ext_form_submit? %>
+			<td colspan="2" style="text-align: center;">
+				<%%= f.submit "Save & Back to List", name: "btn_index" %>
+				<%%= f.submit "Save & Reload", name: "btn_reload" %>
+			</td>
+		<% else %>
+			<td colspan="2"><%%= f.submit %></td>
+		<% end %>
+		</tr>
+	</table>
+<%% end %>
+<br />
+<%%= link_to "Back", <%= table_name %>_path %>
