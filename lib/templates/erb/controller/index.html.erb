@@ -1,0 +1,59 @@
+<h4>Listing <%= plural_table_name.humanize %></h4>
+<table class="outer-list" id="top-level">
+  <thead>
+    <% if @search_sort %>
+    <tr class="header-row">
+      <td colspan="<%= @col_count %>">
+        <table style="width: 100%">
+          <tr>
+            <td>
+              <%%= render "sort_form" %>
+            </td>
+            <td style="text-align: right">
+              <%%= render "search_form" %>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <% end %>
+
+    <tr class="header-row" style="font-weight: bold;">
+    <% @attr_cols.each do |col| %>
+      <td><%= col.name.humanize %></td>
+    <% end %>
+    <% if inc_link?("edit") %>
+      <td class="link_col"></td>
+    <% end %>
+    <% if inc_link?("destroy") %>
+      <td class="link_col"></td>
+    <% end %>
+    </tr>
+  </thead>
+  <tbody class="items">
+    <%% @<%= plural_table_name %>.each do |<%= singular_table_name %>| %>
+      <tr class="item">
+      <% @attr_cols.each do |col| %> 
+        <td><%%= <%= singular_table_name %>.<%= col.name %> %></td>
+      <% end %>
+      <% if inc_link?("edit") %>
+        <td><%%= link_to "Edit", edit_<%= singular_table_name %>_path(<%= singular_table_name %>) %></td>
+      <% end %>
+      <% if inc_link?("destroy") %>
+        <td><%%= link_to "Del", <%= singular_table_name %>, method: :delete, data: {confirm: "Are you sure?"} %></td>
+      <% end %>
+      </tr>
+    <%%  end %>
+  </tbody>
+  <% if options.ext_index_nav? %>
+    <tr id="pagination-row">
+      <td colspan='<%= @col_count %>' class= "pagination-container">
+        <%%= render partial: 'pagination', locals: { :coll => @<%= plural_table_name %> } %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+<br/>
+<% if inc_link?("new") %>
+<%%= link_to 'New <%= singular_table_name.humanize %>', new_<%= singular_table_name %>_path %>
+<% end %>

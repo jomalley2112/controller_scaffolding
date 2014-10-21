@@ -3,7 +3,7 @@
 [![Gem Version](https://badge.fury.io/rb/controller_scaffolding.svg)](http://badge.fury.io/rb/controller_scaffolding)
 
 #### Description ####
-The generator acts somewhat like scaffolding, but you must specify an *existing* model and pass in any of the RESTful actions you are interested in (or no actions if you want all of them). With no options passed in except for the template engine (only Haml for now) it generates index pages with search/sort* functionality and basic pagination and on forms it adds optional date/time pickers** and displays flash messages and validation errors. It also adds some styling for the index page and the new/edit form which makes it a bit easier on the eyes until you have a chance to add your own styling.
+The generator acts somewhat like scaffolding, but you must specify an *existing* model and pass in any of the RESTful actions you are interested in (or no actions if you want all of them). With no options passed in it generates index pages with search/sort* functionality and basic pagination. On the forms it adds optional date/time pickers** and displays flash messages and validation errors. It also adds some styling for the index page and the new/edit form which makes it a bit easier on the eyes until you have a chance to add your own styling.
 
 \* https://github.com/jomalley2112/sql_search_n_sort
 
@@ -29,7 +29,7 @@ $ rails g controller_scaffolding users index new create edit update destroy --te
 ```
 All Options:
 ```bash
-$ rails g|d controller_scaffolding plural_model_name action1 action2 action3 --template-engine=haml
+$ rails g|d controller_scaffolding plural_model_name action1 action2 action3 --template-engine=erb|haml
 [--skip-ext-index-nav] [--skip-ext-form-submit] [--skip-datepicker] [--skip-assets] [--skip-test-framework] [--skip-helper] [--quiet] [--force] [--skip-search-sort]
 ```
 
@@ -42,7 +42,7 @@ $ rails g|d controller_scaffolding plural_model_name action1 action2 action3 --t
 #### Options ####
 | Option                 | Description                                            | Optional?
 | ---------------------- | ------------------------------------------------------ | ---------- |
-| --template-engine=haml | Use Haml for template engine - REQUIRED                | no         |
+| --template-engine      | Specify template engine...erb or haml (erb is default) | yes        |
 | --skip-ext-index-nav   | Do not include extended index navigation functionality | yes        |
 | --skip-ext-form-submit | Do not include extended form submission functionality  | yes        |
 | --skip-datepicker      | Do not include date/time picker functionality          | yes        |
@@ -121,7 +121,7 @@ $ rails g|d controller_scaffolding plural_model_name action1 action2 action3 --t
 - "database_cleaner"
 
 #### TODO ####
-- Add support for Erb
+- Add non-RESTful routes (see issue #3)
 - See if we can support case where existing model has been removed after generator has been run and then the user decides to uninstall (revoke) controller_scaffolding.
 - Add search results message like "9 Results match 'you search string'"
 - Nail down versions for dependencies

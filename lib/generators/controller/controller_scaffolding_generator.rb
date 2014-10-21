@@ -66,6 +66,8 @@ module Rails
 
       def add_routes
         #TODO Handle nested resources here (look at namespace_ladder in scaffold generators)
+        #TODO: make this a little more intelligent so if an action specified to the
+        # generator is Non-RESTful just add a simple "get" route for it
         route "resources :#{plural_table_name.to_sym}"
       end
 

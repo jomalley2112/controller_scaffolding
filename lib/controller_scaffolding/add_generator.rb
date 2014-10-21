@@ -3,6 +3,7 @@ module ControllerScaffolding
   	generators do
 	    require "generators/controller/controller_scaffolding_generator"
 	    require "generators/haml/controller/controller_scaffolding_generator"
+	    require "generators/erb/controller/controller_scaffolding_generator"
 	  end
   end
 end
