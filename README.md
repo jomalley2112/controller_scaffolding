@@ -69,6 +69,7 @@ $ rails g|d controller_scaffolding plural_model_name action1 action2 action3 --t
 * installs ext_form_submit.rb if extended form submission selected
 
 #### Routes ####
+* Adds _get_ routes for any non-RESTful actions specified
 * Adds a resources line for the model specified. *This may be an issue if the routes file already contains  entries for the resource*
 
 #### Extended index navigation (optional) ####
