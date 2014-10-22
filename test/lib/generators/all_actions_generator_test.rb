@@ -9,7 +9,6 @@ class AllActionsGeneratorTest < Rails::Generators::TestCase
   
   def setup
     @contr_name = "people"
-    @actions = %w(index new create edit update destroy)
     @opts = %w(--force --quiet --template-engine=haml)
     @args = [@contr_name] | @opts #Not passing any actions in!
     prepare_destination
@@ -29,7 +28,7 @@ class AllActionsGeneratorTest < Rails::Generators::TestCase
       
   	run_generator @args
   	assert_file "app/controllers/#{@contr_name}_controller.rb" do |p_ctrl|
-  		@actions.each do |a|
+  		%w(index new create edit update destroy).each do |a|
 	  		assert_instance_method a, p_ctrl do |action|
 	  			assert_match(/\.paginate\(per_page: @per_page, page: @page\)/, action) if a == "index"
 			  end

@@ -41,12 +41,14 @@ class ExtControllerScaffoldingGeneratorTest < Rails::Generators::TestCase
 
   test "Routes were added properly" do
     assert_file "config/routes.rb" do |routes|
+      assert_no_match %r(get '#{@contr_name}/custom_action', to: '#{@contr_name}#custom_action'), routes
       assert_no_match %r(resources :#{@contr_name}), routes
     end
 
     run_generator @args
 
     assert_file "config/routes.rb" do |routes|
+      assert_match %r(get '#{@contr_name}/custom_action', to: '#{@contr_name}#custom_action'), routes
       assert_match %r(resources :#{@contr_name}), routes
     end
   end
