@@ -47,7 +47,8 @@ module Rails
       source_paths << [File.expand_path('../../../templates/rails/controller', __FILE__)]
 
       def setup_actions
-        @actions = actions.nil? || actions.empty? ? %w(index new create edit update destroy) : actions
+        @restful_actions = %w(index new create edit update destroy)
+        @actions = actions.nil? || actions.empty? ? @restful_actions : actions
       end
 
       def check_for_model #TODO: only do if behavior = :invoke maybe?
@@ -64,11 +65,19 @@ module Rails
         template 'controller.rb', File.join('app/controllers', class_path, "#{file_name}_controller.rb")
       end
 
-      def add_routes
+      def add_resources_route
         #TODO Handle nested resources here (look at namespace_ladder in scaffold generators)
-        #TODO: make this a little more intelligent so if an action specified to the
-        # generator is Non-RESTful just add a simple "get" route for it
         route "resources :#{plural_table_name.to_sym}"
+      end
+
+      def add_restless_routes
+        #TODO: make this a little more intelligent so if an action specified to the
+        # generator is Non-RESTful just add a simple "get" route for it BEFORE the resources route
+        #like: get '#{@contr_name}/an_action', to: '#{@contr_name}#an_action'
+        @actions.reject { |a| @restful_actions.include?(a) }
+          .each do |action|
+            route "get '#{file_name}/#{action}', to: '#{file_name}##{action}'"
+          end
       end
 
       hook_for :template_engine, :assets, :test_framework, :helper

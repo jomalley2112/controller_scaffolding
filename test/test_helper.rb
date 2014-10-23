@@ -10,12 +10,12 @@ require 'generators/haml/controller/controller_scaffolding_generator'
 Rails.backtrace_cleaner.remove_silencers!
 
 # Load support files
-Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |f| require f }
+#Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |f| require f }
 
 # Load fixtures from the engine
-if ActiveSupport::TestCase.method_defined?(:fixture_path=)
-  ActiveSupport::TestCase.fixture_path = File.expand_path("../fixtures", __FILE__)
-end
+# if ActiveSupport::TestCase.method_defined?(:fixture_path=)
+#   ActiveSupport::TestCase.fixture_path = File.expand_path("../fixtures", __FILE__)
+# end
 
 #TODO: SHould add a helper for this to Rails::Generators::TestCase
 # so you could do like: stage_rails_files("../dummy_test_files", "app", "config", ...)
