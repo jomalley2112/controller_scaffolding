@@ -65,6 +65,11 @@ module Rails
         template 'controller.rb', File.join('app/controllers', class_path, "#{file_name}_controller.rb")
       end
 
+      def add_resources_route
+        #TODO Handle nested resources here (look at namespace_ladder in scaffold generators)
+        route "resources :#{plural_table_name.to_sym}"
+      end
+
       def add_restless_routes
         #TODO: make this a little more intelligent so if an action specified to the
         # generator is Non-RESTful just add a simple "get" route for it BEFORE the resources route
@@ -73,11 +78,6 @@ module Rails
           .each do |action|
             route "get '#{file_name}/#{action}', to: '#{file_name}##{action}'"
           end
-      end
-
-      def add_resources_route
-        #TODO Handle nested resources here (look at namespace_ladder in scaffold generators)
-        route "resources :#{plural_table_name.to_sym}"
       end
 
       hook_for :template_engine, :assets, :test_framework, :helper
