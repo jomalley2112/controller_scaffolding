@@ -3,7 +3,7 @@
 [![Gem Version](https://badge.fury.io/rb/controller_scaffolding.svg)](http://badge.fury.io/rb/controller_scaffolding)
 
 #### Description ####
-The generator acts somewhat like scaffolding, but you must specify an *existing* model and pass in any of the RESTful actions you are interested in (or no actions if you want all of them). With no options passed in it generates index pages with search/sort* functionality and basic pagination. On the forms it adds optional date/time pickers** and displays flash messages and validation errors. It also adds some styling for the index page and the new/edit form which makes it a bit easier on the eyes until you have a chance to add your own styling.
+The generator acts somewhat like scaffolding, but you must specify an *existing* model and pass in any actions you you want added (or no actions at all if you want all RESTful actions added). With no options passed in it generates index pages with search/sort* functionality and basic pagination. On the forms it adds optional date/time pickers** and displays flash messages and validation errors. It also adds some styling for the index page and the new/edit form which makes it a bit easier on the eyes until you have a chance to add your own styling.
 
 \* https://github.com/jomalley2112/sql_search_n_sort
 
@@ -122,7 +122,6 @@ $ rails g|d controller_scaffolding plural_model_name action1 action2 action3 --t
 - "database_cleaner"
 
 #### TODO ####
-- Add non-RESTful routes (see issue #3)
 - See if we can support case where existing model has been removed after generator has been run and then the user decides to uninstall (revoke) controller_scaffolding.
 - Add search results message like "9 Results match 'you search string'"
 - Nail down versions for dependencies
