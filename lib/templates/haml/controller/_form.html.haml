@@ -4,7 +4,7 @@
 		%tr
 		<% if options.datepicker? && [:date, :time, :datetime].include?(col.type) %>
 			%td= f.hd_label :<%= col.name %>
-			%td.field= f.<%= col.type %>_picker :<%= col.name %>
+			%td.field= f.hd_picker :<%= col.name %>
 		<% else %>
 			%td= f.label :<%= col.name %>
 			%td.field= f.<%= col.field_type %> :<%= col.name %>
