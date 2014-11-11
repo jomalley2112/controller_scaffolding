@@ -1,13 +1,13 @@
 PATH
   remote: .
   specs:
-    controller_scaffolding (1.4.1)
+    controller_scaffolding (1.4.2)
       haml-rails
       hot_date_rails (~> 1.4.0)
       jquery-rails
       rails (~> 4.1)
       sass-rails (~> 4.0.3)
-      sql_search_n_sort (= 2.0.0)
+      sql_search_n_sort (= 2.0.2)
       will_paginate
 
 GEM
@@ -160,7 +160,7 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
-    sql_search_n_sort (2.0.0)
+    sql_search_n_sort (2.0.2)
       haml-rails
       jquery-rails
       nokogiri (= 1.6.3.1)

@@ -110,7 +110,7 @@ $ rails g|d controller_scaffolding plural_model_name action1 action2 action3 --t
 - 'haml-rails'
 - 'sass-rails', '~> 4.0.3'
 - 'jquery-rails'
-- 'sql_search_n_sort', '=2.0.0'
+- 'sql_search_n_sort', '=2.0.2'
 - 'hot_date_rails', '~> 1.4.0'
 
 #### Development Environment Dependencies ####
