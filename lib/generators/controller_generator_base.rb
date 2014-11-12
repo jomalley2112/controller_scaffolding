@@ -16,6 +16,7 @@ module Generators
       base_path = File.join("app/views", class_path, file_name)
       empty_directory base_path
       @actions = actions.nil? || actions.empty? ? %w(index new create edit update destroy) : actions
+      #binding.pry
       @attr_cols = ::Rails::Generators::attr_cols(table_name)
       @col_count = @attr_cols.count
       @col_count += 1 if @actions.include?("edit")

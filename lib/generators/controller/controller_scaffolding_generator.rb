@@ -93,7 +93,7 @@ module Rails
         def generate_action_code(action, ext_index=true, ext_form_submit=true)
           case action
             when "index"
-              draw_index_action(true)
+              draw_index_action(ext_index)
             when "edit"
               %Q`@#{table_name.singularize} = #{class_name.singularize}.find(params[:id])`
             when "new"

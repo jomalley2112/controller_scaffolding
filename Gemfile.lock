@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    controller_scaffolding (1.4.2)
+    controller_scaffolding (1.4.3)
       haml-rails
       hot_date_rails (~> 1.4.0)
       jquery-rails
