@@ -20,6 +20,11 @@ UtilityFunction:
   enabled: true
   exclude: [initialize]
   max_helper_calls: 1
+NestedIterators:
+  enabled: false
+  exclude: []
+  max_allowed_nesting: 1
+  ignore_iterators: []
 
 # Attribute:
 # enabled: false

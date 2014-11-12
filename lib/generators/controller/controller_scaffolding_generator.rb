@@ -2,40 +2,11 @@
 #To Teardown manually:
 # rails d controller_scaffolding people index new create edit update destroy custom_action --template-engine=haml
 
-require 'rails/generators/generated_attribute'
+# require 'rails/generators/generated_attribute'
 
 module Rails
   module Generators
-    #####################  Generators module methods  #####################
-    RAILS_ADDED_COLS = %w(id created_at updated_at)
     
-    #TODO...There has GOT to be a better way to do this (column name gets listed first if it contains the word "name")
-    ATTR_SORT_PROC = 
-      proc do |a, b|
-        if a =~ /name/
-          1
-        elsif b =~ /name/
-          -1
-        elsif a =~ /email/
-          1
-        elsif b =~ /email/
-          -1
-        else
-          0
-        end
-      end
-    
-    def attr_cols(table_name)
-      #return an array of the columns we are interested in allowing the user to change...
-      # as GeneratedAttribute objects
-      acs = table_name.classify.constantize.columns
-        .reject{ |col| RAILS_ADDED_COLS.include?(col.name) }
-        .sort(&ATTR_SORT_PROC)
-        .map { |ac| GeneratedAttribute.new(ac.name, ac.type)}
-    end
-    module_function :attr_cols
-    #######################################################################
-
     class ControllerScaffoldingGenerator < Rails::Generators::NamedBase
       argument :actions, type: :array, default: [], banner: "action action"
       class_option :ext_index_nav, :type => :boolean, :default => true, :desc => "Include extended index page features."
@@ -95,43 +66,43 @@ module Rails
             when "index"
               draw_index_action(ext_index)
             when "edit"
-              %Q`@#{table_name.singularize} = #{class_name.singularize}.find(params[:id])`
+              %Q`@#{singular_table_name} = #{class_name.singularize}.find(params[:id])`
             when "new"
-              %Q`@#{table_name.singularize} = #{class_name.singularize}.new`
+              %Q`@#{singular_table_name} = #{class_name.singularize}.new`
             when "update"
-              redir_call = ext_form_submit ? "redir_url" : "edit_#{table_name.singularize}_url(@#{table_name.singularize})"
-              %Q`@#{table_name.singularize} = #{class_name.singularize}.find(params[:id])
-    if @#{table_name.singularize}.update_attributes(#{table_name.singularize}_params)
-      flash[:success] = "Updated #{table_name.singularize.humanize} successfully"
+              redir_call = ext_form_submit ? "redir_url" : "edit_#{singular_table_name}_url(@#{singular_table_name})"
+              %Q`@#{singular_table_name} = #{class_name.singularize}.find(params[:id])
+    if @#{singular_table_name}.update_attributes(#{singular_table_name}_params)
+      flash[:success] = "Updated #{singular_table_name.humanize} successfully"
       redirect_to #{redir_call}
     else
-      flash_alert(@#{table_name.singularize})
+      flash_alert(@#{singular_table_name})
       render :edit
     end`
             when "create"
-              redir_call = ext_form_submit ? "redir_url" : "new_#{table_name.singularize}_url(@#{table_name.singularize})"
-              %Q`@#{table_name.singularize} = #{class_name.singularize}.new(#{table_name.singularize}_params)
-    if @#{table_name.singularize}.save
-      flash[:success] = "Created #{table_name.singularize.humanize} successfully"
+              redir_call = ext_form_submit ? "redir_url" : "new_#{singular_table_name}_url(@#{singular_table_name})"
+              %Q`@#{singular_table_name} = #{class_name.singularize}.new(#{singular_table_name}_params)
+    if @#{singular_table_name}.save
+      flash[:success] = "Created #{singular_table_name.humanize} successfully"
       redirect_to #{redir_call}
     else
-      flash_alert(@#{table_name.singularize})
+      flash_alert(@#{singular_table_name})
       render :new
     end`
             when "destroy"
-              %Q`@#{table_name.singularize} = #{class_name.singularize}.find(params[:id])
-    if @#{table_name.singularize}.destroy
-      flash[:success] = "Deleted #{table_name.singularize.humanize} successfully"
+              %Q`@#{singular_table_name} = #{class_name.singularize}.find(params[:id])
+    if @#{singular_table_name}.destroy
+      flash[:success] = "Deleted #{singular_table_name.humanize} successfully"
     else
-      flash[:error] = "Unable to delete #{table_name.singularize.humanize}"
+      flash[:error] = "Unable to delete #{singular_table_name.humanize}"
     end
     redirect_to #{table_name.pluralize}_url`
           end
         end
 
       def generate_strong_params_def
-        %Q`\tdef #{table_name.singularize}_params
-      params.required(:#{table_name.singularize}).permit(#{Rails::Generators::attr_cols(table_name).map { |col| col.name.to_sym}})
+        %Q`\tdef #{singular_table_name}_params
+      params.required(:#{singular_table_name}).permit(#{GeneratorUtils::attr_cols(table_name).map { |col| col.name.to_sym}})
     end`
       end
 
