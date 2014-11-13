@@ -61,42 +61,42 @@ module Rails
 #================================ P R I V A T E =================================
       private
         #This method gets called from the controller.rb template
-        def generate_action_code(action, ext_index=true, ext_form_submit=true)
+        def generate_action_code(action)
           case action
             when "index"
-              draw_index_action(ext_index)
+              options.ext_index_nav? ? draw_index_action : draw_get_items_for_index
             when "edit"
-              %Q`@#{singular_table_name} = #{class_name.singularize}.find(params[:id])`
+              %Q`@#{singular_table_name} = #{actual_class_name}.find(params[:id])`
             when "new"
-              %Q`@#{singular_table_name} = #{class_name.singularize}.new`
+              %Q`@#{singular_table_name} = #{actual_class_name}.new`
             when "update"
-              redir_call = ext_form_submit ? "redir_url" : "edit_#{singular_table_name}_url(@#{singular_table_name})"
-              %Q`@#{singular_table_name} = #{class_name.singularize}.find(params[:id])
+              redir_call = options.ext_form_submit? ? "redir_url" : "edit_#{singular_table_name}_url(@#{singular_table_name})"
+              %Q`@#{singular_table_name} = #{actual_class_name}.find(params[:id])
     if @#{singular_table_name}.update_attributes(#{singular_table_name}_params)
-      flash[:success] = "Updated #{singular_table_name.humanize} successfully"
+      flash[:success] = "Updated #{human_model_name} successfully"
       redirect_to #{redir_call}
     else
       flash_alert(@#{singular_table_name})
       render :edit
     end`
             when "create"
-              redir_call = ext_form_submit ? "redir_url" : "new_#{singular_table_name}_url(@#{singular_table_name})"
-              %Q`@#{singular_table_name} = #{class_name.singularize}.new(#{singular_table_name}_params)
+              redir_call = options.ext_form_submit? ? "redir_url" : "new_#{singular_table_name}_url(@#{singular_table_name})"
+              %Q`@#{singular_table_name} = #{actual_class_name}.new(#{singular_table_name}_params)
     if @#{singular_table_name}.save
-      flash[:success] = "Created #{singular_table_name.humanize} successfully"
+      flash[:success] = "Created #{human_model_name} successfully"
       redirect_to #{redir_call}
     else
       flash_alert(@#{singular_table_name})
       render :new
     end`
             when "destroy"
-              %Q`@#{singular_table_name} = #{class_name.singularize}.find(params[:id])
+              %Q`@#{singular_table_name} = #{actual_class_name}.find(params[:id])
     if @#{singular_table_name}.destroy
-      flash[:success] = "Deleted #{singular_table_name.humanize} successfully"
+      flash[:success] = "Deleted #{human_model_name} successfully"
     else
-      flash[:error] = "Unable to delete #{singular_table_name.humanize}"
+      flash[:error] = "Unable to delete #{human_model_name}"
     end
-    redirect_to #{table_name.pluralize}_url`
+    redirect_to #{plural_table_name}_url`
           end
         end
 
@@ -106,22 +106,27 @@ module Rails
     end`
       end
 
-      def draw_index_action(ext_index=true)
-        if ext_index
+      def draw_index_action
           %Q`setup_pagination
     #{draw_get_items_for_index}
       .paginate(per_page: @per_page, page: @page)`
-        else
-    draw_get_items_for_index
-        end
       end
 
       def draw_get_items_for_index
         if options.search_sort?
-    "@#{plural_table_name} = #{class_name.singularize}.sql_search(params[:search_for]).sql_sort(@sort_by, @sort_dir)"
+    "@#{plural_table_name} = #{actual_class_name}.sql_search(params[:search_for]).sql_sort(@sort_by, @sort_dir)"
         else
-    "@#{plural_table_name} = #{class_name.singularize}.all"
+    "@#{plural_table_name} = #{actual_class_name}.all"
         end
+      end
+
+      #This shouldn't be necessary, but class_name returns a plural
+      def actual_class_name
+        class_name.singularize
+      end
+
+      def human_model_name
+        singular_table_name.humanize        
       end
 
     end

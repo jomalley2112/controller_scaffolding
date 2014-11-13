@@ -175,11 +175,11 @@ module Generators
     def add_pagination_to_locale_file
       #TODO: Could put some kind of logic in here when revoking that removes some lines
       # from the locale file, but it shouldn't hurt anything if we don't
-      lang = curr_locale
+      lang = GeneratorUtils::curr_locale
       locale_config = YAML.load_file("#{destination_root}/config/locales/#{lang}.yml")
-      locale_config[curr_locale] = {} unless locale_config[lang]
-      lc_wp = locale_config[curr_locale]['will_paginate'] ||=
-        locale_config[curr_locale]['will_paginate'] = {}
+      locale_config[GeneratorUtils::curr_locale] = {} unless locale_config[lang]
+      lc_wp = locale_config[GeneratorUtils::curr_locale]['will_paginate'] ||=
+        locale_config[GeneratorUtils::curr_locale]['will_paginate'] = {}
       wp_models = lc_wp['models'] || lc_wp['models'] = {}
       curr_model = wp_models[table_name] || 
         wp_models[table_name] = { "zero"=>table_name.humanize, 
@@ -194,10 +194,6 @@ module Generators
       pei_sph['one'] || pei_sph['one'] = "Displaying <b>1</b> %{model}"
       pei_sph['other'] || pei_sph['other'] = "Displaying <b>all&nbsp;%{count}</b> %{model}"
       File.open("#{destination_root}/config/locales/#{lang}.yml", "w") { |f| YAML.dump(locale_config, f) }
-    end
-
-    def curr_locale
-      I18n.locale.to_s
     end
 
     def file_action(path)

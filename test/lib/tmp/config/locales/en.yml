@@ -6,10 +6,6 @@ en:
         zero: People
         one: Person
         other: People
-      dinosaurs:
-        zero: Dinosaurs
-        one: Dinosaur
-        other: Dinosaurs
     page_entries_info:
       multi_page_html: Displaying <b>%{from}&nbsp;-&nbsp;%{to}</b> of <b>%{count}</b>
         %{model}

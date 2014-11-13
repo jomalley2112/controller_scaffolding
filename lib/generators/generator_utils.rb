@@ -27,5 +27,9 @@ module GeneratorUtils
       .sort(&ATTR_SORT_PROC)
       .map { |ac| Rails::Generators::GeneratedAttribute.new(ac.name, ac.type)}
   end
+
+  def self.curr_locale
+    I18n.locale.to_s
+  end
   
 end
