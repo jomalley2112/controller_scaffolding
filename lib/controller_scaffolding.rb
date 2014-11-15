@@ -4,6 +4,7 @@ module ControllerScaffolding
 	require 'jquery-rails'
 	require 'controller_scaffolding/add_generator' if defined?(Rails)
 	require 'controller_scaffolding/railtie' if defined?(Rails)
+	require 'generators/generator_utils'
 	require 'sql_search_n_sort'
 	require 'hot_date_rails'
 end

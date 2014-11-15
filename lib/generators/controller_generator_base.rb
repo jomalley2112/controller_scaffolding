@@ -1,6 +1,7 @@
 module Generators
   require 'rails/generators/erb/controller/controller_generator'
   require 'rails/generators/erb/scaffold/scaffold_generator'
+
   class ControllerGeneratorBase < Erb::Generators::ControllerGenerator
     
     argument :actions, type: :array, default: [], banner: "action action"
@@ -14,10 +15,10 @@ module Generators
     def copy_view_files #do NOT change the name of this method 
                         # it must be overriding an existing one in a parent class
       base_path = File.join("app/views", class_path, file_name)
+      #binding.pry
       empty_directory base_path
       @actions = actions.nil? || actions.empty? ? %w(index new create edit update destroy) : actions
-      #binding.pry
-      @attr_cols = ::Rails::Generators::attr_cols(table_name)
+      @attr_cols = GeneratorUtils::attr_cols(table_name)
       @col_count = @attr_cols.count
       @col_count += 1 if @actions.include?("edit")
       @col_count += 1 if @actions.include?("destroy")
@@ -96,15 +97,15 @@ module Generators
     #This is the code that add SnS functionality to the model specified in the controller generator
     def handle_search_n_sort
       if @search_sort
-        inject_into_file "app/models/#{table_name.singularize}.rb",
+        inject_into_file "app/models/#{singular_table_name}.rb",
           before: /^end/ do
             "\n\textend SqlSearchableSortable\n"
           end
-        inject_into_file "app/models/#{table_name.singularize}.rb",
+        inject_into_file "app/models/#{singular_table_name}.rb",
           before: /^end/ do
             "\n\tsql_searchable #{searchable_cols_as_symbols}\n" 
           end
-        inject_into_file "app/models/#{table_name.singularize}.rb",
+        inject_into_file "app/models/#{singular_table_name}.rb",
           before: /^end/ do
             "\n\tsql_sortable #{cols_to_symbols}\n"
           end
@@ -174,11 +175,11 @@ module Generators
     def add_pagination_to_locale_file
       #TODO: Could put some kind of logic in here when revoking that removes some lines
       # from the locale file, but it shouldn't hurt anything if we don't
-      lang = I18n.locale.to_s
+      lang = GeneratorUtils::curr_locale
       locale_config = YAML.load_file("#{destination_root}/config/locales/#{lang}.yml")
-      locale_config[I18n.locale.to_s] = {} unless locale_config[lang]
-      lc_wp = locale_config[I18n.locale.to_s]['will_paginate'] ||=
-        locale_config[I18n.locale.to_s]['will_paginate'] = {}
+      locale_config[GeneratorUtils::curr_locale] = {} unless locale_config[lang]
+      lc_wp = locale_config[GeneratorUtils::curr_locale]['will_paginate'] ||=
+        locale_config[GeneratorUtils::curr_locale]['will_paginate'] = {}
       wp_models = lc_wp['models'] || lc_wp['models'] = {}
       curr_model = wp_models[table_name] || 
         wp_models[table_name] = { "zero"=>table_name.humanize, 
