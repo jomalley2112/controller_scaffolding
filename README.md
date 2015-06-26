@@ -3,7 +3,7 @@
 [![Gem Version](https://badge.fury.io/rb/controller_scaffolding.svg)](http://badge.fury.io/rb/controller_scaffolding)
 
 #### Description ####
-The generator acts somewhat like scaffolding, but you must specify an *existing* model and pass in any actions you you want added (or no actions at all if you want all RESTful actions added). With no options passed in it generates index pages with search/sort* functionality and basic pagination. On the forms it adds optional date/time pickers** and displays flash messages and validation errors. It also adds some styling for the index page and the new/edit form which makes it a bit easier on the eyes until you have a chance to add your own styling.
+The generator acts somewhat like scaffolding, but you must specify an *existing* model and pass in any actions you want added (or no actions at all if you want *all* RESTful actions added). With no options passed in it generates index pages with search/sort* functionality and basic pagination. On the forms it adds optional date/time pickers** and displays flash messages and validation errors. It also adds some styling for the index page and the new/edit form which makes it a bit easier on the eyes until you have a chance to add your own styling.
 
 \* https://github.com/jomalley2112/sql_search_n_sort
 
@@ -73,7 +73,7 @@ $ rails g|d controller_scaffolding plural_model_name action1 action2 action3 --t
 * Adds a resources line for the model specified. *This may be an issue if the routes file already contains  entries for the resource*
 
 #### Extended index navigation (optional) ####
-* Generates an index view file for the model specified containing columns with headers for all  fields not generated automatically by rails (Everything but id, created_at and updated_at). Certain  keywords are given priority when found in the field names which makes them show up before others in the views (eg. name, email)
+* Generates an index view file for the model specified containing columns with headers for all fields except id, created_at and updated_at. Certain  keywords are given priority when found in the field names which makes them show up before others in the views (eg. name, email)
 * Generates pagination functionality for the index page. Default items per page can be set by editing the `@per_page` variable in `app/controllers/concerns/ext_index_nav.rb`
 * Adds some styling to the index page
 
