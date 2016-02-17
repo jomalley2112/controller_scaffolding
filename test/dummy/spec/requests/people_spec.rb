@@ -101,6 +101,7 @@ describe "People" do
         describe "pagination links" do
           it "responds correctly to user", :js => true do
             visit people_path(page: "1", per_page: "10")
+            binding.pry
             page.should have_content("Displaying 1 - 10 of 31 People")
             click_link("2")
             page.should have_content("Displaying 11 - 20 of 31 People")

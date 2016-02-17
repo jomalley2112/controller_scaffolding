@@ -12,8 +12,8 @@ RSpec.describe "Fellows", :type => :request do
 	  	
 	  	before(:all) do
 		    cmd_str = 'rails g controller_scaffolding fellows index ' 
-		    cmd_str << ' --template-engine=erb --quiet --force --skip-assets --skip-test-framework --skip-helper' 
-				puts "\n#{cmd_str}"
+		    cmd_str << ' --template-engine=erb --quiet --force --skip-assets --skip-test-framework --skip-helper'
+		    puts "\n#{cmd_str}"
 		  	%x(#{cmd_str})
 		    Rails.application.reload_routes!
 		  end

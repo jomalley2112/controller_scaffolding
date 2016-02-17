@@ -6,22 +6,6 @@ en:
         zero: People
         one: Person
         other: People
-      credit_card_infos:
-        zero: Credit card infos
-        one: Credit card info
-        other: Credit card infos
-      fellows:
-        zero: Fellows
-        one: Fellow
-        other: Fellows
-      unsearchables:
-        zero: Unsearchables
-        one: Unsearchable
-        other: Unsearchables
-      schedules:
-        zero: Schedules
-        one: Schedule
-        other: Schedules
     page_entries_info:
       multi_page_html: Displaying <b>%{from}&nbsp;-&nbsp;%{to}</b> of <b>%{count}</b>
         %{model}

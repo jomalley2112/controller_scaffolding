@@ -44,8 +44,8 @@ module Generators
       if options.ext_index_nav?
         copy_controller_concern("ext_index_nav.rb")
         inject_into_file "app/controllers/application_controller.rb", 
-              after: "class ApplicationController < ActionController::Base\n" do
-                "\n\tinclude ExtIndexNav\n"
+              after: "class ApplicationController < ActionController::Base" do
+                "\n\n\tinclude ExtIndexNav\n"
               end
         copy_partial("_pagination")
         add_pagination_to_locale_file
@@ -59,12 +59,12 @@ module Generators
         copy_controller_concern("ext_form_submit.rb")
 
         inject_into_file "app/controllers/application_controller.rb", 
-              after: "class ApplicationController < ActionController::Base\n" do
-                "\n\tinclude ExtFormSubmit\n"
+              after: "class ApplicationController < ActionController::Base" do
+                "\n\n\tinclude ExtFormSubmit\n"
               end
         copy_partial("_flash_messages")
         inject_into_file "app/views/layouts/application.html.erb", 
-              before: "<%= yield %>\n" do
+              before: "<%= yield %>" do
                 "\n<%= render 'flash_messages' %>\n"
               end
         copy_partial("_validation_errors")
@@ -75,12 +75,12 @@ module Generators
       if options.datepicker?
         inc_jquery_scripts
         inject_into_file "app/assets/javascripts/application.js",
-          after: "\n//= require_tree ." do
+          after: "//= require_tree ." do
             "\n//= require hot_date_rails"
           end
         inject_into_file "app/assets/stylesheets/application.css",
-          before: "\n *= require_tree ." do
-            "\n *= require hot_date_rails"
+          before: " *= require_tree ." do
+            "\n *= require hot_date_rails\n"
           end
       end
     end
@@ -124,8 +124,8 @@ module Generators
 
     def inc_jquery_scripts
       inject_into_file "app/assets/javascripts/application.js",
-        before: "\n//= require_tree ." do
-          "\n//= require jquery\n//= require jquery_ujs"
+        before: "//= require_tree ." do
+          "\n//= require jquery\n//= require jquery_ujs\n"
         end unless @injected_jquery_ujs #shouldn't allow duplicate text, but just to be safe
       @injected_jquery_ujs = true
     end
@@ -169,7 +169,6 @@ module Generators
       source_paths << File.expand_path('../../../lib/generators/assets/javascripts', __FILE__)
       base_path = "app/assets/javascripts"
       path = File.join(base_path, 'ext_index_nav.js')
-      copy_file('ext_index_nav.js', path) if file_action(path)
     end
 
     def add_pagination_to_locale_file
@@ -186,9 +185,7 @@ module Generators
                                   "one"=>file_name.singularize.humanize, 
                                   "other"=>table_name.humanize }
       wp_pei = lc_wp['page_entries_info'] || lc_wp['page_entries_info'] = {}
-      pei_mph = wp_pei['multi_page_html'] || wp_pei['multi_page_html'] = 
-        "Displaying <b>%{from}&nbsp;-&nbsp;%{to}</b> of <b>%{count}</b> %{model}"
-
+      pei_mph = wp_pei['multi_page_html'] || wp_pei['multi_page_html'] = 'Displaying <b>%{from}&nbsp;-&nbsp;%{to}</b> of <b>%{count}</b> %{model}'
       pei_sph = wp_pei['single_page_html'] || wp_pei['single_page_html'] = {}
       pei_sph['zero'] || pei_sph['zero'] = "No %{model} found"
       pei_sph['one'] || pei_sph['one'] = "Displaying <b>1</b> %{model}"

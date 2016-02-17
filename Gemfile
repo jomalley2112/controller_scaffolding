@@ -3,6 +3,7 @@ source "https://rubygems.org"
 # Declare your gem's dependencies in controller_scaffolding.gemspec.
 # Bundler will treat runtime dependencies like base dependencies, and
 # development dependencies will be added by default to the :development group.
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 gemspec
 
 # Declare any dependencies that are still in development here instead of in
